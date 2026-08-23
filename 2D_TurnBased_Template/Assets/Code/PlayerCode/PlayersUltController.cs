@@ -95,10 +95,10 @@ public class PlayersUltController : MonoBehaviour
         if(UltPoints >= MaxUltPoints)
             UltPoints = MaxUltPoints;
         else
-            UltPoints += amount;
+            UltPoints += amount / 4f;
 
         PlayerInfoRef.UpdatePlayersStats();
-        UltBarUIRef.SetUIUltBar(amount);
+        UltBarUIRef.SetUIUltBar(amount / 4f);
     }
 
     public void RemoveAllUltPoints() => UltPoints = 0;

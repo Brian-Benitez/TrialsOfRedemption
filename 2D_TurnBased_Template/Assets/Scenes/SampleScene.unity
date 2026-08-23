@@ -22275,8 +22275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1898115db7aa4049a0bea68f98aa428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UltAmount: 0
-  MaxUltAmount: 0
+  UltAmountUI: 0
+  MaxUltAmountUI: 0
   Width: 250
   Height: 25
   UltBar: {fileID: 2142658427}
@@ -28606,7 +28606,7 @@ GameObject:
   - component: {fileID: 2109047574}
   - component: {fileID: 2109047577}
   - component: {fileID: 2109047576}
-  - component: {fileID: 2109047575}
+  - component: {fileID: 2109047578}
   m_Layer: 0
   m_Name: XPBar
   m_TagString: Untagged
@@ -28632,25 +28632,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 935, y: -1031}
-  m_SizeDelta: {x: 1599.7, y: 15}
+  m_SizeDelta: {x: 1600, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2109047575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109047573}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80cd3e93fd0de8e4681a9abc9bd21fac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 0
-  MaxHealth: 0
-  Width: 250
-  Height: 25
-  HealthBar: {fileID: 654150997}
 --- !u!114 &2109047576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28689,6 +28672,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109047573}
   m_CullTransparentMesh: 1
+--- !u!114 &2109047578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109047573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd87d8091864d947bff728224e36415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XPAmountUI: 0
+  MaxXPAmountUI: 0
+  Width: 1600
+  Height: 15
+  XPBar: {fileID: 654150997}
 --- !u!1 &2113662470
 GameObject:
   m_ObjectHideFlags: 0

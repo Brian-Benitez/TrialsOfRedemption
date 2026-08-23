@@ -25,6 +25,7 @@ public class XPController : MonoBehaviour
     public void AddXPToPlayer(float xpamount)
     {
         PlayerStats.XP += xpamount;
+        XPBarUI.Instance.SetUIXP(xpamount);
     }
 
     public void CanLevelUp()

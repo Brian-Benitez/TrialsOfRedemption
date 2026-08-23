@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
             if (other.gameObject.CompareTag("Shield"))
             {
                 Debug.Log("shield is hit");
-                ShieldController.instance.ShieldHealth -= EnemyArcherGO.GetComponent<EnemyArcher>().EnemyDamage;
+                ShieldController.Instance.ShieldHealth -= EnemyArcherGO.GetComponent<EnemyArcher>().EnemyDamage;
                 DestroyProjectile();
             }
             else if (other.gameObject.CompareTag("EnemyShield"))

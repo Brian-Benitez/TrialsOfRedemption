@@ -215,7 +215,7 @@ public class LevelUpManager : MonoBehaviour
                 _shieldUpgradePercent += ShieldUpgradeIncrement;
                 _shieldUpgradeLevel += 1;
                 _playerInfo.UpdatePlayersStats();
-                ShieldController.instance.UpgradeShield(ShieldUpgradeIncrement);
+                ShieldController.Instance.UpgradeShield(ShieldUpgradeIncrement);
                 CostForShieldUpgrade *= 2;
                 UpdateUIForUpgradeMenu(ShieldCostAmountText, ShieldPercentText, CostForShieldUpgrade, _shieldUpgradePercent);
             }

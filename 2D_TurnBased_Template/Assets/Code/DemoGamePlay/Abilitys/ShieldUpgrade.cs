@@ -9,7 +9,7 @@ public class ShieldUpgrade : LevelUpStat
         {
             PlayerInfoRef.Souls -= (int)CostAmount;
             StatsLvl++;
-            ShieldController.instance.UpgradeShield(IncrementingStatsAmount);
+            ShieldController.Instance.UpgradeShield(IncrementingStatsAmount);
             CostAmount *= 2;
             PlayerInfoRef.UpdatePlayersStats();
             UpdateStatsUI();

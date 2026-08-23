@@ -49,4 +49,8 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void IsDashing() => PlayerAnimator.SetBool("IsDashing", true);
     public void IsNotDashing() => PlayerAnimator.SetBool("IsDashing", false);
+
+    public void IsParrying() => PlayerAnimator.SetBool("IsParrying", true);
+
+    public void IsNotParrying() => PlayerAnimator.SetBool("IsParrying", false);
 }

@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
-    public static ShieldController instance;//For every singlton we have, make sure everything works then start making things private that we dont need
+    public static ShieldController Instance;//For every singlton we have, make sure everything works then start making things private that we dont need
 
     [Header("Shield Object")]
     public GameObject ShieldObject;
-    public GameObject ParryShieldObject;
     public KeyCode ParryKeyCode;
     public bool IsParrying = false;
     public float ParryDuration;
@@ -27,14 +26,14 @@ public class ShieldController : MonoBehaviour
 
     [Header("Shield key")]
     public KeyCode ShieldKey;
-
+    public PlayerAnimationController PlayerAnimationControllerRef;
     private PlayerMovement _playerMovement;
 
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
     }
 
     private void Start()
@@ -96,15 +95,14 @@ public class ShieldController : MonoBehaviour
     public void StartCorutineActivateParry() => StartCoroutine(ActivateParry());
     IEnumerator ActivateParry()
     {
+        PlayerAnimationControllerRef.IsParrying();
+        yield return new WaitForSecondsRealtime(0.08f);
         IsParrying = true;
-        ParryShieldObject.SetActive(true);
-        ParryShieldObject.gameObject.tag = "Parry";
         ChangePlayerLayerToParry();
         yield return new WaitForSecondsRealtime(ParryDuration);
-        ParryShieldObject.SetActive(false);
         ChangeBackPlayerLayerName();
+        PlayerAnimationControllerRef.IsNotParrying();
         IsParrying = false;
-        ParryShieldObject.gameObject.tag = "Untagged";
     }
     void ChangePlayerLayerToParry() => PlayerController.Instance.Player.gameObject.tag = "Parry";
     void ChangePlayerLayerName() => PlayerController.Instance.Player.gameObject.tag = "Shield";

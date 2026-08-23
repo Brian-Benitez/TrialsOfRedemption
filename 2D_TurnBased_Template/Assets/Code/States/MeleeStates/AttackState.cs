@@ -80,7 +80,7 @@ public class AttackState : State//rename this to EnemyAttackState
             if (enemiesToDamges[i].CompareTag("Shield"))
             {
                 Debug.Log("Hit shield!");
-                ShieldController.instance.ShieldHealth -= EnemySwordsmanRef.EnemyDamage;
+                ShieldController.Instance.ShieldHealth -= EnemySwordsmanRef.EnemyDamage;
             }
 
             if (enemiesToDamges[i].CompareTag("Player"))

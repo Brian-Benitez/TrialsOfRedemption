@@ -4757,7 +4757,7 @@ GameObject:
   - component: {fileID: 386186101}
   - component: {fileID: 386186106}
   - component: {fileID: 386186109}
-  - component: {fileID: 386186104}
+  - component: {fileID: 386186111}
   - component: {fileID: 386186107}
   m_Layer: 6
   m_Name: Player
@@ -4870,43 +4870,6 @@ Transform:
   - {fileID: 954565360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &386186104
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386186100}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.01877451, y: 0.016643643}
-  m_Size: {x: 1.254735, y: 1.864167}
-  m_Direction: 0
 --- !u!114 &386186106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4996,7 +4959,7 @@ MonoBehaviour:
   ShieldObject: {fileID: 1478672680}
   ParryKeyCode: 99
   IsParrying: 0
-  ParryDuration: 0.4
+  ParryDuration: 1
   ParryCooldown: 1
   ShieldHealth: 3
   MaxShieldHealth: 3
@@ -5005,6 +4968,43 @@ MonoBehaviour:
   ShieldBreakDuration: 20
   ShieldKey: 113
   PlayerAnimationControllerRef: {fileID: 7878350318701407153}
+--- !u!70 &386186111
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386186100}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!1 &388334979
 GameObject:
   m_ObjectHideFlags: 0
@@ -21294,7 +21294,7 @@ Transform:
   m_GameObject: {fileID: 1478672680}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05000019, y: 1.36, z: 0}
+  m_LocalPosition: {x: -0.05000019, y: 0.272, z: 0}
   m_LocalScale: {x: 2.1068394, y: 2.2744792, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

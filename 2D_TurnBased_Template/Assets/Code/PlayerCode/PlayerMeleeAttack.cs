@@ -171,6 +171,7 @@ public class PlayerMeleeAttack : MonoBehaviour
             else if (enemiesToDamges[i].GetComponent<BaseEnemy>() != null)
             {
                 enemiesToDamges[i].GetComponent<BaseEnemy>().TakeDamage(dam);
+                DamagePopUp.Create(enemiesToDamges[i].transform.position, dam);
                 Debug.Log("hit enemieas");
             }
         }

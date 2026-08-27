@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class PlayerRangeWeapon : MonoBehaviour
@@ -16,6 +17,7 @@ public class PlayerRangeWeapon : MonoBehaviour
     public Transform ShotPointThree;
     public float LoweredRangeDistance;
 
+    public CinemachineImpulseSource rangeImpulseSource;
     private float _maxTimeBtwAttacks;
     private PlayerMovement PlayerMovementRef;
     private Rigidbody2D _arrowPrefabRB;
@@ -38,6 +40,7 @@ public class PlayerRangeWeapon : MonoBehaviour
 
         if(Input.GetMouseButton(1) && Input.GetMouseButtonDown(0) && PlayerAmmoController.Instance.DoesPlayerHaveAmmo() && CanRangeAttackAgain)
         {
+            CameraShakeManager.Instance.ShakeCamera(rangeImpulseSource);
             PlayerShootsArrowAction();
             PlayerAmmoController.Instance.RemoveAmmo();
             RestartTimerForRangeAttacks();

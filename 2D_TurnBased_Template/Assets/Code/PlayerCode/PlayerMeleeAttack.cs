@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class PlayerMeleeAttack : MonoBehaviour
@@ -55,6 +56,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     public ActivateSlash ActivateSlashRef;
     public PlayerAnimationController PlayerAnimationControllerRef;
     private PlayerMovement _playerMovement;
+    public CinemachineImpulseSource impulseSource;
     public FlipSprite FlipSpriteRef;
 
     private float _maxTimeBtwAttacks;
@@ -65,6 +67,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     private void Start()
     {
         _playerMovement = GetComponentInParent<PlayerMovement>();
+        
         _maxTimeBtwAttacks = WindUpDuration;
         RestartTimerForAttacks();
     }
@@ -104,6 +107,7 @@ public class PlayerMeleeAttack : MonoBehaviour
         {
             FlipSpriteRef.PlayerLookAtMouse();
             Hit(PlayerSpecialDamg, SpeicalPos, SpeicalRange, WhatIsEnemies);
+            CameraShakeManager.Instance.ShakeCamera(impulseSource);
             _specialCooldown = 0;
         }
 

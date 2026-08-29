@@ -12,7 +12,6 @@ public class PlayerMeleeAttack : MonoBehaviour
 
     [Header("Type Of Attack")]
     public bool IsLightAttack = false;
-    public bool IsHeavyAttack = false;
     public bool IsSpecialAttack = false;
 
     [Header("Amount Of Attacks")]
@@ -40,10 +39,6 @@ public class PlayerMeleeAttack : MonoBehaviour
     public float AttackSpeed;
     public float WindUpDuration;
 
-    [Header("Heavy Windup Stats")]
-    private float HeavyWindUpSpeed;
-    public float MaxHeavyWindUpSpeed;
-
     [Header("Player attk damg")]
     public float PlayerLightAttkDamg;
     public float PlayerHeavyAttkDamg;
@@ -60,8 +55,6 @@ public class PlayerMeleeAttack : MonoBehaviour
     public FlipSprite FlipSpriteRef;
 
     private float _maxTimeBtwAttacks;
-    private float _holdTime = 0f;
-    private float _maxHoldTimeForHeavyAttk = 0.2f;
     private float _specialCooldown = 0f;
 
     private void Start()
@@ -91,7 +84,6 @@ public class PlayerMeleeAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && CanMeleeAttackAgain)
         {
             StartCoroutine(WindUpAttack(PlayerLightAttkDamg, AttackPos, AttackRange, WhatIsEnemies));
-            //ActivateSlashRef.DeactivateSlashingArt();
             _playerMovement.UnSlowPlayer();
             AmountOfAttacks++;
         }
@@ -109,33 +101,6 @@ public class PlayerMeleeAttack : MonoBehaviour
             Hit(PlayerSpecialDamg, SpeicalPos, SpeicalRange, WhatIsEnemies);
             CameraShakeManager.Instance.ShakeCamera(impulseSource);
             _specialCooldown = 0;
-        }
-
-        if (Input.GetMouseButton(0))
-        {
-            _holdTime += Time.deltaTime;
-            
-            if (_holdTime >= _maxHoldTimeForHeavyAttk)
-            {
-                _playerMovement.SlowPlayer();
-                CanMeleeAttackAgain = false;
-
-                if(HeavyWindUpSpeed >= MaxHeavyWindUpSpeed)
-                {
-                    IsHeavyAttack = true;
-                    CanMeleeAttackAgain = true;
-                }
-                else
-                {
-                    HeavyWindUpSpeed += Time.deltaTime;//double check all this
-                }
-            }
-        }
-        if (Input.GetMouseButtonUp(0) && IsHeavyAttack && CanMeleeAttackAgain)
-        {
-            FlipSpriteRef.PlayerLookAtMouse();
-            Hit(PlayerHeavyAttkDamg, AttackPos, AttackRange, WhatIsEnemies);
-            _playerMovement.UnSlowPlayer();
         }
 
         if (WindUpDuration <= 0f)
@@ -186,12 +151,9 @@ public class PlayerMeleeAttack : MonoBehaviour
 
     void RestartMeleeBools()
     {
-        IsHeavyAttack = false;
         IsSpecialAttack = false;
         IsLightAttack = false;
         ChangedValues = false;
-        _holdTime = 0f;
-        HeavyWindUpSpeed = 0f;
     }
 
     private void OnDrawGizmosSelected()

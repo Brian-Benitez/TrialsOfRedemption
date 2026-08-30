@@ -1753,7 +1753,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 386186103}
+  m_Father: {fileID: 1870391472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &143878478
 MonoBehaviour:
@@ -3214,7 +3214,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 250060173}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1929690283}
+        m_TargetAssemblyTypeName: LingeringHealthAbility, Assembly-CSharp
+        m_MethodName: UpgradeStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &250060173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3641,12 +3653,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266331971}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 386186103}
+  m_Father: {fileID: 1984240828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &266331973
 MonoBehaviour:
@@ -4047,11 +4059,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a8d6d2989678db48a8650dad1119072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatsLvlText: {fileID: 0}
   CostAmountText: {fileID: 0}
-  IncrementingStatsAmount: 0
   CostAmount: 1000
-  MinCostAmount: 1000
   PriceMultipler: 1
   StatsLvl: 0
   PlayerInfoRef: {fileID: 386186108}
@@ -4976,10 +4985,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 519420032}
-  - {fileID: 143878477}
-  - {fileID: 626727879}
-  - {fileID: 266331972}
+  - {fileID: 1870391472}
   - {fileID: 954565360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5042,7 +5048,7 @@ MonoBehaviour:
   CharacterMaxHealth: 15
   BaseLineHealth: 15
   RangeDamg: 1
-  Souls: 0
+  Souls: 10000
   BossSouls: 0
   XP: 595
   IsCharacterDead: 0
@@ -6869,7 +6875,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7878350318935056678}
-  m_Father: {fileID: 386186103}
+  m_Father: {fileID: 1870391472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -7019,11 +7025,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdda4dbb96007b4383cc092f3c356ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatsLvlText: {fileID: 0}
   CostAmountText: {fileID: 0}
-  IncrementingStatsAmount: 0
   CostAmount: 0
-  MinCostAmount: 0
   PriceMultipler: 2
   StatsLvl: 0
   BossSoulCost: 1
@@ -7163,11 +7166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3533302390838e647871bc288b2e604d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatsLvlText: {fileID: 0}
   CostAmountText: {fileID: 0}
-  IncrementingStatsAmount: 0
   CostAmount: 1000
-  MinCostAmount: 1000
   PriceMultipler: 1
   StatsLvl: 0
   PlayerInfoRef: {fileID: 386186108}
@@ -7763,12 +7763,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626727878}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 386186103}
+  m_Father: {fileID: 1984240828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &626727880
 MonoBehaviour:
@@ -18550,11 +18550,10 @@ MonoBehaviour:
   CanSpeicalAgain: 0
   ChangedValues: 0
   IsLightAttack: 0
-  IsHeavyAttack: 0
   IsSpecialAttack: 0
   MaxAmountOfAttacks: 3
   AmountOfAttacks: 0
-  MaxTimerToRestartAttack: 0.65
+  MaxTimerToRestartAttack: 0.5
   SpecialKey: 102
   SpeicalPos: {fileID: 758283178}
   SpeicalRange: 3
@@ -18564,7 +18563,6 @@ MonoBehaviour:
   AttackRange: 1
   AttackSpeed: 0.1
   WindUpDuration: 0.3
-  MaxHeavyWindUpSpeed: 1
   PlayerLightAttkDamg: 1
   PlayerHeavyAttkDamg: 3
   PlayerSpecialDamg: 2
@@ -21371,6 +21369,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1929690283}
+        m_TargetAssemblyTypeName: LingeringHealthAbility, Assembly-CSharp
+        m_MethodName: UseLingeringHealthAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1415442834
 GameObject:
   m_ObjectHideFlags: 0
@@ -21998,11 +22008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98110c93d7e98504991e5cc4dd68ee32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatsLvlText: {fileID: 0}
   CostAmountText: {fileID: 0}
-  IncrementingStatsAmount: 0
   CostAmount: 1000
-  MinCostAmount: 1000
   PriceMultipler: 1
   StatsLvl: 0
   PlayerMeleeAttackRef: {fileID: 1131129220}
@@ -22740,7 +22747,7 @@ MonoBehaviour:
   - {fileID: 264568203}
   - {fileID: 3721221941373602431}
   AllStats:
-  - {fileID: 1929690283}
+  - {fileID: 0}
   - {fileID: 1490441809}
   - {fileID: 549956200}
   - {fileID: 287232074}
@@ -23613,12 +23620,12 @@ RectTransform:
   - {fileID: 78871554}
   - {fileID: 1887390965}
   - {fileID: 1533368012}
+  - {fileID: 1944497367}
+  - {fileID: 1621693172}
   - {fileID: 116347526}
   - {fileID: 94659935}
   - {fileID: 1750898639}
-  - {fileID: 1621693172}
   - {fileID: 34148752}
-  - {fileID: 1944497367}
   m_Father: {fileID: 1949009256}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -26153,11 +26160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777c52c1ac852004f8e7d23b4fa2fd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatsLvlText: {fileID: 0}
   CostAmountText: {fileID: 0}
-  IncrementingStatsAmount: 0
   CostAmount: 500
-  MinCostAmount: 0
   PriceMultipler: 1
   StatsLvl: 0
   PlayerInfoRef: {fileID: 386186108}
@@ -26316,6 +26320,40 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.0000076293945}
   m_Radius: 0.5
+--- !u!1 &1870391471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870391472}
+  m_Layer: 6
+  m_Name: Cameras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1870391472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870391471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 519420032}
+  - {fileID: 143878477}
+  - {fileID: 1984240828}
+  m_Father: {fileID: 386186103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1886225621
 GameObject:
   m_ObjectHideFlags: 0
@@ -26738,7 +26776,7 @@ GameObject:
   - component: {fileID: 1929690282}
   - component: {fileID: 1929690283}
   m_Layer: 0
-  m_Name: HealPlayerStats
+  m_Name: LingeringHealthAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26768,16 +26806,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1929690281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e2b28f729b2861448177a345d4bb2a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 802fff3e4be077548b2bce53c0c381ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatsLvlText: {fileID: 0}
-  CostAmountText: {fileID: 0}
-  IncrementingStatsAmount: 0
-  CostAmount: 800
-  MinCostAmount: 0
-  PriceMultipler: 1
+  CostAmountText: {fileID: 496664708}
+  CostAmount: 1000
+  PriceMultipler: 2
   StatsLvl: 0
+  IsLingerHealthEnabled: 0
+  Tier: 0
   PlayerInfoRef: {fileID: 386186108}
 --- !u!1 &1936295835
 GameObject:
@@ -27704,6 +27741,39 @@ MonoBehaviour:
   WaitForRemovingPos: {x: 0, y: 400}
   RestartCardsPos: {x: 27, y: 1115}
   RestartBackroundPos: {x: -8.8, y: 1160}
+--- !u!1 &1984240827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984240828}
+  m_Layer: 6
+  m_Name: ImpuseCameras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1984240828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984240827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 266331972}
+  - {fileID: 626727879}
+  m_Father: {fileID: 1870391472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1984954334
 GameObject:
   m_ObjectHideFlags: 0

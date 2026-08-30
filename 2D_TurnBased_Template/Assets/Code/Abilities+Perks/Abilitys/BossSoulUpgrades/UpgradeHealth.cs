@@ -10,7 +10,6 @@ public class UpgradeHealth : LevelUpStat
     {
         if(BossSoulCost >= PlayerInfoRef.BossSouls)
         {
-            PlayerInfoRef.CharacterMaxHealth += IncrementingStatsAmount;
             PlayerInfoRef.HealthBarUIRef.SetUIMaxHealth(PlayerInfoRef.CharacterMaxHealth);
             PlayerInfoRef.SetHealth(PlayerInfoRef.CharacterHealthAmount);
             PlayerInfoRef.BossSouls -= BossSoulCost;

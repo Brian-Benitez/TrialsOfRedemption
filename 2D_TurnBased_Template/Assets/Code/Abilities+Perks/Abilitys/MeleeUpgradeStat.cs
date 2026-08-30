@@ -9,9 +9,6 @@ public class MeleeUpgradeStat : LevelUpStat
         if (PlayerInfoRef.Souls >= CostAmount)
         {
             Debug.Log("upgraded melee");
-            PlayerMeleeAttackRef.PlayerLightAttkDamg += IncrementingStatsAmount;
-            PlayerMeleeAttackRef.PlayerHeavyAttkDamg += IncrementingStatsAmount;
-            PlayerMeleeAttackRef.PlayerSpecialDamg += IncrementingStatsAmount;
             StatsLvl++;
             PlayerInfoRef.Souls -= (int)CostAmount;
             PlayerInfoRef.UpdatePlayersStats();

@@ -3,20 +3,22 @@ using UnityEngine;
 
 public class LevelUpStat : MonoBehaviour
 {
-    public TextMeshProUGUI StatsLvlText, CostAmountText;
-    public float IncrementingStatsAmount, CostAmount,  MinCostAmount, PriceMultipler;//We still need to do the rest of the abilities. Only done health.
+    public TextMeshProUGUI CostAmountText;
+    public float CostAmount, PriceMultipler;//We still need to do the rest of the abilities. Only done health.
+    private float MinCostAmount;
     public int StatsLvl;
 
     private void Start()
     {
         MinCostAmount = CostAmount;
+        PriceMultipler = 1;
+        StatsLvl = 0;
     }
 
     public void UpdateStatsUI()
     {
         CostAmount += CostAmount * PriceMultipler;
         StatsLvl++;
-        //StatsLvlText.text = "Lvl: " + StatsLvl;
         CostAmountText.text = " " + CostAmount;
     }
     

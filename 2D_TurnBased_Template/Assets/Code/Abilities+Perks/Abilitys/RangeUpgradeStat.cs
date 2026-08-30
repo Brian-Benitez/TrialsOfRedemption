@@ -7,7 +7,6 @@ public class RangeUpgradeStat : LevelUpStat
     {
         if (PlayerInfoRef.Souls >= CostAmount)
         {
-            PlayerInfoRef.RangeDamg += IncrementingStatsAmount;
             StatsLvl++;
             PlayerInfoRef.Souls -= (int)CostAmount;
             PlayerInfoRef.UpdatePlayersStats();

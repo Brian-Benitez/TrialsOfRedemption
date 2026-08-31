@@ -6699,7 +6699,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 514872265}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1490441809}
+        m_TargetAssemblyTypeName: HellsRetriverAbility, Assembly-CSharp
+        m_MethodName: UpgradeStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &514872265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21381,6 +21393,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1490441809}
+        m_TargetAssemblyTypeName: HellsRetriverAbility, Assembly-CSharp
+        m_MethodName: AddXAmountOfArrowsToPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1415442834
 GameObject:
   m_ObjectHideFlags: 0
@@ -21975,7 +21999,7 @@ GameObject:
   - component: {fileID: 1490441808}
   - component: {fileID: 1490441809}
   m_Layer: 0
-  m_Name: MeleeUpgradeStats
+  m_Name: HellsRetriverAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22005,14 +22029,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1490441807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98110c93d7e98504991e5cc4dd68ee32, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e0655116e133d143a83c3bfb4cd017f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CostAmountText: {fileID: 0}
+  CostAmountText: {fileID: 1744900770}
   CostAmount: 1000
-  PriceMultipler: 1
+  PriceMultipler: 0
   StatsLvl: 0
-  PlayerMeleeAttackRef: {fileID: 1131129220}
+  CurrentTier: 0
+  IsUsingHellsRetriver: 0
   PlayerInfoRef: {fileID: 386186108}
 --- !u!1 &1520014522
 GameObject:
@@ -22748,7 +22773,7 @@ MonoBehaviour:
   - {fileID: 3721221941373602431}
   AllStats:
   - {fileID: 0}
-  - {fileID: 1490441809}
+  - {fileID: 0}
   - {fileID: 549956200}
   - {fileID: 287232074}
   - {fileID: 0}

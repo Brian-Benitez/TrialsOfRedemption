@@ -18551,8 +18551,8 @@ MonoBehaviour:
   ChangedValues: 0
   IsLightAttack: 0
   IsSpecialAttack: 0
-  MaxAmountOfAttacks: 3
   AmountOfAttacks: 0
+  MaxAmountOfAttacks: 3
   MaxTimerToRestartAttack: 0.5
   SpecialKey: 102
   SpeicalPos: {fileID: 758283178}
@@ -22751,7 +22751,7 @@ MonoBehaviour:
   - {fileID: 1490441809}
   - {fileID: 549956200}
   - {fileID: 287232074}
-  - {fileID: 1854783366}
+  - {fileID: 0}
   - {fileID: 539102880}
   RoundsSurvived: {fileID: 1913227436}
   RoundControllerRef: {fileID: 1414053473}
@@ -23537,7 +23537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1636709607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26127,7 +26127,7 @@ GameObject:
   - component: {fileID: 1854783365}
   - component: {fileID: 1854783366}
   m_Layer: 0
-  m_Name: ShieldUpgradeStats
+  m_Name: ExtraLightAttackAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26157,14 +26157,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1854783364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777c52c1ac852004f8e7d23b4fa2fd0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4799e1de656176548b64a5e8d30b5979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CostAmountText: {fileID: 0}
-  CostAmount: 500
-  PriceMultipler: 1
+  CostAmountText: {fileID: 1724830769}
+  CostAmount: 1000
+  PriceMultipler: 0
   StatsLvl: 0
   PlayerInfoRef: {fileID: 386186108}
+  PlayerMeleeAttackRef: {fileID: 1131129220}
 --- !u!1 &1865559711
 GameObject:
   m_ObjectHideFlags: 0

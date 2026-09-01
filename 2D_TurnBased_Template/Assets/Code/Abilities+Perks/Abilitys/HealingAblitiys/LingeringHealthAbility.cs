@@ -10,11 +10,12 @@ public class LingeringHealthAbility : LevelUpStat
     private const float finalUpgradeAmount = 7f;
     public enum AbilityTiers
     {
+        None,
         FirstUpgrade,
         SecondUpgrade,
         FinalUpgrade
     }
-    public AbilityTiers Tier;
+    public AbilityTiers Tier = AbilityTiers.None;
     [Header("Scripts")]
     public PlayerInfo PlayerInfoRef;
 

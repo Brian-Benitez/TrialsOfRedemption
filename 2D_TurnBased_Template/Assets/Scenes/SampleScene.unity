@@ -4026,7 +4026,7 @@ GameObject:
   - component: {fileID: 287232073}
   - component: {fileID: 287232074}
   m_Layer: 0
-  m_Name: RangeUpgradeStats
+  m_Name: ExtraDashAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4056,13 +4056,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 287232072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a8d6d2989678db48a8650dad1119072, type: 3}
+  m_Script: {fileID: 11500000, guid: f2f798392982600419f586ba46a322cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CostAmountText: {fileID: 0}
+  CostAmountText: {fileID: 187968445}
   CostAmount: 1000
-  PriceMultipler: 1
+  PriceMultipler: 0
   StatsLvl: 0
+  IsUsingExtraDash: 0
+  PlayerMovementRef: {fileID: 386186101}
   PlayerInfoRef: {fileID: 386186108}
 --- !u!1 &315112527 stripped
 GameObject:
@@ -4909,7 +4911,7 @@ MonoBehaviour:
   DashCoolDown: 0.1
   DashCoolDownUpgrade: 0.2
   UsedDashes: 0
-  MaxUsedDashes: 3
+  MaxUsedDashes: 2
   TimerForMaxUsedDashes: 0
   MaxTimeForMaxUsedDashes: 0.5
   IsDashing: 0
@@ -22775,7 +22777,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 549956200}
-  - {fileID: 287232074}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 539102880}
   RoundsSurvived: {fileID: 1913227436}

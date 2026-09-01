@@ -5064,6 +5064,7 @@ MonoBehaviour:
   PlayersCore: {fileID: 954565359}
   HealthBarUIRef: {fileID: 823619039}
   GameOverControllerRef: {fileID: 1556314982}
+  SecondChanceAbilityRef: {fileID: 549956200}
   PlayerObject: {fileID: 386186100}
 --- !u!114 &386186109
 MonoBehaviour:
@@ -7147,7 +7148,7 @@ GameObject:
   - component: {fileID: 549956199}
   - component: {fileID: 549956200}
   m_Layer: 0
-  m_Name: RageUpgradeStats
+  m_Name: SecondChanceAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7177,13 +7178,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 549956198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3533302390838e647871bc288b2e604d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f03cf9029505c64aacc271b9d4f1296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CostAmountText: {fileID: 0}
+  CostAmountText: {fileID: 270804874}
   CostAmount: 1000
-  PriceMultipler: 1
+  PriceMultipler: 0
   StatsLvl: 0
+  ReviveAmountForPlayer: 0
+  IsSecondChanceEnabled: 0
+  IsSecondChanceUsed: 0
+  CurrentTier: 0
+  PlayerBaseStats: {fileID: 386186108}
   PlayerInfoRef: {fileID: 386186108}
 --- !u!1 &574168713
 GameObject:
@@ -8480,7 +8486,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 727259719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 549956200}
+        m_TargetAssemblyTypeName: SecondChanceAbility, Assembly-CSharp
+        m_MethodName: UpgradeStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &727259719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22776,7 +22794,7 @@ MonoBehaviour:
   AllStats:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 549956200}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 539102880}

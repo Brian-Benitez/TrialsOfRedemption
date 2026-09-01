@@ -31,6 +31,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
 
     public HealthBarUI HealthBarUIRef;
     public GameOverController GameOverControllerRef;
+    public SecondChanceAbility SecondChanceAbilityRef;
     public void TakeDamage(float damage)
     {
         PostProcessingController.Instance.PlayCorutineHitEffect();
@@ -50,18 +51,28 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
 
     public void DoesCharacterDie()
     {
-        if (CharacterHealthAmount <= 0)
+        if(SecondChanceAbilityRef.IsSecondChanceUsed == false && CharacterHealthAmount <= 0)
         {
-            IsCharacterDead = true;
-            GameOverControllerRef.TurnOnGameOverScreen();
-            PlayersCore.SetActive(false);
+            SetHealth(SecondChanceAbilityRef.ReviveAmountForPlayer);
+            HealthBarUIRef.SetUIHealth(SecondChanceAbilityRef.ReviveAmountForPlayer);
+            SecondChanceAbilityRef.ActivateSecondChanceAbility();
+            Debug.Log("Used Second Chance!");
         }
         else
         {
-            Debug.Log("Still has health");
-            IsCharacterDead = false;
+            if (CharacterHealthAmount <= 0)
+            {
+                IsCharacterDead = true;
+                GameOverControllerRef.TurnOnGameOverScreen();
+                SecondChanceAbilityRef.IsSecondChanceUsed = false;
+                PlayersCore.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("Still has health");
+                IsCharacterDead = false;
+            }
         }
-
     }
 
     public void UpdatePlayersStats()

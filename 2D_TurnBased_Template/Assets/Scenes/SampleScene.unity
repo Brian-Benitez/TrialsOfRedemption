@@ -7020,32 +7020,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 539102881}
-  - component: {fileID: 539102880}
+  - component: {fileID: 539102882}
   m_Layer: 0
-  m_Name: UpgradeHealthStats
+  m_Name: UpgradeHealthAblility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &539102880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539102879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cdda4dbb96007b4383cc092f3c356ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CostAmountText: {fileID: 0}
-  CostAmount: 0
-  PriceMultipler: 2
-  StatsLvl: 0
-  BossSoulCost: 1
-  PlayerInfoRef: {fileID: 386186108}
 --- !u!4 &539102881
 Transform:
   m_ObjectHideFlags: 0
@@ -7061,6 +7043,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 228032351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &539102882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539102879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2b28f729b2861448177a345d4bb2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostAmountText: {fileID: 1105159407}
+  CostAmount: 1000
+  PriceMultipler: 0
+  StatsLvl: 0
+  CurrentTier: 0
+  PlayerInfoRef: {fileID: 386186108}
 --- !u!1 &543055088
 GameObject:
   m_ObjectHideFlags: 0
@@ -19231,7 +19231,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1196943705}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 539102882}
+        m_TargetAssemblyTypeName: HealPlayerScript, Assembly-CSharp
+        m_MethodName: UpgradeStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1196943705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22797,7 +22809,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 539102880}
+  - {fileID: 0}
   RoundsSurvived: {fileID: 1913227436}
   RoundControllerRef: {fileID: 1414053473}
   PlayerInfoRef: {fileID: 386186108}
@@ -23582,7 +23594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1636709607
 MonoBehaviour:
   m_ObjectHideFlags: 0

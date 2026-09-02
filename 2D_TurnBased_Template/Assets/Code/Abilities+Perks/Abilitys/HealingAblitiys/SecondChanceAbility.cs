@@ -22,7 +22,7 @@ public class SecondChanceAbility : LevelUpStat
     {
         if (PlayerInfoRef.Souls >= CostAmount)
         {
-            StatsLvl++;
+            IsSecondChanceEnabled = true;
             PlayerInfoRef.Souls -= (int)CostAmount;
             PlayerInfoRef.UpdatePlayersStats();
             UpdateStatsUI();

@@ -11,6 +11,7 @@ public class ExtraDashAbility : LevelUpStat
     {
         if (PlayerInfoRef.Souls >= CostAmount)
         {
+            IsUsingExtraDash = true;
             PlayerInfoRef.Souls -= (int)CostAmount;
             PlayerInfoRef.UpdatePlayersStats();
             UpdateStatsUI();

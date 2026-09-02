@@ -21,7 +21,6 @@ public class HellsRetriverAbility : LevelUpStat
         if (PlayerInfoRef.Souls >= CostAmount)
         {
             IsUsingHellsRetriver = true;
-            StatsLvl++;
             PlayerInfoRef.Souls -= (int)CostAmount;// if theres issues with souls being subtracted by cost amount its here.
             PlayerInfoRef.UpdatePlayersStats();
             UpdateStatsUI();

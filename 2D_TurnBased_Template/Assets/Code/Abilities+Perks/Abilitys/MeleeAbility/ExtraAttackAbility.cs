@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ExtraAttackAbility : LevelUpStat
 {
+    public bool IsUseingExtraAttack = false;
     private const int DefaultAmountOfAttack = 3;
     private const int UpgradedAmountOfAttacks = 4;
     public PlayerInfo PlayerInfoRef;
@@ -23,6 +24,7 @@ public class ExtraAttackAbility : LevelUpStat
     private void AddExtraAttackToPlayer()
     {
         Debug.Log("ability extra attack is enbaled");
+        IsUseingExtraAttack = true;
         PlayerMeleeAttackRef.MaxAmountOfAttacks = UpgradedAmountOfAttacks;
     }
 }

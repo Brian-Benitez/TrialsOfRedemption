@@ -21,14 +21,13 @@ public class HealPlayerScript : LevelUpStat
     {
         if(PlayerInfoRef.Souls >= CostAmount)
         {
-            StatsLvl++;
+            UpdateStatsUI();
             DetermineCurrentTier();
             PlayerInfoRef.CharacterMaxHealth += upgradeHealthAmount;//THIS IS FOR UPGRADING HEALTH KEEPING IT HERE FOR LATER USAGE DO NOT DELETE
             PlayerInfoRef.HealthBarUIRef.SetUIMaxHealth(PlayerInfoRef.CharacterMaxHealth);
             PlayerInfoRef.SetHealth(PlayerInfoRef.CharacterHealthAmount);
             PlayerInfoRef.Souls -= (int)CostAmount;// if theres issues with souls being subtracted by cost amount its here.
             PlayerInfoRef.UpdatePlayersStats();
-            UpdateStatsUI();
         }
         else
         {

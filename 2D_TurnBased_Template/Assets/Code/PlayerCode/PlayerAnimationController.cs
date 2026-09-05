@@ -32,7 +32,7 @@ public class PlayerAnimationController : MonoBehaviour
             //PlayerAnimator.SetBool("IsAttacking", false);
             PlayerAnimator.SetBool("IsAttackingTwo", true);
         }
-        else if(PlayerMeleeAttackRef.AmountOfAttacks == 2)
+        else if(PlayerMeleeAttackRef.AmountOfAttacks == 2 || PlayerMeleeAttackRef.AmountOfAttacks == 3)
         {
             //PlayerAnimator.SetBool("IsAttackingTwo", false);
             PlayerAnimator.SetBool("IsAttackingThree", true);

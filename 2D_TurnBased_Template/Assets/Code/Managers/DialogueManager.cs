@@ -12,9 +12,9 @@ public class DialogueManager : MonoBehaviour
 
     public bool isDialogueActive = false;
     public bool IsDialogueInProgress = false;
+    public bool IsThereMoreDialogue = false;
 
     public float TypingSpeed;
-    //private float _normalTypingSpeed = .5f;
 
     public int SentencesCount = 0;
 
@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     {
         lines = new Queue<DialogueLine>();
     }
+
 
     public void StartDialogue(Dialogue dialogue)
     {
@@ -41,14 +42,14 @@ public class DialogueManager : MonoBehaviour
     {
         if (lines.Count == 0)
         {
+            IsThereMoreDialogue = false;
             EndDialogue();
             return;
         }
 
+        IsThereMoreDialogue = true;
         DialogueLine currentLine = lines.Dequeue();
-
         StopAllCoroutines();
-
         StartCoroutine(TypeSentence(currentLine));
     }
 
@@ -64,18 +65,21 @@ public class DialogueManager : MonoBehaviour
         }
 
         IsDialogueInProgress = false;
-        //TypingSpeed = _normalTypingSpeed;//work in progress..
     }
 
-    public void TurnOnDialogueUI() => UIDialogueCanvas.SetActive(true);
+
+    public void TurnOnDialogueUI()
+    {
+        UIDialogueCanvas.SetActive(true);
+    }
     public void TurnOffDialogueUI()
     {
         UIDialogueCanvas.SetActive(false);
     }
     void EndDialogue()
     {
+        SentencesCount = 0;
         isDialogueActive = false;
         UIDialogueCanvas.SetActive(false);
-        //animator.Play("hide");
     }
 }

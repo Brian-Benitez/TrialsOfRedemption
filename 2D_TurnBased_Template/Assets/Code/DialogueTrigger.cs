@@ -38,25 +38,20 @@ public class DialogueTrigger : MonoBehaviour
     {
         _dialogueManagerRef.StartDialogue(Dialogue);
     }
-    //BUG!: If you skip dialouge, it cannot restart properly
     private void Update()
     {
-        if(!RestartDialouge && UnityEngine.Input.GetKeyUp(InteractKeyCode))
+        if(!RestartDialouge && Input.GetKeyUp(InteractKeyCode))
             return;
-        if(_dialogueManagerRef.isDialogueActive && UnityEngine.Input.GetKeyUp(InteractKeyCode))
+        if(_dialogueManagerRef.isDialogueActive && Input.GetKeyUp(InteractKeyCode))
         {
             RestartDialouge = false;
             Debug.Log("start dialouge");
             TriggerDialogue();
         }
-        if(_dialogueManagerRef.isDialogueActive && _dialogueManagerRef.IsDialogueInProgress && UnityEngine.Input.GetKeyUp(KeyCode.Space) || UnityEngine.Input.GetMouseButtonUp(0))
-        {
-            //_dialogueManagerRef.TypingSpeed = 0.01f;
-        }
-        if(!_dialogueManagerRef.IsDialogueInProgress &&_dialogueManagerRef.isDialogueActive && UnityEngine.Input.GetKeyUp(KeyCode.Space) || UnityEngine.Input.GetMouseButtonUp(0))
+        if(_dialogueManagerRef.IsThereMoreDialogue && Input.GetKeyUp(KeyCode.Space))
         {
             _dialogueManagerRef.DisplayNextDialogueLine();
-            CheckList();
+            Debug.Log("am i here");
         }
     }
 
@@ -68,7 +63,7 @@ public class DialogueTrigger : MonoBehaviour
             RestartDialouge = true;
             _dialogueManagerRef.SentencesCount = 0;
         }
-        else if(_dialogueManagerRef.SentencesCount < Dialogue.DialogueLines.Count && _dialogueManagerRef.isDialogueActive)
+        else if(_dialogueManagerRef.SentencesCount < Dialogue.DialogueLines.Count)
             RestartDialouge = false;
     }
 

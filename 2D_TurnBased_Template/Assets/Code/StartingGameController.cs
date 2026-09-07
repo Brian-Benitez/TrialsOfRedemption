@@ -19,6 +19,7 @@ public class StartingGameController : MonoBehaviour
             UIStartGameObject.SetActive(false);
             RoundControllerRef.IsStartedEvent = false;
             EnemiesSpawner.Instance.IsAllEnemiesDead = false;
+            PlayerSpawnerController.Instance.SpawnPlayerInArena();
         }
     }
 

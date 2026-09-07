@@ -5,6 +5,7 @@ using UnityEngine;
 public class NpcController : MonoBehaviour
 {
     public int LayoutIndex;
+    private int MaxLayoutIndex = 3;
     public List<GameObject> NPCLayouts;
     public enum NpcLayout
     {
@@ -13,12 +14,15 @@ public class NpcController : MonoBehaviour
         SecondLayout,
         ThirdLayout
     }
-    public NpcLayout CurrentNpcLayout;
+    public NpcLayout CurrentNpcLayout = NpcLayout.None;
 
     public void IncrementLayoutIndex()
     {
-        LayoutIndex++;
-        ChangeLayout();
+        if(LayoutIndex < MaxLayoutIndex)
+        {
+            LayoutIndex++;
+            ChangeLayout();
+        }      
     }
     void ChangeLayout()
     {

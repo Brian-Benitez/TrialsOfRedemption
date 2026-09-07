@@ -27,11 +27,12 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
     public TextMeshProUGUI MaxUltAmountText;
     public TextMeshProUGUI ArrowCountText;
 
-    public GameObject PlayersCore; 
-
+    public GameObject PlayersCore;
+    [Header("Scripts")]
     public HealthBarUI HealthBarUIRef;
     public GameOverController GameOverControllerRef;
     public SecondChanceAbility SecondChanceAbilityRef;
+    public NpcController NpcControllerRef;
     public void TakeDamage(float damage)
     {
         PostProcessingController.Instance.PlayCorutineHitEffect();
@@ -63,6 +64,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
             if (CharacterHealthAmount <= 0)
             {
                 IsCharacterDead = true;
+                NpcControllerRef.IncrementLayoutIndex();
                 GameOverControllerRef.TurnOnGameOverScreen();
                 SecondChanceAbilityRef.IsSecondChanceUsed = false;
                 PlayersCore.SetActive(false);

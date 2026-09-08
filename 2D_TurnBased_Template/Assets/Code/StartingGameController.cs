@@ -13,16 +13,19 @@ public class StartingGameController : MonoBehaviour
     {
         if (Input.GetKeyDown(StartRoundKey) && !RoundControllerRef.IsRoundStarted && XPController.Instance.IsUpgrading == false && CanInteract)
         {
-            Debug.Log("start new round");
-            RoundControllerRef.IsRoundStarted = true;
-            RoundControllerRef.IsRoundEnd = false;
-            UIStartGameObject.SetActive(false);
-            RoundControllerRef.IsStartedEvent = false;
-            EnemiesSpawner.Instance.IsAllEnemiesDead = false;
-            PlayerSpawnerController.Instance.SpawnPlayerInArena();
+            StartNewRound();
         }
     }
-
+    public void StartNewRound()
+    {
+        Debug.Log("start new round");
+        RoundControllerRef.IsRoundStarted = true;
+        RoundControllerRef.IsRoundEnd = false;
+        UIStartGameObject.SetActive(false);
+        RoundControllerRef.IsStartedEvent = false;
+        EnemiesSpawner.Instance.IsAllEnemiesDead = false;
+        PlayerSpawnerController.Instance.SpawnPlayerInArena();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))

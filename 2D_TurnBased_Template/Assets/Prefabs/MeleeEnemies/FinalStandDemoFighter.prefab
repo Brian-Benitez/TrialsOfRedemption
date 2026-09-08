@@ -872,7 +872,7 @@ MonoBehaviour:
   HealthPotion: {fileID: 8241212872979105498, guid: 71ffacc5d176d324eac596cf228156cd, type: 3}
   RagePotion: {fileID: 600810356273653899, guid: ab5027affe3cbc84b97865519c0f8019, type: 3}
   BossSoulsObj: {fileID: 0}
-  ChanceToDropItem: 5
+  ChanceToDropItem: 0
   EnemySoulsValue: 25
   IsHit: 0
   IsDead: 0

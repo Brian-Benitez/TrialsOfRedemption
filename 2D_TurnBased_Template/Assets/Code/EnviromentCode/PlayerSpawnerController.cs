@@ -9,6 +9,8 @@ public class PlayerSpawnerController : MonoBehaviour
     public GameObject InteractGO;
     public GameObject StartSpawner;
     public GameObject CampfireSpawner;
+    [Header("Scripts")]
+    public StartingGameController StartingGameControllerRef;
     private void Awake()
     {
         if (Instance == null)
@@ -18,7 +20,9 @@ public class PlayerSpawnerController : MonoBehaviour
     private void Start()
     {
         if(SpawnInArena)
+        {
             SpawnPlayerInArena();
+        }
         else
             SpawnPlayerInCampfire();
     }
@@ -26,7 +30,11 @@ public class PlayerSpawnerController : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(InteractKeyCode) && CanInteract)
+        {
             SpawnPlayerInArena();
+            StartingGameControllerRef.StartNewRound();
+        }
+            
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

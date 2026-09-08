@@ -24,7 +24,15 @@ public class StartingGameController : MonoBehaviour
         UIStartGameObject.SetActive(false);
         RoundControllerRef.IsStartedEvent = false;
         EnemiesSpawner.Instance.IsAllEnemiesDead = false;
-        PlayerSpawnerController.Instance.SpawnPlayerInArena();
+        if(RoundControllerRef.EnemiesWaveCounter == 10)
+        {
+            PlayerSpawnerController.Instance.SpawnPlayerInBossRoom();
+            //spawn to boss room
+        }
+        else
+        {
+            PlayerSpawnerController.Instance.SpawnPlayerInArena();
+        }   
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -9,6 +9,7 @@ public class PlayerSpawnerController : MonoBehaviour
     public GameObject InteractGO;
     public GameObject StartSpawner;
     public GameObject CampfireSpawner;
+    public GameObject BossRoomSpawner;
     [Header("Scripts")]
     public StartingGameController StartingGameControllerRef;
     private void Awake()
@@ -59,5 +60,6 @@ public class PlayerSpawnerController : MonoBehaviour
         PlayerController.Instance.Player.position = StartSpawner.transform.position;
     }
 
+    public void SpawnPlayerInBossRoom() => PlayerController.Instance.Player.position = BossRoomSpawner.transform.position;
     public void SpawnPlayerInCampfire() => PlayerController.Instance.Player.position = CampfireSpawner.transform.position;
 }

@@ -41,9 +41,8 @@ public class GameOverController : MonoBehaviour
         RoundControllerRef.TotalAmountOfRoundsWon = 0;
         SoulsBankController.Instance.DemonBossSoulsBank = 0;
         SoulsBankController.Instance.SoulsBank = 0;
-        PlayerSpawnerController.Instance.SpawnPlayerInArena();
+        PlayerSpawnerController.Instance.SpawnPlayerInCampfire();
         RestartAllPlayersPerks();
-        //RestartAllPlayersStats();
         LevelUpPrefab.SetActive(true); 
     }
 

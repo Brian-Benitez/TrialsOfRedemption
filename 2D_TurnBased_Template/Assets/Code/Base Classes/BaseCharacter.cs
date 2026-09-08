@@ -52,7 +52,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
 
     public void DoesCharacterDie()
     {
-        if(SecondChanceAbilityRef.IsSecondChanceUsed == false && CharacterHealthAmount <= 0)
+        if(SecondChanceAbilityRef.CurrentTier != SecondChanceAbility.UpgradeTiers.None && SecondChanceAbilityRef.IsSecondChanceUsed == false && CharacterHealthAmount <= 0)
         {
             SetHealth(SecondChanceAbilityRef.ReviveAmountForPlayer);
             HealthBarUIRef.SetUIHealth(SecondChanceAbilityRef.ReviveAmountForPlayer);

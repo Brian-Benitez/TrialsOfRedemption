@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4706135824830880834
 Transform:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768b729d61df31349bdc0d3e0040a8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyShieldHealth: 0
+  EnemyShieldHealth: 3
   EnemyParentObject: {fileID: 8818265710935858715}
   Shield: {fileID: 489298248577655887}
   IsShieldBroken: 0
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 587120249393042125}
   m_Layer: 3
   m_Name: FinalStandEasyArcher
-  m_TagString: Enemy
+  m_TagString: EnemyShield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

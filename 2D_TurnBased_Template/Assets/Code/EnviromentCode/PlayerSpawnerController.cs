@@ -4,6 +4,7 @@ public class PlayerSpawnerController : MonoBehaviour
 {
     public static PlayerSpawnerController Instance;
     public bool SpawnInArena = false;
+    public bool SpawnInBossRoom = false;
     public KeyCode InteractKeyCode;
     private bool CanInteract = false;
     public GameObject InteractGO;
@@ -24,6 +25,8 @@ public class PlayerSpawnerController : MonoBehaviour
         {
             SpawnPlayerInArena();
         }
+        if (SpawnInBossRoom)
+            SpawnPlayerInBossRoom();
         else
             SpawnPlayerInCampfire();
     }

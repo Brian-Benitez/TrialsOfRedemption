@@ -96,7 +96,7 @@ MonoBehaviour:
   AmountOfAttkIncrease: 2
   AttackDamIncrease: 2
   RangeAttackDamIncrease: 2
-  MovementSpeedIncrease: 1
+  MovementSpeedIncrease: 2
   BossStats: {fileID: 3849610635453228326}
   AttackStateRef: {fileID: 499970276011381823}
   DKRangeAttackRef: {fileID: 4342819746663072318}
@@ -281,12 +281,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPlayingAttackAni: 0
   MeleePos: {fileID: 5351484751421859356}
-  AttackRange: 2
-  WindUpTimeForMelee: 4
+  AttackRange: 2.5
+  WindUpTimeForMelee: 2
   AmountOfAttacks: 0
-  MaxAmountOfAttacks: 2
+  MaxAmountOfAttacks: 3
   AttackCooldownTimer: 0
-  MaxTimerOfCooldown: 4
+  MaxTimerOfCooldown: 3
   IsWaiting: 0
   WithinRange: 0
   IsDoneCoolingDown: 0
@@ -657,8 +657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a93dd8c5db448444806c88c17677e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 80
-  MaxEnemyHealth: 80
+  EnemyHealth: 60
+  MaxEnemyHealth: 60
   EnemySpeed: 2
   EnemyDamage: 2.5
   HealthPotion: {fileID: 0}
@@ -669,7 +669,7 @@ MonoBehaviour:
   IsHit: 0
   IsDead: 0
   StunStateRef: {fileID: 2419263769339304645}
-  EnemyType: 2
+  EnemyType: 3
   EnemyDifficulty: 3
 --- !u!50 &5096189896417039861
 Rigidbody2D:
@@ -858,7 +858,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.010000229, y: -0.029999971, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5351484751421859356}

@@ -122,7 +122,6 @@ public class LevelUpManager : MonoBehaviour
             {
                 Debug.Log("upgraded melee");
                 PlayerMeleeAttackRef.PlayerLightAttkDamg += MeleeUpgradeIncrement;
-                PlayerMeleeAttackRef.PlayerHeavyAttkDamg += MeleeUpgradeIncrement;
                 PlayerMeleeAttackRef.PlayerSpecialDamg += MeleeUpgradeIncrement;
                 _meleeUpgradePercent += MeleeUpgradeIncrement;
                 _meleeUpgradeLevel += 1;

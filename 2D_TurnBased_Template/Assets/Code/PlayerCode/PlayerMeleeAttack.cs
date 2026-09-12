@@ -41,7 +41,6 @@ public class PlayerMeleeAttack : MonoBehaviour
 
     [Header("Player attk damg")]
     public float PlayerLightAttkDamg;
-    public float PlayerHeavyAttkDamg;
     public float PlayerSpecialDamg;
 
     [Header("LayerMasks")]

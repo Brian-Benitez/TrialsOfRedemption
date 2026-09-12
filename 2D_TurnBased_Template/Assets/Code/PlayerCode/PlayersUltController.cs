@@ -111,7 +111,6 @@ public class PlayersUltController : MonoBehaviour
 
         //Melee upgrade
         PlayerMeleeAttackRef.PlayerLightAttkDamg -= MeleeUpgradeDam;
-        PlayerMeleeAttackRef.PlayerHeavyAttkDamg -= MeleeUpgradeDam;
 
         //Range upgrade
         PlayerInfoRef.RangeDamg -= RangeUpgradeDam;

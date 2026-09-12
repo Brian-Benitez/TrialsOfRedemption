@@ -31,7 +31,6 @@ public class PureRagePerk : UpgradePerk
 
         //Melee upgrade
         PlayerMeleeAttackRef.PlayerLightAttkDamg += MeleeUpgradeDam;
-        PlayerMeleeAttackRef.PlayerHeavyAttkDamg += MeleeUpgradeDam;
 
         //Range upgrade
         PlayerInfoRef.RangeDamg += RangeUpgradeDam;

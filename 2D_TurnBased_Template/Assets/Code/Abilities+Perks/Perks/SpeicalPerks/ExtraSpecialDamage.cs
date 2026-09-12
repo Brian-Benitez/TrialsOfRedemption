@@ -18,8 +18,8 @@ public class ExtraSpecialDamage : UpgradePerk
 
     public override void DisablePerk()
     {
-        PlayerMeleeAttackRef.PlayerSpecialDamg -= AddedDamage;
-        PlayerMeleeAttackRef.SpeicalRange += DecreaseRangeAmount;//0.6f;
+        PlayerMeleeAttackRef.PlayerSpecialDamg = 2f;
+        PlayerMeleeAttackRef.SpeicalRange = 3f;//0.6f;
         Debug.Log("removed rage quake perk");
     }
 }

@@ -5,12 +5,14 @@ public class IncreaseRadius : UpgradePerk
     [Header("Stats Info")]
     public float AddedRadiusForSpeical;
     public float OldRadiusSpeical;
+    float _oldWaitTime;
     public float AdditionalWaitTime;
     public PlayerMeleeAttack PlayerMeleeAttackRef;
 
     private void Start()
     {
         OldRadiusSpeical = PlayerMeleeAttackRef.SpeicalRange;
+        _oldWaitTime = PlayerMeleeAttackRef._maxwaitTimeForSpeical;
     }
     public override void EnablePerk()
     {
@@ -32,7 +34,7 @@ public class IncreaseRadius : UpgradePerk
         if(IsPerkActive)
         {
             PlayerMeleeAttackRef.SpeicalRange = OldRadiusSpeical;
-            PlayerMeleeAttackRef._maxwaitTimeForSpeical -= AdditionalWaitTime;
+            PlayerMeleeAttackRef._maxwaitTimeForSpeical = _oldWaitTime;
             Debug.Log("radius is decrease");
         }
     }

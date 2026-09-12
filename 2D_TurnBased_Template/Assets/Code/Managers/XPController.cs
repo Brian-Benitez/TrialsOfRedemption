@@ -37,7 +37,9 @@ public class XPController : MonoBehaviour
             PerkCardControllerRef.RandomlyPickingChoiceCards();
             PerkCardControllerRef.MoveBackroundOnScreen();
             PerkCardControllerRef.StartPlaceCardsOnScreenCoroutine();
+            XPBarUI.Instance.SetUIXP(-LevelUpThershold);
             RaiseLevelUpThershold();
+            XPBarUI.Instance.SetXPMaxHealth();
         }
     }
 

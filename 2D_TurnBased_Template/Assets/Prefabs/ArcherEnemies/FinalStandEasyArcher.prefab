@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4706135824830880834
 Transform:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   LockedOnPlayer: 0
   IsPlayingAnimation: 0
   WizardBullet: {fileID: 0}
-  ArrowSpeed: 5
+  ArrowSpeed: 7
   EnemyCoreGO: {fileID: 8818265710935858715}
   ShotPointTwo: {fileID: 4263232305946379098}
   ShotPointThree: {fileID: 8824331901901780249}
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768b729d61df31349bdc0d3e0040a8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyShieldHealth: 3
+  EnemyShieldHealth: 0
   EnemyParentObject: {fileID: 8818265710935858715}
   Shield: {fileID: 489298248577655887}
   IsShieldBroken: 0
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 587120249393042125}
   m_Layer: 3
   m_Name: FinalStandEasyArcher
-  m_TagString: EnemyShield
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -909,11 +909,8 @@ MonoBehaviour:
   MaxEnemyHealth: 5
   EnemySpeed: 1.5
   EnemyDamage: 0.5
-  HealthPotion: {fileID: 8241212872979105498, guid: 71ffacc5d176d324eac596cf228156cd, type: 3}
-  RagePotion: {fileID: 600810356273653899, guid: ab5027affe3cbc84b97865519c0f8019, type: 3}
   BossSoulsObj: {fileID: 0}
-  ChanceToDropItem: 0
-  EnemySoulsValue: 15
+  EnemySoulsValue: 5
   IsHit: 0
   IsDead: 0
   StunStateRef: {fileID: 6606801238363406728}

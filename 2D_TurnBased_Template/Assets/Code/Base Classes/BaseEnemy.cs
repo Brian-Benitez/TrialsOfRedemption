@@ -9,10 +9,7 @@ public class BaseEnemy : MonoBehaviour
     public float EnemyDamage;
 
     [Header("Item that can be dropped")]
-    public GameObject HealthPotion;
-    public GameObject RagePotion;
     public GameObject BossSoulsObj;
-    public int ChanceToDropItem;
 
     [Header("Enemy Souls Value")]
     public int EnemySoulsValue;
@@ -82,7 +79,6 @@ public class BaseEnemy : MonoBehaviour
                 {
                     EnemyTurnController.Instance.RemoveEnemyFromList(this.gameObject);
                 }
-                DropAnItem();
                 IsDead = true;
             }
             
@@ -92,41 +88,6 @@ public class BaseEnemy : MonoBehaviour
                 BuffEnemiesManager.Instance.StartBossDefeatedEvent();
             }
             Destroy(this.gameObject);
-        }
-    }
-
-  
-    /// <summary>
-    /// rolls to see if the enemy drops an item or not.
-    /// </summary>
-    private void DropAnItem()
-    {
-        if(EnemyType == TypeOfEnemy.Boss)
-        {
-            Instantiate(BossSoulsObj, transform.position, Quaternion.identity);
-        }
-        else
-        {
-            int chance = Random.Range(0, 100);
-
-            if (chance <= ChanceToDropItem)
-            {
-                int random = Random.Range(0, 10);
-                if (random <= 5)
-                {
-                    Instantiate(HealthPotion, transform.position, Quaternion.identity);
-                    Debug.Log("dropped health");
-                }
-                else
-                {
-                    Instantiate(RagePotion, transform.position, Quaternion.identity);
-                    Debug.Log("dropped rage");
-                }
-            }
-            else
-            {
-                Debug.Log("did not drop anything");
-            }
         }
     }
 }

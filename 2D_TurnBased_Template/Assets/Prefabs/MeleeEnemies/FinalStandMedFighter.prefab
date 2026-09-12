@@ -352,7 +352,7 @@ MonoBehaviour:
   IsPlayingAttackAni: 0
   MeleePos: {fileID: 7916153532616726675}
   AttackRange: 1.11
-  WindUpTimeForMelee: 2
+  WindUpTimeForMelee: 1.5
   AmountOfAttacks: 0
   MaxAmountOfAttacks: 2
   AttackCooldownTimer: 0
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 2908071471798872749}
   m_Layer: 3
   m_Name: FinalStandMedFighter
-  m_TagString: EnemyShield
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -601,15 +601,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a93dd8c5db448444806c88c17677e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 7
-  MaxEnemyHealth: 7
+  EnemyHealth: 6
+  MaxEnemyHealth: 6
   EnemySpeed: 3.5
-  EnemyDamage: 1.5
-  HealthPotion: {fileID: 8241212872979105498, guid: 71ffacc5d176d324eac596cf228156cd, type: 3}
-  RagePotion: {fileID: 600810356273653899, guid: ab5027affe3cbc84b97865519c0f8019, type: 3}
+  EnemyDamage: 1.25
   BossSoulsObj: {fileID: 0}
-  ChanceToDropItem: 0
-  EnemySoulsValue: 25
+  EnemySoulsValue: 10
   IsHit: 0
   IsDead: 0
   StunStateRef: {fileID: 2229198354024632843}
@@ -730,7 +727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2705486564257355089
 Transform:
   m_ObjectHideFlags: 0
@@ -1010,7 +1007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768b729d61df31349bdc0d3e0040a8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyShieldHealth: 3
+  EnemyShieldHealth: 0
   EnemyParentObject: {fileID: 5295978787876234622}
   Shield: {fileID: 6264658101153515369}
   IsShieldBroken: 0

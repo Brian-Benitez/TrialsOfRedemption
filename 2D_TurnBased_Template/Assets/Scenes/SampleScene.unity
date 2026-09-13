@@ -16717,7 +16717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ad0ad2c910e34f9e895b065f53655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesWaveCounter: 0
+  EnemiesWaveCounter: 9
   TotalAmountOfRoundsWon: 0
   MaxAmountOfRounds: 10
   RoundsText: {fileID: 1171648889}

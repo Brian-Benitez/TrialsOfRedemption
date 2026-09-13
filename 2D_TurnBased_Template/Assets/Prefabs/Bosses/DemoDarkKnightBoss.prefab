@@ -286,7 +286,7 @@ MonoBehaviour:
   AmountOfAttacks: 0
   MaxAmountOfAttacks: 3
   AttackCooldownTimer: 0
-  MaxTimerOfCooldown: 3
+  MaxTimerOfCooldown: 5
   IsWaiting: 0
   WithinRange: 0
   IsDoneCoolingDown: 0
@@ -659,12 +659,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealth: 10
   MaxEnemyHealth: 10
-  EnemySpeed: 2
-  EnemyDamage: 2.5
-  HealthPotion: {fileID: 0}
-  RagePotion: {fileID: 0}
+  EnemySpeed: 3
+  EnemyDamage: 4
   BossSoulsObj: {fileID: 126269282101802777, guid: f54c8a0bec1e1634b84e73ba3016080c, type: 3}
-  ChanceToDropItem: 0
   EnemySoulsValue: 1000
   IsHit: 0
   IsDead: 0

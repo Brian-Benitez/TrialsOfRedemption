@@ -132,7 +132,7 @@ public class AttackState : State//rename this to EnemyAttackState
             }
             if(EnemySwordsmanRef.EnemyDifficulty == BaseEnemy.LevelOfEnemy.Boss)
             {
-                return BossVunerableStateRef;
+                return DKChaseState;
             }
         }
 

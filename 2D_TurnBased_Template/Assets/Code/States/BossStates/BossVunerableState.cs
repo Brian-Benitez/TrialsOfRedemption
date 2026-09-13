@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class BossVunerableState : State
+public class BossVunerableState : MonoBehaviour
 {
+    public bool IsVunerable = false;
     public float AttkCooldown;
     public float MaxCooldown;
     private bool _startCountdown = false;
@@ -10,24 +11,24 @@ public class BossVunerableState : State
 
     private void Update()
     {
+        if(AttackStateRef.AttackCooldownTimer > AttackStateRef.MaxTimerOfCooldown)
+            _startCountdown = true;
         if(_startCountdown)
+        {
             AttkCooldown += Time.deltaTime;
-    }
-
-    public override State RunCurrentState()
-    {
-        _startCountdown = true;
-        if (AttkCooldown >= MaxCooldown)
-        {
-            StunStateRef.InstanteStun = false;
-            AttkCooldown = 0;
-            _startCountdown = false;
-            return AttackStateRef;
+            if (AttkCooldown >= MaxCooldown)
+            {
+                IsVunerable = false;
+                StunStateRef.InstanteStun = false;
+                AttkCooldown = 0;
+                _startCountdown = false;
+            }
+            else
+            {
+                IsVunerable = true;
+                StunStateRef.InstanteStun = true;
+            }
         }
-        else
-        {
-            StunStateRef.InstanteStun = true;
-            return this;
-        } 
+           
     }
 }

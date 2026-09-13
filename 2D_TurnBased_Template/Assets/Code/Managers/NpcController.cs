@@ -5,32 +5,33 @@ using UnityEngine;
 public class NpcController : MonoBehaviour
 {
     public int LayoutIndex;
-    private int MaxLayoutIndex = 3;
+    private int MaxLayoutIndex = 4;
     public List<GameObject> NPCLayouts;
+   
     public enum NpcLayout
     {
-        None,
+        StarterNpcLayout,
         FirstLayout,
         SecondLayout,
         ThirdLayout
     }
-    public NpcLayout CurrentNpcLayout = NpcLayout.None;
+    public NpcLayout CurrentNpcLayout = NpcLayout.StarterNpcLayout;
 
     public void IncrementLayoutIndex()
     {
         if(LayoutIndex < MaxLayoutIndex)
         {
-            LayoutIndex++;
             ChangeLayout();
+            LayoutIndex++;
         }      
     }
     void ChangeLayout()
     {
-        if(LayoutIndex == 0)
+        if(LayoutIndex == 1)
             CurrentNpcLayout = NpcLayout.FirstLayout;
-        if (LayoutIndex == 1)
-            CurrentNpcLayout = NpcLayout.SecondLayout;
         if (LayoutIndex == 2)
+            CurrentNpcLayout = NpcLayout.SecondLayout;
+        if (LayoutIndex == 3)
             CurrentNpcLayout = NpcLayout.ThirdLayout;
 
         SetNPCsOnMap();
@@ -39,12 +40,14 @@ public class NpcController : MonoBehaviour
     void SetNPCsOnMap()
     {
         RestartAllLayouts();
+        if (CurrentNpcLayout != NpcLayout.StarterNpcLayout)
+            NPCLayouts[0].gameObject.SetActive(false);
 
-        if(LayoutIndex == 0)
-            NPCLayouts[LayoutIndex].gameObject.SetActive(true);
         if(LayoutIndex == 1)
             NPCLayouts[LayoutIndex].gameObject.SetActive(true);
         if(LayoutIndex == 2)
+            NPCLayouts[LayoutIndex].gameObject.SetActive(true);
+        if(LayoutIndex == 3)
             NPCLayouts[LayoutIndex].gameObject.SetActive(true);
     }
 

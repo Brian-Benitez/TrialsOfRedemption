@@ -33,11 +33,13 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
     public GameOverController GameOverControllerRef;
     public SecondChanceAbility SecondChanceAbilityRef;
     public NpcController NpcControllerRef;
+    public PlayerAnimationController PlayerAnimationControllerRef;
     public void TakeDamage(float damage)
     {
         PostProcessingController.Instance.PlayCorutineHitEffect();
         CharacterHealthAmount -= damage;
         SetHealth(-damage);
+        PlayerAnimationControllerRef.IsHurt();
         Debug.Log("player took: " + damage);
         DoesCharacterDie();
     }

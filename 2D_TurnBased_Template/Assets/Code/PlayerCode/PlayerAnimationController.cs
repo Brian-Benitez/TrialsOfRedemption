@@ -53,4 +53,7 @@ public class PlayerAnimationController : MonoBehaviour
     public void IsParrying() => PlayerAnimator.SetBool("IsParrying", true);
 
     public void IsNotParrying() => PlayerAnimator.SetBool("IsParrying", false);
+
+    public void IsHurt() => PlayerAnimator.SetBool("IsHurt", true);
+    public void IsNotHurt() => PlayerAnimator.SetBool("IsHurt", false);
 }

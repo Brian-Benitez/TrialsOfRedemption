@@ -5570,6 +5570,7 @@ MonoBehaviour:
   GameOverControllerRef: {fileID: 1556314982}
   SecondChanceAbilityRef: {fileID: 549956200}
   NpcControllerRef: {fileID: 1095011193}
+  PlayerAnimationControllerRef: {fileID: 7878350318701407153}
   PlayerObject: {fileID: 386186100}
 --- !u!114 &386186109
 MonoBehaviour:

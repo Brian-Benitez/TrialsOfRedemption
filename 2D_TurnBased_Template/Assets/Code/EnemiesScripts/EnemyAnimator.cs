@@ -34,4 +34,14 @@ public class EnemyAnimator : MonoBehaviour
     {
         Animator.SetBool("IsAttacking", false);
     }
+
+    void IsWalking()
+    {
+        Animator.SetBool("IsWalking", true);
+    }
+
+    void IsNotWalking()
+    {
+        Animator.SetBool("IsWalking", false);
+    }
 }

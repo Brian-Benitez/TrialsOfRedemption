@@ -3,6 +3,7 @@ using UnityEngine;
 public class HealingRagePerk : UpgradePerk
 {
     public PlayerInfo PlayerInfoRef;
+    public HealthBarUI HealthBarUIRef;
 
     public void ReadyHealingRagePerk()
     {
@@ -15,7 +16,11 @@ public class HealingRagePerk : UpgradePerk
         //PlayerInfoRef.CharacterHealthAmount += PlayersUltController.Instance.MaxUltPoints;
     }
 
-    public void ActivateHealPerk() => PlayerInfoRef.CharacterHealthAmount += PlayersUltController.Instance.MaxUltPoints;
+    public void ActivateHealPerk()
+    {
+        HealthBarUIRef.SetUIHealth(PlayersUltController.Instance.MaxUltPoints);
+        PlayerInfoRef.CharacterHealthAmount += PlayersUltController.Instance.MaxUltPoints;
+    }
 
     public override void DisablePerk()
     {

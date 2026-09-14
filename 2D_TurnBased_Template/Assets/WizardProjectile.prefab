@@ -105,8 +105,8 @@ MonoBehaviour:
   Rb: {fileID: 0}
   SpeedOfMagicProjectile: 6
   ReturnSpeed: 0
-  LifeTimeOfProjectile: 3
-  DistanceOfProjectile: 3
+  LifeTimeOfProjectile: 2.5
+  DistanceOfProjectile: 2.5
   EnemyArcherGO: {fileID: 8818265710935858715, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
   CharacterTypes: 1
   TypeOfProjectiles: 1

@@ -18004,7 +18004,7 @@ GameObject:
   - component: {fileID: 1536016092}
   - component: {fileID: 1536016093}
   m_Layer: 6
-  m_Name: UltController
+  m_Name: PlayersUltController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18042,7 +18042,7 @@ MonoBehaviour:
   IsUlted: 0
   IsUpgradeOn: 0
   UltPoints: 0
-  MaxUltPoints: 8
+  MaxUltPoints: 25
   UltDuration: 8
   UltActivationKey: 120
   BoostedMovementSpeed: 2

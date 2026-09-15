@@ -24,6 +24,8 @@ public class UltBarUI : MonoBehaviour
         UltAmountUI += amount;
         if (UltAmountUI > MaxUltAmountUI)
             UltAmountUI = MaxUltAmountUI;
+        if (UltAmountUI < 0)
+            UltAmountUI = 0;
             
 
         float newWidth = (UltAmountUI / MaxUltAmountUI) * Width;

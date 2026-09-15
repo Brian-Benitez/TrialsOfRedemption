@@ -68,6 +68,11 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
                 IsCharacterDead = true;
                 NpcControllerRef.IncrementLayoutIndex();
                 GameOverControllerRef.TurnOnGameOverScreen();
+                PlayersUltController.Instance.UltPoints = 0f;
+                UltBarUI.Instance.UltAmountUI = 0;
+                UltBarUI.Instance.SetUIUltBar(-UltBarUI.Instance.MaxUltAmountUI);
+                XP = 0;
+                XPBarUI.Instance.SetUIXP(-XPBarUI.Instance.MaxXPAmountUI);
                 SecondChanceAbilityRef.IsSecondChanceUsed = false;
                 PlayersCore.SetActive(false);
             }

@@ -26,6 +26,12 @@ public class XPBarUI : MonoBehaviour
     public void SetUIXP(float amountOfXPWon)//check when player hits cap and levels up.
     {
         XPAmountUI += amountOfXPWon;
+
+        if(XPAmountUI >  MaxXPAmountUI)
+            XPAmountUI = MaxXPAmountUI;
+        if(XPAmountUI < 0)
+            XPAmountUI = 0;
+
         float newWidth = (XPAmountUI / MaxXPAmountUI) * Width;
         XPBar.sizeDelta = new Vector2(newWidth, Height);
     }

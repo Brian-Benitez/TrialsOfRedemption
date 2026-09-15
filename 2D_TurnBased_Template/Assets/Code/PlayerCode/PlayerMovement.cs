@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         if (IsDashing)
             return;
 
-        if (StopPlayerMovement)
+        if (StopPlayerMovement || XPController.Instance.IsUpgrading)
         {
             moveDirection = Vector2.zero;
             Rb.linearVelocity = new Vector2(0, 0);

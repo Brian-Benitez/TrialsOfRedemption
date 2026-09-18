@@ -1,13 +1,19 @@
+using TMPro;
 using UnityEngine;
 
 public class SecondChanceAbility : LevelUpStat
 {
     public float ReviveAmountForPlayer;
+    public bool IsSecondChanceEnabled = false;
+    public bool IsSecondChanceUsed = false;
+    public TextMeshProUGUI DescriptionNumberAmount;
+    public TextMeshProUGUI CurrentAmount;
+    public GameObject UpgradeButton;
+    public GameObject MaxButton;
     private const float firstReviveHealthAmount = 5f;
     private const float secondReviveHealthAmount = 10f;
     private const float lastReviveHealthAmount = 15f;
-    public bool IsSecondChanceEnabled = false;
-    public bool IsSecondChanceUsed = false;
+
     public enum UpgradeTiers
     {
         None,
@@ -27,6 +33,7 @@ public class SecondChanceAbility : LevelUpStat
             PlayerInfoRef.UpdatePlayersStats();
             UpdateStatsUI();
             DetermineCurrentTier();
+            ChangeAllText();
         }
         else
         {
@@ -50,6 +57,8 @@ public class SecondChanceAbility : LevelUpStat
         {
             CurrentTier = UpgradeTiers.LastUpgrade;
             ReviveAmountForPlayer = lastReviveHealthAmount;
+            CostAmountText.gameObject.SetActive(false);
+            TurnOnMaxButton();
         }
             
     }
@@ -59,5 +68,26 @@ public class SecondChanceAbility : LevelUpStat
         {
             IsSecondChanceUsed = true;
         }
+    }
+
+    void ChangeAllText()
+    {
+        CurrentAmount.text = ReviveAmountForPlayer.ToString();
+
+        if (StatsLvl == 1)
+            DescriptionNumberAmount.text = secondReviveHealthAmount.ToString();
+        if (StatsLvl == 2)
+            DescriptionNumberAmount.text = lastReviveHealthAmount.ToString();
+    }
+    void TurnOnUpgradeButton()
+    {
+        UpgradeButton.SetActive(true);
+        MaxButton.SetActive(false);
+    }
+
+    void TurnOnMaxButton()
+    {
+        MaxButton.SetActive(true);
+        UpgradeButton.SetActive(false);
     }
 }

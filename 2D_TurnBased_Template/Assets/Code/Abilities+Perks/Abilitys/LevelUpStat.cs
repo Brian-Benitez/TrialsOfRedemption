@@ -11,6 +11,7 @@ public class LevelUpStat : MonoBehaviour
     private void Start()
     {
         MinCostAmount = CostAmount;
+        CostAmountText.text = "" + CostAmount;
         PriceMultipler = 1;
         StatsLvl = 0;
     }

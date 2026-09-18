@@ -1,7 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class HealPlayerScript : LevelUpStat
 {
+    public TextMeshProUGUI DescriptionAmount;
+    public TextMeshProUGUI CurrentText;
+    public GameObject UpgradeButton;
+    public GameObject MaxButton;
     private float upgradeHealthAmount;
     private const float firstLevelHealthUpgrade = 5f;
     private const float secondLevelHealthUpgrade = 10f;
@@ -23,10 +28,10 @@ public class HealPlayerScript : LevelUpStat
         {
             UpdateStatsUI();
             DetermineCurrentTier();
-            PlayerInfoRef.CharacterMaxHealth += upgradeHealthAmount;//THIS IS FOR UPGRADING HEALTH KEEPING IT HERE FOR LATER USAGE DO NOT DELETE
+            PlayerInfoRef.CharacterMaxHealth += upgradeHealthAmount;
             PlayerInfoRef.HealthBarUIRef.SetUIMaxHealth(PlayerInfoRef.CharacterMaxHealth);
             PlayerInfoRef.SetHealth(PlayerInfoRef.CharacterHealthAmount);
-            PlayerInfoRef.Souls -= (int)CostAmount;// if theres issues with souls being subtracted by cost amount its here.
+            PlayerInfoRef.Souls -= (int)CostAmount;
             PlayerInfoRef.UpdatePlayersStats();
         }
         else
@@ -42,9 +47,15 @@ public class HealPlayerScript : LevelUpStat
         if (StatsLvl == 2)
             CurrentTier = UpgradeTiers.SecondUpgrade;
         if(StatsLvl == 3)
+        {
             CurrentTier = UpgradeTiers.LastUpgrade;
+            CostAmountText.gameObject.SetActive(false);
+            TurnOnMaxButton();
+        }
+            
 
         DetermineHealthAmount();
+        ChangeText();
     }
     void DetermineHealthAmount()
     {
@@ -54,6 +65,22 @@ public class HealPlayerScript : LevelUpStat
             upgradeHealthAmount = secondLevelHealthUpgrade;
         if(CurrentTier == UpgradeTiers.LastUpgrade)
             upgradeHealthAmount = lastLevelHealthUpgrade;
+    }
+
+
+    void ChangeText()
+    {
+        CurrentText.text = upgradeHealthAmount.ToString();
+
+        if(CurrentTier == UpgradeTiers.FirstUpgrade)
+            DescriptionAmount.text = secondLevelHealthUpgrade.ToString();
+        if(CurrentTier == UpgradeTiers.SecondUpgrade)
+            DescriptionAmount.text = lastLevelHealthUpgrade.ToString();
+    }
+    void TurnOnMaxButton()
+    {
+        UpgradeButton.gameObject.SetActive(false);
+        MaxButton.SetActive(true);
     }
 
 }

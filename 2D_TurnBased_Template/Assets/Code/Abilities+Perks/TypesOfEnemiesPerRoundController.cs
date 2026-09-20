@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TypesOfEnemiesPerRoundController : MonoBehaviour
@@ -15,7 +16,8 @@ public class TypesOfEnemiesPerRoundController : MonoBehaviour
     public List<GameObject> AOEEnemies;
     public List<GameObject> ArchersGameObjects;
     public List<GameObject> Wizards;
-    public GameObject BossGameObject;
+    public List<GameObject> Bosses;
+    public TextMeshProUGUI BossNameString;
 
     public RoundController RoundControllerRef;
     public EnemiesSpawner EnemiesSpawnerRef;
@@ -155,7 +157,10 @@ public class TypesOfEnemiesPerRoundController : MonoBehaviour
         TypesOfInGameEnemies.Add(AOEEnemies[0]);
         TypesOfInGameEnemies.Add(ArchersGameObjects[1]);
     }
-    void TenthWaveEnemies() => TypesOfInGameEnemies.Add(BossGameObject);
+    void TenthWaveEnemies()
+    {
+        TypesOfInGameEnemies.Add(Bosses[0]);
+    }
 
     public void RemoveAllEnemiesFromList()
     {

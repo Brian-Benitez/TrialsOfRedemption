@@ -8,21 +8,23 @@ public class BaseEnemy : MonoBehaviour
     public float EnemySpeed;
     public float EnemyDamage;
 
-    [Header("Item that can be dropped")]
+    [Header("Boss Settings")]
     public GameObject BossSoulsObj;
-
-    [Header("Enemy Souls Value")]
     public int EnemySoulsValue;
+    
     [Header("demo stuff delete later")]
     public bool IsHit = false;
 
     public bool IsDead = false;
 
     public StunState StunStateRef;
+    private BossHealthUI _bossHealthUIRef;
 
     private void Start()
     {
         MaxEnemyHealth = EnemyHealth;
+        if (EnemyType == TypeOfEnemy.Boss)
+            _bossHealthUIRef = transform.gameObject.GetComponentInChildren<BossHealthUI>();
     }
 
     [SerializeField]
@@ -52,6 +54,11 @@ public class BaseEnemy : MonoBehaviour
         EnemyHealth -= damage;
         IsHit = true;   
         Debug.Log("enemy took: " + damage);
+        if(EnemyType == TypeOfEnemy.Boss)
+        {
+            _bossHealthUIRef.SetUIHealth(damage);
+            Debug.Log("iom gherererer");
+        }
         StunStateRef.IsEnemyStunned();
         DoesEnemyDie();
     }

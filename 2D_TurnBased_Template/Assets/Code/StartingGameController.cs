@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class StartingGameController : MonoBehaviour
@@ -7,6 +8,8 @@ public class StartingGameController : MonoBehaviour
     [Header("UI Start GameObject")]
     public GameObject EKeyGameObject;
     public GameObject UIStartGameObject;
+    [Header("Boss Settings")]
+    public GameObject BossHealth;
     [Header("Scripts")]
     public RoundController RoundControllerRef;
     void Update()
@@ -27,6 +30,7 @@ public class StartingGameController : MonoBehaviour
         if(RoundControllerRef.EnemiesWaveCounter == 10)
         {
             PlayerSpawnerController.Instance.SpawnPlayerInBossRoom();
+            BossHealth.SetActive(true);
             //spawn to boss room
         }
         else

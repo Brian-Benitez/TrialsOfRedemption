@@ -36,8 +36,9 @@ public class PlayerMeleeAttack : MonoBehaviour
     public float AttackRange;
 
     [Header("Windup Stats")]
-    public float AttackSpeed;
-    public float WindUpDuration;
+    public float NormalAttackSpeed = 0.1f;
+    public float SpeicalAttackSpeed = 0.5f;
+    public float WindUpDuration = 0.3f;
 
     [Header("Player attk damg")]
     public float PlayerLightAttkDamg;
@@ -83,7 +84,7 @@ public class PlayerMeleeAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && CanMeleeAttackAgain)
         {
             PlayerAnimationControllerRef.IsAttacking();
-            StartCoroutine(WindUpAttack(PlayerLightAttkDamg, AttackPos, AttackRange, WhatIsEnemies));
+            StartCoroutine(WindUpAttack(PlayerLightAttkDamg, NormalAttackSpeed,AttackPos, AttackRange, WhatIsEnemies));
             ActivateSlashRef.ActivateSlashingArt();
             _playerMovement.UnSlowPlayer();
             AmountOfAttacks++;
@@ -100,9 +101,10 @@ public class PlayerMeleeAttack : MonoBehaviour
         {
             FlipSpriteRef.PlayerLookAtMouse();
             PlayerAnimationControllerRef.IsSpeicalAttacking();
-            StartCoroutine(WindUpAttack(PlayerSpecialDamg, SpeicalPos, SpeicalRange, WhatIsEnemies));
+            StartCoroutine(WindUpAttack(PlayerSpecialDamg, SpeicalAttackSpeed, SpeicalPos, SpeicalRange, WhatIsEnemies));
             CameraShakeManager.Instance.ShakeCamera(impulseSource);
             _specialCooldown = 0;
+            IsSpecialAttack = false;
         }
 
         if (WindUpDuration <= 0f)
@@ -119,9 +121,9 @@ public class PlayerMeleeAttack : MonoBehaviour
     }
 
 
-    public IEnumerator WindUpAttack(float dam, Transform pos, float range, LayerMask enemy)
+    public IEnumerator WindUpAttack(float dam, float attackspeed,Transform pos, float range, LayerMask enemy)
     {
-        yield return new WaitForSecondsRealtime(AttackSpeed);
+        yield return new WaitForSecondsRealtime(attackspeed);
         Hit(dam, pos, range, enemy);
         PlayerAnimationControllerRef.IsNotAttacking();
     }

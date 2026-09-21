@@ -22,15 +22,15 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 2220983858831565416, guid: 5608bdca96484c042a5b2f92c4fe574a, type: 3}
-    - time: 0.13333334
+    - time: 0.41666666
       value: {fileID: 1213018626030775725, guid: 5608bdca96484c042a5b2f92c4fe574a, type: 3}
-    - time: 0.16666667
+    - time: 0.5
       value: {fileID: -3003740571448189620, guid: 5608bdca96484c042a5b2f92c4fe574a, type: 3}
-    - time: 0.18333334
+    - time: 0.5833333
       value: {fileID: 7676347132422293073, guid: 5608bdca96484c042a5b2f92c4fe574a, type: 3}
-    - time: 0.2
+    - time: 0.6
       value: {fileID: -1514262205826854159, guid: 5608bdca96484c042a5b2f92c4fe574a, type: 3}
-    - time: 0.28333333
+    - time: 0.6666667
       value: {fileID: -6627240160288842853, guid: 5608bdca96484c042a5b2f92c4fe574a, type: 3}
     attribute: m_Sprite
     path: 
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -85,7 +85,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.28333333
+  - time: 0.6666667
     functionName: IsNotSpeicalAttacking
     data: 
     objectReferenceParameter: {fileID: 0}

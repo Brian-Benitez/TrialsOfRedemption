@@ -15563,7 +15563,8 @@ MonoBehaviour:
   AttackPos: {fileID: 1091878788}
   DirectionalLooks: {fileID: 524028573}
   AttackRange: 1
-  AttackSpeed: 0.1
+  NormalAttackSpeed: 0.1
+  SpeicalAttackSpeed: 0.4
   WindUpDuration: 0.3
   PlayerLightAttkDamg: 1
   PlayerSpecialDamg: 2

@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f4e9e2a5edd7a4c9090afe51cd1cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossName: Lord Of Gulit
+  BossName: Lord Of Guilt
   BossDisplayNameText: {fileID: 2293992083446347835}
   BossSettings: {fileID: 3849610635453228326}
   Health: 0

@@ -40,6 +40,9 @@ public class PlayerAnimationController : MonoBehaviour
         }
        
     }
+
+    public void IsSpeicalAttacking() => PlayerAnimator.SetBool("IsSpecialAttack", true);
+    public void IsNotSpeicalAttacking() => PlayerAnimator.SetBool("IsSpecialAttack", false);
     public void IsNotAttacking()
     {
         PlayerAnimator.SetBool("IsAttacking", false);

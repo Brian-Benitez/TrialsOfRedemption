@@ -82,7 +82,9 @@ public class PlayerMeleeAttack : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && CanMeleeAttackAgain)
         {
+            PlayerAnimationControllerRef.IsAttacking();
             StartCoroutine(WindUpAttack(PlayerLightAttkDamg, AttackPos, AttackRange, WhatIsEnemies));
+            ActivateSlashRef.ActivateSlashingArt();
             _playerMovement.UnSlowPlayer();
             AmountOfAttacks++;
         }
@@ -97,7 +99,8 @@ public class PlayerMeleeAttack : MonoBehaviour
         if(Input.GetKeyDown(SpecialKey) && IsSpecialAttack)
         {
             FlipSpriteRef.PlayerLookAtMouse();
-            Hit(PlayerSpecialDamg, SpeicalPos, SpeicalRange, WhatIsEnemies);
+            PlayerAnimationControllerRef.IsSpeicalAttacking();
+            StartCoroutine(WindUpAttack(PlayerSpecialDamg, SpeicalPos, SpeicalRange, WhatIsEnemies));
             CameraShakeManager.Instance.ShakeCamera(impulseSource);
             _specialCooldown = 0;
         }
@@ -118,7 +121,6 @@ public class PlayerMeleeAttack : MonoBehaviour
 
     public IEnumerator WindUpAttack(float dam, Transform pos, float range, LayerMask enemy)
     {
-        PlayerAnimationControllerRef.IsAttacking();
         yield return new WaitForSecondsRealtime(AttackSpeed);
         Hit(dam, pos, range, enemy);
         PlayerAnimationControllerRef.IsNotAttacking();
@@ -127,8 +129,6 @@ public class PlayerMeleeAttack : MonoBehaviour
     {
         IsAttacking = true;
         Collider2D[] enemiesToDamges = Physics2D.OverlapCircleAll(pos.position, range, enemy);
-
-        ActivateSlashRef.ActivateSlashingArt();
 
         for (int i = 0; i < enemiesToDamges.Length; i++)
         {

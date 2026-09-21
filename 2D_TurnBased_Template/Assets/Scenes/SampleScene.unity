@@ -11287,7 +11287,7 @@ Transform:
   m_GameObject: {fileID: 758283177}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0099945, z: 0}
+  m_LocalPosition: {x: 0, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15512,7 +15512,7 @@ GameObject:
   - component: {fileID: 1131129219}
   - component: {fileID: 1131129220}
   m_Layer: 0
-  m_Name: MeleeTest
+  m_Name: MeleeController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15551,7 +15551,7 @@ MonoBehaviour:
   CanMeleeAttackAgain: 0
   CanSpeicalAgain: 0
   ChangedValues: 0
-  IsLightAttack: 0
+  IsLightAttack: 1
   IsSpecialAttack: 0
   AmountOfAttacks: 0
   MaxAmountOfAttacks: 3
@@ -18808,7 +18808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ad0ad2c910e34f9e895b065f53655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesWaveCounter: 9
+  EnemiesWaveCounter: 0
   TotalAmountOfRoundsWon: 0
   MaxAmountOfRounds: 10
   RoundsText: {fileID: 1171648889}
@@ -30469,7 +30469,7 @@ GameObject:
   - component: {fileID: 7878350318701407153}
   - component: {fileID: 7878350318701407155}
   m_Layer: 0
-  m_Name: TempReven
+  m_Name: PlayerAnimator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

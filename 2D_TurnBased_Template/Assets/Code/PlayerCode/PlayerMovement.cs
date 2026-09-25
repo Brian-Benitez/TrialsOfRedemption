@@ -45,6 +45,14 @@ public class PlayerMovement : MonoBehaviour
         if (IsDashing)
             return;
 
+
+        if (moveDirection == Vector2.zero || StopPlayerMovement)
+            PlayerAnimationControllerRef.IsNotMoving();
+        else
+        {
+            PlayerAnimationControllerRef.IsMoving();
+        }
+
         if (StopPlayerMovement || XPController.Instance.IsUpgrading)
         {
             moveDirection = Vector2.zero;
@@ -58,12 +66,7 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-        if (moveDirection == Vector2.zero)
-            PlayerAnimationControllerRef.IsNotMoving();
-        else
-        {
-            PlayerAnimationControllerRef.IsMoving();
-        }
+  
 
         if(UsedDashes == MaxUsedDashes)
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 public class CameraShakeManager : MonoBehaviour
 {
     public static CameraShakeManager Instance;
-    public float GlobalShakeForce = 0.25f;
+    public float GlobalShakeForce = 0.6f;
 
     private void Awake()
     {

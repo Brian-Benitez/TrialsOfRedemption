@@ -26,6 +26,7 @@ public class PlayerAnimationController : MonoBehaviour
         if(PlayerMeleeAttackRef.AmountOfAttacks == 0)
         {
             PlayerAnimator.SetBool("IsAttacking", true);
+            IsNotMoving();
         }
         else if(PlayerMeleeAttackRef.AmountOfAttacks == 1)
         {

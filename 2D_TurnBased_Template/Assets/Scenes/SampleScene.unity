@@ -9615,7 +9615,7 @@ MonoBehaviour:
     DissipationMode: 2
     DissipationDistance: 100
     PropagationSpeed: 343
-  DefaultVelocity: {x: 0.25, y: 0.25, z: 0}
+  DefaultVelocity: {x: 0.3, y: 0.3, z: 0}
 --- !u!1 &647171013
 GameObject:
   m_ObjectHideFlags: 0
@@ -11004,7 +11004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5ee452552b96b4c850e5c52de89bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalShakeForce: 0.25
+  GlobalShakeForce: 0.6
 --- !u!1 &757749366
 GameObject:
   m_ObjectHideFlags: 0
@@ -27858,7 +27858,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Locked. Need to reach Round 10 to unlock.
+  m_text: Locked. Need to reach Round 7 to unlock.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}
   m_sharedMaterial: {fileID: 223548740990782276, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}
@@ -27994,7 +27994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Locked. Need to reach Round 6 to unlock.
+  m_text: Locked. Need to reach Round 5 to unlock.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}
   m_sharedMaterial: {fileID: 223548740990782276, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}

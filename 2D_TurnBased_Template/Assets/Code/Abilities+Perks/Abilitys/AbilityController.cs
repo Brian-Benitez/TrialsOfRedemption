@@ -19,10 +19,10 @@ public class AbilityController : MonoBehaviour
     }
 
     public void CheckingOnAchivementsPlayersWon()
-    {
-        if(RoundControllerRef.TotalAmountOfRoundsWon == 6)
+    {           
+        if(RoundControllerRef.TotalAmountOfRoundsWon == 5)
             CurrentUnlock = UnlockTiers.FirstUnlock;
-        if (RoundControllerRef.TotalAmountOfRoundsWon == 10)
+        if (RoundControllerRef.TotalAmountOfRoundsWon == 7)
             CurrentUnlock = UnlockTiers.LastUnlock;
 
         SetRestrictersOnAbilitys();

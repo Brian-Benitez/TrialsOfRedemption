@@ -55,13 +55,14 @@ public class ShieldController : MonoBehaviour
 
         if (CanParry && Input.GetKeyDown(ParryKeyCode))
         {
-            _playerMovement.SlowPlayer();
             ShieldObject.SetActive(false);
             StartCorutineActivateParry();
             ParryCooldown = _maxParryCooldown;
             CanParry = false;
         }
-     
+        if(IsParrying)
+            _playerMovement.TurnOnStopPlayerMovement();
+
         if (Input.GetKey(ShieldKey) && !IsShieldBroken && !IsParrying)
         {
             _playerMovement.SlowPlayer();
@@ -100,6 +101,7 @@ public class ShieldController : MonoBehaviour
     public void StartCorutineActivateParry() => StartCoroutine(ActivateParry());
     IEnumerator ActivateParry()
     {
+       
         PlayerAnimationControllerRef.IsParrying();
         yield return new WaitForSecondsRealtime(0.08f);
         IsParrying = true;
@@ -108,6 +110,7 @@ public class ShieldController : MonoBehaviour
         ChangeBackPlayerLayerName();
         PlayerAnimationControllerRef.IsNotParrying();
         IsParrying = false;
+       
     }
     void ChangePlayerLayerToParry() => PlayerController.Instance.Player.gameObject.tag = "Parry";
     void ChangePlayerLayerName() => PlayerController.Instance.Player.gameObject.tag = "Shield";

@@ -45,13 +45,11 @@ public class DialogueTrigger : MonoBehaviour
         if(_dialogueManagerRef.isDialogueActive && Input.GetKeyUp(InteractKeyCode))
         {
             RestartDialouge = false;
-            Debug.Log("start dialouge");
             TriggerDialogue();
         }
         if(_dialogueManagerRef.IsThereMoreDialogue && Input.GetKeyUp(KeyCode.Space))
         {
             _dialogueManagerRef.DisplayNextDialogueLine();
-            Debug.Log("am i here");
         }
     }
 

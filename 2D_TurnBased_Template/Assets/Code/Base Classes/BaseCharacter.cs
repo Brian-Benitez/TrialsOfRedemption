@@ -72,6 +72,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
                 UltBarUI.Instance.UltAmountUI = 0;
                 UltBarUI.Instance.SetUIUltBar(-UltBarUI.Instance.MaxUltAmountUI);
                 XP = 0;
+                XPController.Instance.RestartLevelUpThershold();
                 XPBarUI.Instance.SetUIXP(-XPBarUI.Instance.MaxXPAmountUI);
                 SecondChanceAbilityRef.IsSecondChanceUsed = false;
                 PlayersCore.SetActive(false);

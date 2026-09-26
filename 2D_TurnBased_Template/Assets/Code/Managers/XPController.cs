@@ -49,4 +49,10 @@ public class XPController : MonoBehaviour
         LevelUpThershold += newThershold;
         ThersholdMultiplier += 0.5f;
     }
+
+    public void RestartLevelUpThershold()
+    {
+        LevelUpThershold = MinLevelUpThershold;
+        ThersholdMultiplier = 0.5f;
+    }
 }

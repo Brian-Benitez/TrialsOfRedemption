@@ -2,11 +2,12 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.UI;
 
 public class PerkCardController : MonoBehaviour
 {
+    public bool IsChoosenPerksEnabled = false;
     public RectTransform BackroundCanvas;
+    public RectTransform ChoosenPerkScreen;
     public List<RectTransform> PlayersVisualActivePerks;
     public List<RectTransform> PerkCardsChoices;
     public List<RectTransform> AllPerkCards;
@@ -17,6 +18,17 @@ public class PerkCardController : MonoBehaviour
     public Vector2 WaitForRemovingPos;
     public Vector2 RestartCardsPos;
     public Vector2 RestartBackroundPos;
+    public Vector2 RestartChoosenPerkScreen;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if(IsChoosenPerksEnabled)
+                RestartChoosenPerks();
+            else
+                SeeChoosenPerkCards();
+        }
+    }
 
     public void CheckIfTheresRoomForAPerk()
     {
@@ -156,6 +168,35 @@ public class PerkCardController : MonoBehaviour
         {
             PlayersVisualActivePerks[J].GetComponent<PerkCardBehaviour>().TurnOffEnableButton();//gotta turn it on again here
             PlayersVisualActivePerks[J].DOAnchorPos(AnchorsForCards[J], .5f);
+        }
+    }
+
+    public void SeeChoosenPerkCards()
+    {
+        IsChoosenPerksEnabled = true;
+        ChoosenPerkScreen.DOAnchorPos(PickedCardPos, 0.5f);
+
+        if(PlayersVisualActivePerks.Count != 0)
+        {
+            TurnOffButtons(PlayersVisualActivePerks);
+            for (int i = 0; i < PlayersVisualActivePerks.Count; i++)
+            {
+                PlayersVisualActivePerks[i].DOAnchorPos(AnchorsForCards[i], 0.5f);
+            }
+        }
+    }
+
+    public void RestartChoosenPerks()
+    {
+        IsChoosenPerksEnabled = false;
+        ChoosenPerkScreen.DOAnchorPos(RestartChoosenPerkScreen, 0.5f);
+
+        if (PlayersVisualActivePerks.Count != 0)
+        {
+            for (int i = 0; i < PlayersVisualActivePerks.Count; i++)
+            {
+                PlayersVisualActivePerks[i].DOAnchorPos(PlayerCardsPilePos, 0.5f);
+            }
         }
     }
 

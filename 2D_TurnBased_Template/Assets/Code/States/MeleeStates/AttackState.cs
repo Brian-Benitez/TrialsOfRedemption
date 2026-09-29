@@ -55,12 +55,15 @@ public class AttackState : State//rename this to EnemyAttackState
 
     void Update()
     {
-        if (AttackCooldownTimer >= MaxTimerOfCooldown)
+        if(!StunState.IsStunned)
         {
-            AttackCooldownTimer = MaxTimerOfCooldown;
+            if (AttackCooldownTimer >= MaxTimerOfCooldown)
+            {
+                AttackCooldownTimer = MaxTimerOfCooldown;
+            }
+            else
+                AttackCooldownTimer += Time.deltaTime;
         }
-        else
-            AttackCooldownTimer += Time.deltaTime;
     }
 
     void MeleeAttack()
@@ -111,9 +114,22 @@ public class AttackState : State//rename this to EnemyAttackState
             StopCoroutine(_windupCoroutine);
         }
 
+        if (AttackMissedPlayer == true)
+        {
+            RestartEnemy();
+            if (EnemySwordsmanRef.EnemyDifficulty == BaseEnemy.LevelOfEnemy.Boss)
+            {
+                Debug.Log("we go here");
+                return DKChaseState;
+            }
+
+            else
+                return ChaseState;
+        }
+
         if (IsDoneCoolingDown)
         {
-            if (!IsWaiting && WithinRange && AmountOfAttacks < MaxAmountOfAttacks)
+            if (!IsWaiting && WithinRange && AmountOfAttacks < MaxAmountOfAttacks && StunState.IsStunned == false)
             {
                 _enemyWeaponRotationRef.IsAttacking = true;
                 StartCoroutine(WindUpAttack());
@@ -151,18 +167,6 @@ public class AttackState : State//rename this to EnemyAttackState
         if (EnemySwordsmanRef.EnemyDifficulty == BaseEnemy.LevelOfEnemy.LevelThree)
         {
             //do something
-        }
-        if (AttackMissedPlayer == true)
-        {
-            RestartEnemy();
-            if (EnemySwordsmanRef.EnemyDifficulty == BaseEnemy.LevelOfEnemy.Boss)
-            {
-                Debug.Log("we go here");
-                return DKChaseState;
-            }
-  
-            else
-                return ChaseState;
         }
 
         return this;

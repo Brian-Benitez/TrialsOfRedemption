@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsStunned: 0
   InstanteStun: 1
-  StunDuration: 2
+  StunDuration: 3
   KnockBackFeedBackRef: {fileID: 8478864681154725586}
 --- !u!1 &2535473672352954059
 GameObject:
@@ -486,12 +486,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPlayingAttackAni: 0
   MeleePos: {fileID: 5976774633233644905}
-  AttackRange: 1.11
-  WindUpTimeForMelee: 1
+  AttackRange: 1
+  WindUpTimeForMelee: 2
   AmountOfAttacks: 0
   MaxAmountOfAttacks: 2
   AttackCooldownTimer: 0
-  MaxTimerOfCooldown: 3.5
+  MaxTimerOfCooldown: 4
   IsWaiting: 0
   WithinRange: 0
   IsDoneCoolingDown: 1
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b73f734f239ce4c9fb99bdc27d37fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackRange: 2.8
+  AttackRange: 2
   AggroRange: 5
   StandByRange: 10
   DistanceFromPlayer: 0

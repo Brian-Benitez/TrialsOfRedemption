@@ -5,6 +5,8 @@ public class UltBarUI : MonoBehaviour
 {
     public static UltBarUI Instance;
     public float UltAmountUI, MaxUltAmountUI, Width, Height;
+    public GameObject UltUIGameObject;
+    
 
     public RectTransform UltBar;
 
@@ -23,10 +25,15 @@ public class UltBarUI : MonoBehaviour
     {
         UltAmountUI += amount;
         if (UltAmountUI > MaxUltAmountUI)
+        {
             UltAmountUI = MaxUltAmountUI;
+            UltUIGameObject.SetActive(true);    
+        }
         if (UltAmountUI < 0)
+        {
+            UltUIGameObject.SetActive(false);
             UltAmountUI = 0;
-            
+        }
 
         float newWidth = (UltAmountUI / MaxUltAmountUI) * Width;
         UltBar.sizeDelta = new Vector2(newWidth, Height);
@@ -35,6 +42,7 @@ public class UltBarUI : MonoBehaviour
     public void StartDrianUltUICorutine() => StartCoroutine(DrainUltUI());
     IEnumerator DrainUltUI()
     {
+        UltUIGameObject.SetActive(false);
         while(PlayersUltController.Instance.UltPoints > 0)
         {
             PlayersUltController.Instance.UltPoints--;

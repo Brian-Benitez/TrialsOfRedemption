@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsStunned: 0
   InstanteStun: 1
-  StunDuration: 3
+  StunDuration: 2
   KnockBackFeedBackRef: {fileID: 8478864681154725586}
 --- !u!1 &2535473672352954059
 GameObject:

@@ -73,6 +73,7 @@ public class LingeringHealthAbility : LevelUpStat
         if (IsLingerHealthEnabled)
         {
             PlayerInfoRef.SetHealth(healthUpgradeAmount);
+            ParticleController.Instance.PlayLowHealingParticleEffect();
         }   
     }
 

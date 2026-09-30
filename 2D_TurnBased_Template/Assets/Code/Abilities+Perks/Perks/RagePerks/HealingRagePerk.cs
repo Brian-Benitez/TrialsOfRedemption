@@ -20,6 +20,7 @@ public class HealingRagePerk : UpgradePerk
     {
         HealthBarUIRef.SetUIHealth(PlayersUltController.Instance.MaxUltPoints);
         PlayerInfoRef.CharacterHealthAmount += PlayersUltController.Instance.MaxUltPoints;
+        ParticleController.Instance.PlayLowHealingParticleEffect();
         UltBarUI.Instance.SetUIUltBar(-100);//if the ult bar breaks look here
     }
 

@@ -14,6 +14,7 @@ public class PlayersUltController : MonoBehaviour
     public float UltPoints;
     public float MaxUltPoints;
     public float UltDuration;
+    float MaxUltDuration = 8f;
     public KeyCode UltActivationKey;
 
     [Header("Pure Rage Perk Settings")]
@@ -65,7 +66,7 @@ public class PlayersUltController : MonoBehaviour
             IsUpgradeOn = false;
             ResettingPlayerFromPerk();
             RemoveAllUltPoints();
-            UltDuration += MaxUltPoints;
+            UltDuration += MaxUltDuration;
         }
 
         if(IsUlted && !IsUpgradeOn)
@@ -105,6 +106,7 @@ public class PlayersUltController : MonoBehaviour
     
     public void SetPlayerToNormalStats()
     {
+        PureRagePerkRef.PlayTurnOffRageFilter();
         //Movement upgrade
         PlayerMovementRef.FullSpeed -= BoostedMovementSpeed;
         PlayerMovementRef.DashCoolDown += LoweredDashCoolDown;

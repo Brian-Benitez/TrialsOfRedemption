@@ -56,7 +56,7 @@ public class Projectile : MonoBehaviour
             else if (other.gameObject.CompareTag("Enemy"))
             {
                 Debug.Log("hit enemy");
-                other.gameObject.GetComponent<BaseEnemy>().TakeDamage(PlayerController.Instance.Player.gameObject.GetComponent<PlayerInfo>().RangeDamg);
+                other.gameObject.GetComponent<BaseEnemy>().TakeDamage(PlayerController.Instance.Player.gameObject.GetComponent<PlayerInfo>().RangeDamg);//its here because GO of Gun is disabled when not clicked on
                 DamagePopUp.Create(other.gameObject.transform.position, PlayerController.Instance.Player.gameObject.GetComponent<PlayerInfo>().RangeDamg);
                 DestroyProjectile();
             }

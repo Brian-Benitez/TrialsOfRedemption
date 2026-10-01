@@ -36,6 +36,7 @@ public class PlayerSpawnerController : MonoBehaviour
         if (Input.GetKeyDown(InteractKeyCode) && CanInteract)
         {
             SpawnPlayerInArena();
+            AudioController.Instance.StartCorutineFadeCurrentSong();
             StartingGameControllerRef.StartNewRound();
         }
             

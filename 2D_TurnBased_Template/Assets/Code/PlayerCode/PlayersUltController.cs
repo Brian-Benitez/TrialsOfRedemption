@@ -17,12 +17,6 @@ public class PlayersUltController : MonoBehaviour
     float MaxUltDuration = 8f;
     public KeyCode UltActivationKey;
 
-    [Header("Pure Rage Perk Settings")]
-    public int BoostedMovementSpeed;
-    public float LoweredDashCoolDown;
-    public int MeleeUpgradeDam;
-    public int RangeUpgradeDam;
-
     public TextMeshProUGUI UltAmountText;
     public TextMeshProUGUI MaxUltAmountText;
 
@@ -49,7 +43,7 @@ public class PlayersUltController : MonoBehaviour
     {
         if(Input.GetKeyDown(UltActivationKey))
         {
-            if(!IsUlted && UltPoints >= MaxUltPoints || !IsUlted && UltPoints == MaxUltPoints / 2)
+            if(!IsUlted && UltPoints >= MaxUltPoints) //|| !IsUlted && UltPoints == MaxUltPoints / 2)
             {
                 IsUlted = true;
                 UltBarUI.Instance.StartDrianUltUICorutine();
@@ -88,7 +82,11 @@ public class PlayersUltController : MonoBehaviour
     public void ResettingPlayerFromPerk()
     {
         if (IsUsingPureRagePerk)
-            SetPlayerToNormalStats();
+        {
+            Debug.Log("looookkkk");
+            PureRagePerkRef.SetPlayerToNormalStats();
+        }
+            
     }
 
     public void AddUltPoint(float amount)
@@ -103,19 +101,4 @@ public class PlayersUltController : MonoBehaviour
     }
 
     public void RemoveAllUltPoints() => UltPoints = 0;
-    
-    public void SetPlayerToNormalStats()
-    {
-        PureRagePerkRef.PlayTurnOffRageFilter();
-        //Movement upgrade
-        PlayerMovementRef.FullSpeed -= BoostedMovementSpeed;
-        PlayerMovementRef.DashCoolDown += LoweredDashCoolDown;
-
-        //Melee upgrade
-        PlayerMeleeAttackRef.PlayerLightAttkDamg -= MeleeUpgradeDam;
-
-        //Range upgrade
-        PlayerInfoRef.RangeDamg -= RangeUpgradeDam;
-        IsUsingPureRagePerk = false;
-    }
 }

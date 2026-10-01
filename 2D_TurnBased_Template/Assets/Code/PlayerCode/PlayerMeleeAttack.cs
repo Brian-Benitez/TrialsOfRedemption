@@ -43,6 +43,8 @@ public class PlayerMeleeAttack : MonoBehaviour
     [Header("Player attk damg")]
     public float PlayerLightAttkDamg;
     public float PlayerSpecialDamg;
+    public float DefaultLightAttkDamg;
+    public float DefaultSpeicalDamg;
 
     [Header("LayerMasks")]
     public LayerMask WhatIsEnemies;
@@ -125,7 +127,6 @@ public class PlayerMeleeAttack : MonoBehaviour
         yield return new WaitForSecondsRealtime(attackspeed);
         if(!IsSpecialAttack)
             CameraShakeManager.Instance.ShakeCamera(impulseSource);
-
 
         Hit(dam, pos, range, enemy);
         PlayerAnimationControllerRef.IsNotAttacking();

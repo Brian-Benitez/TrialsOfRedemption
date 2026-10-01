@@ -11,5 +11,9 @@ public class ParticleController : MonoBehaviour
             Instance = this;
     }
 
+    private void Start()
+    {
+        LowHealingParticle.Stop();
+    }
     public void PlayLowHealingParticleEffect() => LowHealingParticle.Play();
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -6,11 +5,10 @@ public class PureRagePerk : UpgradePerk
 {
     [Header("Stats Info")]
     [Header("Movement")]
-    public float BoostedMovementSpeed;
-    public float LoweredDashCoolDown;
+    public float BoostedMovementSpeed = 11f;
     [Header("Damages")]
-    public float MeleeUpgradeDam;
-    public float RangeUpgradeDam;
+    public float MeleeUpgradeDam = 4f;
+    public float RangeUpgradeDam = 2.5f;
     [Header("Rage Filter")]
     public Animator RageAnimator;
     [Header("Shaking camera")]
@@ -31,16 +29,29 @@ public class PureRagePerk : UpgradePerk
 
     public void ActivatePureRagePerk()
     {
+        Debug.Log("how many times");
         CameraShakeManager.Instance.ShakeCamera(PureRageCinemachine);
         PlayRageFilter();
-        PlayerMovementRef.FullSpeed += BoostedMovementSpeed;
-        PlayerMovementRef.DashCoolDown -= LoweredDashCoolDown;
+        PlayerMovementRef.FullSpeed = BoostedMovementSpeed;
 
         //Melee upgrade
-        PlayerMeleeAttackRef.PlayerLightAttkDamg += MeleeUpgradeDam;
+        PlayerMeleeAttackRef.PlayerLightAttkDamg = MeleeUpgradeDam;
 
         //Range upgrade
-        PlayerInfoRef.RangeDamg += RangeUpgradeDam;
+        PlayerInfoRef.RangeDamg = RangeUpgradeDam;
+    }
+    public void SetPlayerToNormalStats()
+    {
+        PlayTurnOffRageFilter();
+        //Movement upgrade
+        PlayerMovementRef.FullSpeed = 8f;
+
+        //Melee upgrade
+        PlayerMeleeAttackRef.PlayerLightAttkDamg = PlayerMeleeAttackRef.DefaultLightAttkDamg;
+
+        //Range upgrade
+        PlayerInfoRef.RangeDamg = 1f;
+        Debug.Log("restart pure rage perk");
     }
 
     public override void DisablePerk()

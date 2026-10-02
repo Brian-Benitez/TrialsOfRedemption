@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -36,12 +37,15 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
     public PlayerAnimationController PlayerAnimationControllerRef;
     public void TakeDamage(float damage)
     {
-        PostProcessingController.Instance.PlayCorutineHitEffect();
-        CharacterHealthAmount -= damage;
-        SetHealth(-damage);
-        PlayerAnimationControllerRef.IsHurt();
-        Debug.Log("player took: " + damage);
-        DoesCharacterDie();
+        if(!IsCharacterDead)
+        {
+            PostProcessingController.Instance.PlayCorutineHitEffect();
+            CharacterHealthAmount -= damage;
+            SetHealth(-damage);
+            PlayerAnimationControllerRef.IsHurt();
+            Debug.Log("player took: " + damage);
+            DoesCharacterDie();
+        }
     }
 
     public void SetHealth(float healthChange)
@@ -65,17 +69,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
         {
             if (CharacterHealthAmount <= 0)
             {
-                IsCharacterDead = true;
-                NpcControllerRef.IncrementLayoutIndex();
-                GameOverControllerRef.TurnOnGameOverScreen();
-                PlayersUltController.Instance.UltPoints = 0f;
-                UltBarUI.Instance.UltAmountUI = 0;
-                UltBarUI.Instance.SetUIUltBar(-UltBarUI.Instance.MaxUltAmountUI);
-                XP = 0;
-                XPController.Instance.RestartLevelUpThershold();
-                XPBarUI.Instance.SetUIXP(-XPBarUI.Instance.MaxXPAmountUI);
-                SecondChanceAbilityRef.IsSecondChanceUsed = false;
-                PlayersCore.SetActive(false);
+                PlayerIsDead();
             }
             else
             {
@@ -83,6 +77,34 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
                 IsCharacterDead = false;
             }
         }
+    }
+
+    void PlayerIsDead()
+    {
+        IsCharacterDead = true;
+        NpcControllerRef.IncrementLayoutIndex();
+        PlayersUltController.Instance.UltPoints = 0f;
+        UltBarUI.Instance.UltAmountUI = 0;
+        UltBarUI.Instance.SetUIUltBar(-UltBarUI.Instance.MaxUltAmountUI);
+        XP = 0;
+        XPController.Instance.RestartLevelUpThershold();
+        XPBarUI.Instance.SetUIXP(-XPBarUI.Instance.MaxXPAmountUI);
+        SecondChanceAbilityRef.IsSecondChanceUsed = false;
+        //PlayersCore.SetActive(false);
+        PostProcessingController.Instance.PlayCorutineDeathTunnelVision();
+        StartCoroutine(PlayingDeathScreenTransition());
+    }
+
+    IEnumerator PlayingDeathScreenTransition()
+    {
+        PlayerAnimationControllerRef.IsDead();
+        yield return new WaitForSecondsRealtime(2f);
+        GameOverControllerRef.TurnOnDeathScreen();
+        yield return new WaitForSecondsRealtime(3f);
+        GameOverControllerRef.RestartGame();
+        GameOverControllerRef.TurnOffDeathScreen();
+        PostProcessingController.Instance.StopDeathTunnelVison();
+        PlayerAnimationControllerRef.IsNotDead();
     }
 
     public void UpdatePlayersStats()

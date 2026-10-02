@@ -60,4 +60,6 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void IsHurt() => PlayerAnimator.SetBool("IsHurt", true);
     public void IsNotHurt() => PlayerAnimator.SetBool("IsHurt", false);
+    public void IsDead() => PlayerAnimator.SetBool("IsDead", true);
+    public void IsNotDead() => PlayerAnimator.SetBool("IsDead", false);
 }

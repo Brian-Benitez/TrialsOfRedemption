@@ -10,6 +10,9 @@ public class GameOverController : MonoBehaviour
     public List<UpgradePerk> AllPerks;
     public List<LevelUpStat> AllStats;
     public TextMeshProUGUI RoundsSurvived;
+    [Header("Animator")]
+    public Animator DeathScreenAnimator;
+
     [Header("Scripts")]
     public RoundController RoundControllerRef;
     public PlayerInfo PlayerInfoRef;
@@ -20,11 +23,13 @@ public class GameOverController : MonoBehaviour
         GameOverPrefab.SetActive(false);
         MainMenuPrefab.SetActive(true);
     }
-    public void TurnOnGameOverScreen()
+    public void TurnOnDeathScreen()
     {
-        GameOverPrefab.SetActive(true);
+        DeathScreenAnimator.SetBool("IsPlayingDeadScreen", true);
         RoundsSurvived.text = "" + RoundControllerRef.EnemiesWaveCounter;
     }
+
+    public void TurnOffDeathScreen() => DeathScreenAnimator.SetBool("IsPlayingDeadScreen", false);
 
     public void RestartGame() 
     {

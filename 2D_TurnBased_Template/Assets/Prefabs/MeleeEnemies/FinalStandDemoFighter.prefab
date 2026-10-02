@@ -487,7 +487,7 @@ MonoBehaviour:
   IsPlayingAttackAni: 0
   MeleePos: {fileID: 5976774633233644905}
   AttackRange: 1
-  WindUpTimeForMelee: 2
+  WindUpTimeForMelee: 1.5
   AmountOfAttacks: 0
   MaxAmountOfAttacks: 2
   AttackCooldownTimer: 0
@@ -865,10 +865,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a93dd8c5db448444806c88c17677e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 4
-  MaxEnemyHealth: 4
+  EnemyHealth: 3
+  MaxEnemyHealth: 3
   EnemySpeed: 2
-  EnemyDamage: 1
+  EnemyDamage: 0.7
   BossSoulsObj: {fileID: 0}
   EnemySoulsValue: 5
   IsHit: 0
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b73f734f239ce4c9fb99bdc27d37fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackRange: 2
+  AttackRange: 2.5
   AggroRange: 5
   StandByRange: 10
   DistanceFromPlayer: 0

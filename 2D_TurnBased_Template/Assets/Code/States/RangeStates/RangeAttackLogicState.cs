@@ -85,7 +85,7 @@ public class RangeAttackLogicState : State
 
     }
 
-    public void EnemyRangeAttack()
+    void EnemyRangeAttack()
     {
         if(_enemyArcherRef.EnemyType == BaseEnemy.TypeOfEnemy.Archer)
         {
@@ -115,6 +115,7 @@ public class RangeAttackLogicState : State
 
     IEnumerator WindUpArrowAttack()
     {
+        GetWithinRangeAttackState.IsArcherMoving = false;
         IsPlayingAnimation = true;
         yield return new WaitForSecondsRealtime(WindUpTime);
         LockedOnPlayer = false;

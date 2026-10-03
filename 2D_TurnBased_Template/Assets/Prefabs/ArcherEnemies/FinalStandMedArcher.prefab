@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 4285936806981938576}
   - component: {fileID: 4839241095111752054}
   - component: {fileID: 2564929790220554398}
+  - component: {fileID: 8364061878631777401}
   m_Layer: 0
   m_Name: TempArcher-0002
   m_TagString: Untagged
@@ -537,6 +538,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpriteRendererRef: {fileID: 4839241095111752054}
+--- !u!95 &8364061878631777401
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5110741940316867064}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 832cdb727af66754993b5f385fc4ba02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6472043413705405316
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,6 +766,7 @@ MonoBehaviour:
   AttackRange: 5
   MeleeRange: 3
   StandByRange: 10
+  IsArcherMoving: 0
   ArcherAttackStateRef: {fileID: 5314576183346446978}
   EnemyAggroDistanceRef: {fileID: 5211125791650558122}
   EnemyStatsRef: {fileID: 4523472527908755746}

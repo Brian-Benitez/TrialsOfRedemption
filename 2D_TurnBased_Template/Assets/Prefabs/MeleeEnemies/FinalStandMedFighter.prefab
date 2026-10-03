@@ -105,6 +105,7 @@ MonoBehaviour:
   Animator: {fileID: 6246656192346290789}
   BaseEnemy: {fileID: 9113469955481799094}
   AttackStateRef: {fileID: 4232709564529391995}
+  GetWithinRangeAttackStateRef: {fileID: 0}
   AttackState: {fileID: 0}
 --- !u!114 &4326836338821274930
 MonoBehaviour:

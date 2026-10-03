@@ -5,12 +5,19 @@ public class EnemyAnimator : MonoBehaviour
     public Animator Animator;
     public BaseEnemy BaseEnemy;
     public AttackState AttackStateRef;
+    [Header("Archers Settings")]
+    public GetWithinRangeAttackState GetWithinRangeAttackStateRef;
     public RangeAttackLogicState AttackState;
 
     private void Update()
     {
-        if(BaseEnemy.EnemyType == BaseEnemy.TypeOfEnemy.Archer)
+        if(BaseEnemy.EnemyType == BaseEnemy.TypeOfEnemy.Archer || BaseEnemy.EnemyType == BaseEnemy.TypeOfEnemy.Wizard)
         {
+            if (GetWithinRangeAttackStateRef.IsArcherMoving == true)
+                IsWalking();
+            else
+                IsNotWalking();
+
             if (AttackState.IsPlayingAnimation == true)
                 IsAttacking();
             else

@@ -8,9 +8,12 @@ public class GetWithinRangeAttackState : State
     public float AttackRange;
     public float MeleeRange;
     public float StandByRange;
- 
+
     //States below
+    [Header("Archers settings")]
+    public bool IsArcherMoving = false;
     public RangeAttackLogicState ArcherAttackStateRef;
+    
 
     [Header("Scripts")]
     public EnemyAggroDistance EnemyAggroDistanceRef;
@@ -41,11 +44,13 @@ public class GetWithinRangeAttackState : State
             {
                 TurnOffWithinRangeBool();
                 transform.position = Vector2.MoveTowards(transform.position, PlayerController.Instance.Player.position, EnemyStatsRef.EnemySpeed * Time.deltaTime);
+                IsArcherMoving = true;
             }
 
             if (Vector2.Distance(transform.position, PlayerController.Instance.Player.position) <= MeleeRange)//moving back
             {
                 transform.position = Vector2.MoveTowards(transform.position, PlayerController.Instance.Player.position, -EnemyStatsRef.EnemySpeed / 2 * Time.deltaTime);
+                IsArcherMoving = true;
             }
         }
         else if (EnemyAggroDistanceRef.IsFightingPlayer == false)
@@ -63,13 +68,10 @@ public class GetWithinRangeAttackState : State
     }
     public override State RunCurrentState()
     {
-        if (WithinRangeAttack && EnemyStatsRef.EnemyType == BaseEnemy.TypeOfEnemy.Archer)
+        if (WithinRangeAttack)
         {
+            IsArcherMoving = false;
             return ArcherAttackStateRef;
-        }
-        if(WithinRangeAttack && EnemyStatsRef.EnemyType == BaseEnemy.TypeOfEnemy.Wizard)
-        {
-            //return RangeAttackState;//change to wizard attack
         }
         return this;
     }

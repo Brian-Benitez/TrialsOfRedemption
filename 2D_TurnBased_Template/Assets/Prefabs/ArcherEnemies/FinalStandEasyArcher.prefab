@@ -456,6 +456,7 @@ MonoBehaviour:
   Animator: {fileID: 2606571140067528217}
   BaseEnemy: {fileID: 3818436561324985095}
   AttackStateRef: {fileID: 0}
+  GetWithinRangeAttackStateRef: {fileID: 3836935540627045171}
   AttackState: {fileID: 5592220182403413781}
 --- !u!1 &5874299026286413137
 GameObject:
@@ -933,6 +934,7 @@ MonoBehaviour:
   AttackRange: 6
   MeleeRange: 1.5
   StandByRange: 8
+  IsArcherMoving: 0
   ArcherAttackStateRef: {fileID: 5592220182403413781}
   EnemyAggroDistanceRef: {fileID: 3572448280567692750}
   EnemyStatsRef: {fileID: 3818436561324985095}

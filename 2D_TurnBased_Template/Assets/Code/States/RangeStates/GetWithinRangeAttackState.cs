@@ -37,6 +37,7 @@ public class GetWithinRangeAttackState : State
         {
             if (Vector2.Distance(transform.position, PlayerController.Instance.Player.position) <= AttackRange)
             {
+                IsArcherMoving = false;
                 TurnOnWithinRangeBool();
             }
 
@@ -55,6 +56,8 @@ public class GetWithinRangeAttackState : State
         }
         else if (EnemyAggroDistanceRef.IsFightingPlayer == false)
         {
+            if (EnemyAggroDistanceRef.IsAggro)//just for animations
+                IsArcherMoving = false;
             if(Vector2.Distance(transform.position, PlayerController.Instance.Player.position) <= AttackRange)
             {
                 EnemyTurnController.Instance.TryAddingEnemyToList(this.gameObject);

@@ -167,17 +167,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBtwAttack: 2
   WindUpTime: 0.5
-  Projectile: {fileID: 6214239991093025471, guid: 9066830de6b4f134ab83d8b927f0a184, type: 3}
   ShotPoint: {fileID: 8604800931791002064}
   RangeDistance: 10
   CanRangeAttackAgain: 0
   IsAttacking: 0
   IsStillWithinRange: 0
-  LockedOnPlayer: 1
+  LockedOnPlayer: 0
   IsPlayingAnimation: 0
-  StunStateRef: {fileID: 6606801238363406728}
+  WizardBullet: {fileID: 0}
+  ArrowSpeed: 0
+  EnemyCoreGO: {fileID: 0}
   ShotPointTwo: {fileID: 4263232305946379098}
   ShotPointThree: {fileID: 8824331901901780249}
+  StunStateRef: {fileID: 6606801238363406728}
+  GetWithinRangeAttackState: {fileID: 0}
 --- !u!1 &3557692869808197435
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +408,8 @@ MonoBehaviour:
   Animator: {fileID: 2606571140067528217}
   BaseEnemy: {fileID: 3818436561324985095}
   AttackStateRef: {fileID: 0}
-  RangeAttackState: {fileID: 1889920391416521444}
+  GetWithinRangeAttackStateRef: {fileID: 0}
+  AttackState: {fileID: 0}
 --- !u!1 &5874299026286413137
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAggro: 0
+  IsFightingPlayer: 0
   AggroDistance: 10
 --- !u!58 &6363027080359075984
 CircleCollider2D:
@@ -674,8 +679,6 @@ MonoBehaviour:
   IsStunned: 0
   InstanteStun: 1
   StunDuration: 2
-  BaseEnemyRef: {fileID: 3818436561324985095}
-  MovementStateRef: {fileID: 0}
   KnockBackFeedBackRef: {fileID: 587120249393042125}
 --- !u!1 &8818265710935858715
 GameObject:
@@ -857,18 +860,15 @@ MonoBehaviour:
   EnemyHealth: 5
   MaxEnemyHealth: 5
   EnemySpeed: 1.5
-  PatrolSpeed: 0.7
   EnemyDamage: 1
-  HealthPotion: {fileID: 8241212872979105498, guid: 71ffacc5d176d324eac596cf228156cd, type: 3}
-  RagePotion: {fileID: 600810356273653899, guid: ab5027affe3cbc84b97865519c0f8019, type: 3}
-  ChanceToDropItem: 15
+  BossSoulsObj: {fileID: 0}
   EnemySoulsValue: 15
   IsHit: 0
   IsDead: 0
-  HitPauseControllerRef: {fileID: 9184289616862122558}
   StunStateRef: {fileID: 6606801238363406728}
   EnemyType: 1
   EnemyDifficulty: 0
+  EnemiesArrowRB: {fileID: 0}
 --- !u!114 &3836935540627045171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,9 +884,11 @@ MonoBehaviour:
   WithinRangeAttack: 0
   AttackRange: 10
   MeleeRange: 5
-  MinimunDistanceForRangeAttack: 10
+  StandByRange: 0
+  IsArcherMoving: 0
+  ArcherAttackStateRef: {fileID: 0}
   EnemyAggroDistanceRef: {fileID: 3572448280567692750}
-  EnemyArcherRef: {fileID: 3818436561324985095}
+  EnemyStatsRef: {fileID: 0}
   StunStateRef: {fileID: 6606801238363406728}
 --- !u!114 &5727651949420622849
 MonoBehaviour:

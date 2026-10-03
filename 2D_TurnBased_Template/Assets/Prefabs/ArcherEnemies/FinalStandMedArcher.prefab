@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 4839241095111752054}
   - component: {fileID: 2564929790220554398}
   - component: {fileID: 8364061878631777401}
+  - component: {fileID: 7559896255367915256}
   m_Layer: 0
   m_Name: TempArcher-0002
   m_TagString: Untagged
@@ -464,7 +465,7 @@ Transform:
   m_GameObject: {fileID: 5110741940316867064}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -0.8, z: 0}
+  m_LocalPosition: {x: -0.04, y: 0.014, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -514,7 +515,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3824205174523065093, guid: 2c78049ba668e9742a8e88fbe90ea38d, type: 3}
+  m_Sprite: {fileID: -7647461735706025491, guid: 92df55594809ea34ea6d31b45190fe2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -560,6 +561,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7559896255367915256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5110741940316867064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93b67279a02fa247b4087ce67af59c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 8364061878631777401}
+  BaseEnemy: {fileID: 4523472527908755746}
+  AttackStateRef: {fileID: 0}
+  GetWithinRangeAttackStateRef: {fileID: 6627246155356475132}
+  AttackState: {fileID: 5314576183346446978}
 --- !u!1 &6472043413705405316
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,8 +781,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WithinRangeAttack: 0
-  AttackRange: 5
-  MeleeRange: 3
+  AttackRange: 4
+  MeleeRange: 2
   StandByRange: 10
   IsArcherMoving: 0
   ArcherAttackStateRef: {fileID: 5314576183346446978}
@@ -912,10 +930,10 @@ MonoBehaviour:
   CanRangeAttackAgain: 0
   IsAttacking: 0
   IsStillWithinRange: 0
-  LockedOnPlayer: 1
-  IsPlayingAnimation: 1
+  LockedOnPlayer: 0
+  IsPlayingAnimation: 0
   WizardBullet: {fileID: 0}
-  ArrowSpeed: 7
+  ArrowSpeed: 8
   EnemyCoreGO: {fileID: 6472043413705405316}
   ShotPointTwo: {fileID: 6948228698367970731}
   ShotPointThree: {fileID: 7662686658691191966}

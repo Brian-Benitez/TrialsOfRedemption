@@ -11037,6 +11037,7 @@ MonoBehaviour:
   SecondChanceAbilityRef: {fileID: 549956200}
   NpcControllerRef: {fileID: 1095011193}
   PlayerAnimationControllerRef: {fileID: 7878350318701407153}
+  PlayerMovementRef: {fileID: 386186101}
   PlayerObject: {fileID: 386186100}
 --- !u!114 &386186109
 MonoBehaviour:
@@ -12451,6 +12452,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3721221941647051947, guid: e799edf5728e95c468db944f24063388, type: 3}
   m_PrefabInstance: {fileID: 937844637}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &470462207 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1285926857070826977, guid: e799edf5728e95c468db944f24063388, type: 3}
+  m_PrefabInstance: {fileID: 937844637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404468c927e03df408ad2b3402716c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &477313015
 GameObject:
   m_ObjectHideFlags: 0
@@ -18951,6 +18963,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1984954335}
     m_Modifications:
+    - target: {fileID: 1285926857070826977, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: RageAnimator
+      value: 
+      objectReference: {fileID: 1403292107}
+    - target: {fileID: 1285926857070826977, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: PlayerInfoRef
+      value: 
+      objectReference: {fileID: 386186108}
+    - target: {fileID: 1285926857070826977, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: PlayerMovementRef
+      value: 
+      objectReference: {fileID: 386186101}
+    - target: {fileID: 1285926857070826977, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: PureRageCinemachine
+      value: 
+      objectReference: {fileID: 319898923}
+    - target: {fileID: 1285926857070826977, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: PlayerMeleeAttackRef
+      value: 
+      objectReference: {fileID: 1131129220}
     - target: {fileID: 1974496331080907576, guid: e799edf5728e95c468db944f24063388, type: 3}
       propertyPath: m_Name
       value: PureRagePerkCard
@@ -19034,6 +19066,50 @@ PrefabInstance:
     - target: {fileID: 3721221941647051947, guid: e799edf5728e95c468db944f24063388, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1982623517}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1536016091}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartPickedACardCoroutine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PerkCardController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PerkCardController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819764912552506927, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26055,7 +26131,7 @@ MonoBehaviour:
   PlayerMovementRef: {fileID: 386186101}
   PlayerMeleeAttackRef: {fileID: 1131129220}
   PlayerInfoRef: {fileID: 386186108}
-  PureRagePerkRef: {fileID: 0}
+  PureRagePerkRef: {fileID: 470462207}
   HealingRagePerkRef: {fileID: 1540077176}
   UltBarUIRef: {fileID: 1552305877}
 --- !u!1001 &1540077173
@@ -26881,8 +26957,10 @@ MonoBehaviour:
   - {fileID: 187421985}
   - {fileID: 1540077176}
   - {fileID: 3721221941691737320}
-  - {fileID: 0}
+  - {fileID: 470462207}
   - {fileID: 3721221941373602431}
+  - {fileID: 104601202}
+  - {fileID: 811501136}
   AllStats:
   - {fileID: 0}
   - {fileID: 0}
@@ -29720,7 +29798,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804566821}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

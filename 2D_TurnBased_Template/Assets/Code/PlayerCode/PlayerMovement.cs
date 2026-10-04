@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (IsDashing)
             return;
+        
 
 
         if (moveDirection == Vector2.zero || StopPlayerMovement)

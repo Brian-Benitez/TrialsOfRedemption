@@ -53,11 +53,15 @@ public class GameOverController : MonoBehaviour
 
     void RestartAllPlayersPerks()
     {
-        for (int i = 0; i < AllPerks.Count; i++)
+        if(AllPerks.Count > 0)
         {
-            Debug.Log("turn off " +  AllPerks[i].gameObject.name);
-            AllPerks[i].DisablePerk();
+            for (int i = 0; i < AllPerks.Count; i++)
+            {
+                Debug.Log("turn off " + AllPerks[i].gameObject.name);
+                AllPerks[i].DisablePerk();
+            }
         }
+        
     }
 
     void RestartAllPlayersStats()

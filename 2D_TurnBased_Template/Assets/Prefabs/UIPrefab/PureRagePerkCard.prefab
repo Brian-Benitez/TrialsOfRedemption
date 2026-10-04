@@ -356,6 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3721221941647051947}
+  - component: {fileID: 1285926857070826977}
   - component: {fileID: 8613054406365571306}
   m_Layer: 10
   m_Name: PureRagePerkCard
@@ -391,6 +392,28 @@ RectTransform:
   m_AnchoredPosition: {x: -368, y: 627}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1285926857070826977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974496331080907576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404468c927e03df408ad2b3402716c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPerkPicked: 0
+  IsPerkActive: 0
+  BoostedMovementSpeed: 11
+  MeleeUpgradeDam: 4
+  RangeUpgradeDam: 2.5
+  RageAnimator: {fileID: 0}
+  PureRageCinemachine: {fileID: 0}
+  PlayerMovementRef: {fileID: 0}
+  PlayerMeleeAttackRef: {fileID: 0}
+  PlayerInfoRef: {fileID: 0}
 --- !u!114 &8613054406365571306
 MonoBehaviour:
   m_ObjectHideFlags: 0

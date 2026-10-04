@@ -2,7 +2,6 @@ using DG.Tweening;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class BaseCharacter : MonoBehaviour// need to move melee and rage values here. Want this to be main place to change values
 {
@@ -35,6 +34,13 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
     public SecondChanceAbility SecondChanceAbilityRef;
     public NpcController NpcControllerRef;
     public PlayerAnimationController PlayerAnimationControllerRef;
+    public PlayerMovement PlayerMovementRef;
+
+    private void Update()
+    {
+        if (IsCharacterDead)
+            PlayerMovementRef.TurnOnStopPlayerMovement();
+    }
     public void TakeDamage(float damage)
     {
         if(!IsCharacterDead)
@@ -81,6 +87,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
 
     void PlayerIsDead()
     {
+        PlayerMovementRef.StopPlayerMovement = true;
         IsCharacterDead = true;
         NpcControllerRef.IncrementLayoutIndex();
         PlayersUltController.Instance.UltPoints = 0f;
@@ -105,6 +112,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
         GameOverControllerRef.TurnOffDeathScreen();
         PostProcessingController.Instance.StopDeathTunnelVison();
         PlayerAnimationControllerRef.IsNotDead();
+        PlayerMovementRef.StopPlayerMovement = false;
     }
 
     public void UpdatePlayersStats()

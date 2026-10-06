@@ -18,6 +18,8 @@ public class PlayerRangeWeapon : MonoBehaviour
     public float LoweredRangeDistance;
 
     public CinemachineImpulseSource rangeImpulseSource;
+    public CinemachineImpulseSource ChargeShotImpulseSource;
+    public ChargeShotPerk ChargeShotPerkRef;
     private float _maxTimeBtwAttacks;
     private PlayerMovement PlayerMovementRef;
     private Rigidbody2D _arrowPrefabRB;
@@ -40,7 +42,11 @@ public class PlayerRangeWeapon : MonoBehaviour
 
         if(Input.GetMouseButton(1) && Input.GetMouseButtonDown(0) && PlayerAmmoController.Instance.DoesPlayerHaveAmmo() && CanRangeAttackAgain)
         {
-            CameraShakeManager.Instance.ShakeCamera(rangeImpulseSource);
+            if (ChargeShotPerkRef.IsPerkActive)
+                CameraShakeManager.Instance.ShakeCamera(ChargeShotImpulseSource);
+            else
+                CameraShakeManager.Instance.ShakeCamera(rangeImpulseSource);
+
             PlayerShootsArrowAction();
             PlayerAmmoController.Instance.RemoveAmmo();
             RestartTimerForRangeAttacks();

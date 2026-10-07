@@ -9,7 +9,7 @@ public class DoubleArrowReturnsPerk : UpgradePerk
         {
             PlayerAmmoController.Instance.AmountOfArrowsReturned = ArrowsMultipler;
             PlayerAmmoController.Instance.PlayerInfoRef.UpdatePlayersStats();
-            PerksController.Instance.AddPerkToList(this.gameObject);
+            PerksController.Instance.AddPerkToList(this);
         }
     }
 

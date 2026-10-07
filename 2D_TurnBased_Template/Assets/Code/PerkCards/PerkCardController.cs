@@ -217,5 +217,5 @@ public class PerkCardController : MonoBehaviour
     }
 
 
-    public void RemoveAllPerkCardsFromList() => PerkCardsChoices.Clear();
+    public void RemoveAllVisualPerkCardsFromList() => PlayersVisualActivePerks.Clear();
 }

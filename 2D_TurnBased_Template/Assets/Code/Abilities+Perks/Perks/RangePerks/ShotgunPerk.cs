@@ -9,7 +9,7 @@ public class ShotgunPerk : UpgradePerk
         {
             PlayerRangeWeaponRef.IsUsingShotgunPerk = true;
             PlayerRangeWeaponRef.ChangeArrowsDurations();
-            PerksController.Instance.AddPerkToList(this.gameObject);
+            PerksController.Instance.AddPerkToList(this);
         }
     }
 

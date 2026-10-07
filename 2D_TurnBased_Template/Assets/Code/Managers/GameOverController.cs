@@ -7,8 +7,6 @@ public class GameOverController : MonoBehaviour
     public GameObject MainMenuPrefab;
     public GameObject GameOverPrefab;
     public GameObject LevelUpPrefab;
-    public List<UpgradePerk> AllPerks;
-    public List<LevelUpStat> AllStats;
     public TextMeshProUGUI RoundsSurvived;
     [Header("Animator")]
     public Animator DeathScreenAnimator;
@@ -47,29 +45,7 @@ public class GameOverController : MonoBehaviour
         SoulsBankController.Instance.DemonBossSoulsBank = 0;
         SoulsBankController.Instance.SoulsBank = 0;
         PlayerSpawnerController.Instance.SpawnPlayerInCampfire();
-        RestartAllPlayersPerks();
+        PerksController.Instance.RestartAllPlayersPerks();
         LevelUpPrefab.SetActive(true); 
-    }
-
-    void RestartAllPlayersPerks()
-    {
-        if(AllPerks.Count > 0)
-        {
-            for (int i = 0; i < AllPerks.Count; i++)
-            {
-                Debug.Log("turn off " + AllPerks[i].gameObject.name);
-                AllPerks[i].DisablePerk();
-            }
-        }
-        
-    }
-
-    void RestartAllPlayersStats()
-    {
-        for (int i = 0; i < AllStats.Count; i++)
-        {
-            AllStats[i].RestartStat();
-        }
-
     }
 }

@@ -12,7 +12,7 @@ public class HealingRagePerk : UpgradePerk
     public override void EnablePerk()
     {
         PlayersUltController.Instance.IsUsingHealingRagePerk = true;
-        PerksController.Instance.AddPerkToList(this.gameObject);
+        PerksController.Instance.AddPerkToList(this);
         //PlayerInfoRef.CharacterHealthAmount += PlayersUltController.Instance.MaxUltPoints;
     }
 

@@ -4,19 +4,12 @@ public class PerksController : MonoBehaviour
 {
     public static PerksController Instance;
     public int MaxAmountOfPerks;
-    public List<GameObject> ListOfActivePerks;
+    public List<UpgradePerk> ListOfActivePerks;
+    public List<UpgradePerk> AllPerks;
     public int ListIndex;
     [Header("UIs")]
-    public GameObject AllPerksUI;
-    public GameObject PerksUIGO;
     public GameObject LevelUpUIGO;
-    [Header("everything below must be moved!")]
-    [Header("Highlights")]
-    public List<GameObject> Highlights;
-
-    [Header("Archers For Images")]
-    public List<GameObject> PosForImages;
-    public GameObject IconsResetPOS;
+    public PerkCardController PerkCardControllerRef;
 
 
     private void Awake()
@@ -26,7 +19,7 @@ public class PerksController : MonoBehaviour
     }
 
 
-    public void AddPerkToList(GameObject GO)
+    public void AddPerkToList(UpgradePerk GO)
     {
         bool _isPerkInList = false;
 
@@ -43,51 +36,44 @@ public class PerksController : MonoBehaviour
         {
             if (ListOfActivePerks.Count >= MaxAmountOfPerks)
             {
-                ListOfActivePerks[ListIndex].GetComponent<UpgradePerk>().DisablePerk();
-                ListOfActivePerks[ListIndex].GetComponent<UpgradePerk>().IsPerkActive = false;
+                ListOfActivePerks[ListIndex].DisablePerk();
+                ListOfActivePerks[ListIndex].IsPerkActive = false;
                 ListOfActivePerks.RemoveAt(ListIndex);
                 Debug.Log("remove perk that was previously there");
             }
             ListOfActivePerks.Insert(ListIndex, GO);
-            ListOfActivePerks[ListIndex].GetComponent<UpgradePerk>().IsPerkActive = true;
+            ListOfActivePerks[ListIndex].IsPerkActive = true;
             Debug.Log(GO.name + " Is enabled!");
         }
     }
 
-    //Note, have it so when player clicks on the perk box they can switch it up with the code above.
-    public void SetListIndexToFirstSlot() => ListIndex = 0;
-    public void SetListIndexToSecondSlot() => ListIndex = 1;
-    public void SetListIndexToThirdSlot() => ListIndex = 2;
-    //move this to new script
-    public void SetHighlight()
+    public void RestartAllPlayersPerks()
     {
-        foreach (GameObject go in Highlights)
+        if (ListOfActivePerks.Count > 0)
         {
-            go.SetActive(false);
+            PerkCardControllerRef.RemoveAllVisualPerkCardsFromList();//Removes all UI versions of the perks
+            for (int i = 0; i < AllPerks.Count; i++)//disables all perks
+            {
+                Debug.Log("turn off " + AllPerks[i].gameObject.name);
+                AllPerks[i].DisablePerk();
+            }
+            
+            for (int j = 0; j < ListOfActivePerks.Count; j++)
+            {
+                ListOfActivePerks.Remove(ListOfActivePerks[j]);
+
+            }
+            
         }
-        Highlights[ListIndex].SetActive(true);
-    }
 
-    public void RemoveIconOnSlotsUI()
-    {
-        Debug.Log("remove icon on UI");
-        PosForImages[ListIndex].gameObject.transform.position = IconsResetPOS.transform.position;
     }
-
-    public void EnableAllPerksMenu() => AllPerksUI.SetActive(true);
     public void EnablePerksUI()
     {
         LevelUpUIGO.SetActive(false);
-        PerksUIGO.SetActive(true);
     }
     public void DisablePerksUI()
     {
         LevelUpUIGO.SetActive(true); 
-        PerksUIGO.SetActive(false);
     }
    
-    public void DisableAllGOs()
-    {
-       AllPerksUI.SetActive(false); 
-    }
 }

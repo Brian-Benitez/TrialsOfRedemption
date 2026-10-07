@@ -20,6 +20,7 @@ public class PlayerRangeWeapon : MonoBehaviour
     public CinemachineImpulseSource rangeImpulseSource;
     public CinemachineImpulseSource ChargeShotImpulseSource;
     public ChargeShotPerk ChargeShotPerkRef;
+    public BaseCharacter BaseCharacterRef;
     private float _maxTimeBtwAttacks;
     private PlayerMovement PlayerMovementRef;
     private Rigidbody2D _arrowPrefabRB;
@@ -40,7 +41,7 @@ public class PlayerRangeWeapon : MonoBehaviour
         if (PlayerMovementRef.IsDashing)
             return;
 
-        if(Input.GetMouseButton(1) && Input.GetMouseButtonDown(0) && PlayerAmmoController.Instance.DoesPlayerHaveAmmo() && CanRangeAttackAgain)
+        if(Input.GetMouseButton(1) && Input.GetMouseButtonDown(0) && PlayerAmmoController.Instance.DoesPlayerHaveAmmo() && CanRangeAttackAgain && !BaseCharacterRef.IsCharacterDead)
         {
             if (ChargeShotPerkRef.IsPerkActive)
                 CameraShakeManager.Instance.ShakeCamera(ChargeShotImpulseSource);

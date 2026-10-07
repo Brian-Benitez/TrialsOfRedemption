@@ -55,7 +55,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     private PlayerMovement _playerMovement;
     public CinemachineImpulseSource impulseSource;
     public FlipSprite FlipSpriteRef;
-
+    public BaseCharacter BaseCharacterRef;
     private float _maxTimeBtwAttacks;
     private float _specialCooldown = 0f;
 
@@ -83,7 +83,7 @@ public class PlayerMeleeAttack : MonoBehaviour
             CanMeleeAttackAgain = false;
         }
 
-        if (Input.GetMouseButtonDown(0) && CanMeleeAttackAgain)
+        if (Input.GetMouseButtonDown(0) && CanMeleeAttackAgain && !BaseCharacterRef.IsCharacterDead)
         {
             PlayerAnimationControllerRef.IsAttacking();
             StartCoroutine(WindUpAttack(PlayerLightAttkDamg, NormalAttackSpeed,AttackPos, AttackRange, WhatIsEnemies));

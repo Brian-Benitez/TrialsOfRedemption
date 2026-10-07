@@ -99,7 +99,7 @@ public class PlayerMeleeAttack : MonoBehaviour
             IsSpecialAttack = true;
         }
 
-        if(Input.GetKeyDown(SpecialKey) && IsSpecialAttack)
+        if(Input.GetKeyDown(SpecialKey) && IsSpecialAttack && !BaseCharacterRef.IsCharacterDead)
         {
             FlipSpriteRef.PlayerLookAtMouse();
             PlayerAnimationControllerRef.IsSpeicalAttacking();

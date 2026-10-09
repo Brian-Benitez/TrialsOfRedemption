@@ -4,7 +4,8 @@ using UnityEngine;
 public class InteractingWithUpgradeSystem : MonoBehaviour
 {
     public GameObject UpgradeUIGameObject;
-    public GameObject PerksUIGameObject;
+    public GameObject SoulsUI;
+    public GameObject BossSoulsUI;
     public GameObject EKeyPNG;
     public KeyCode InteracteWithUpgradeKey;
     public KeyCode DismissUIKey;
@@ -33,7 +34,7 @@ public class InteractingWithUpgradeSystem : MonoBehaviour
             if (Input.GetKeyUp(DismissUIKey))
             {
                 UpgradeUIGameObject.SetActive(false);
-                PerksUIGameObject.SetActive(false);
+                BossSoulsUI.SetActive(false);
                 IsInteracting = false;
                 PlayerMovementRef.TurnOffStopPlayerMovement();
                 XPController.Instance.IsUpgrading = false;
@@ -44,6 +45,17 @@ public class InteractingWithUpgradeSystem : MonoBehaviour
             PlayerMovementRef.TurnOnStopPlayerMovement();
     }
 
+    public void TurnOnBossSoulsUI()
+    {
+        BossSoulsUI.SetActive(true);
+        SoulsUI.SetActive(false);
+    }
+
+    public void TurnOnSoulsUI()
+    {
+        SoulsUI.SetActive(true);
+        BossSoulsUI.SetActive(false);
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         CanInteract = true;

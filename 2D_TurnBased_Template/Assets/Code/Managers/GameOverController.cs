@@ -37,8 +37,8 @@ public class GameOverController : MonoBehaviour
         BuffEnemiesManager.Instance.StartRestartEnemiesShieldEvent();
         TypesOfEnemiesPerRoundControllerRef.RemoveAllEnemiesFromList();
         PlayerInfoRef.IsCharacterDead = false;
-        PlayerInfoRef.HealthBarUIRef.SetUIHealth(PlayerInfoRef.BaseLineHealth);
-        PlayerInfoRef.SetHealth(PlayerInfoRef.BaseLineHealth);
+        PlayerInfoRef.HealthBarUIRef.SetUIHealth(PlayerInfoRef.CharacterMaxHealth);
+        PlayerInfoRef.SetHealth(PlayerInfoRef.CharacterMaxHealth);
         GameOverPrefab.SetActive(false);
         RoundControllerRef.EnemiesWaveCounter = 0;
         RoundControllerRef.TotalAmountOfRoundsWon = 0;

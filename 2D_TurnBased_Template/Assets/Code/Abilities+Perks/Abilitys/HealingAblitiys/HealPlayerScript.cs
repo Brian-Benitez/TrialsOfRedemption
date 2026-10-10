@@ -30,7 +30,8 @@ public class HealPlayerScript : LevelUpStat
             DetermineCurrentTier();
             PlayerInfoRef.CharacterMaxHealth += upgradeHealthAmount;
             PlayerInfoRef.HealthBarUIRef.SetUIMaxHealth(PlayerInfoRef.CharacterMaxHealth);
-            PlayerInfoRef.SetHealth(PlayerInfoRef.CharacterHealthAmount);
+            PlayerInfoRef.HealthBarUIRef.UpdateHealthBarUI();
+            PlayerInfoRef.SetHealth(PlayerInfoRef.CharacterMaxHealth);
             PlayerInfoRef.Souls -= (int)CostAmount;
             PlayerInfoRef.UpdatePlayersStats();
         }

@@ -12,6 +12,11 @@ public class ChargeShotPerk : UpgradePerk
     float _maxHoldTimer = 3f;
     public BaseCharacter RangeAttkDamRef;
 
+    private void Start()
+    {
+        _normalDamg = RangeAttkDamRef.RangeDamg;
+    }
+
     private void Update()
     {
         if(IsUsingChargeShot)
@@ -52,6 +57,7 @@ public class ChargeShotPerk : UpgradePerk
     public override void EnablePerk()
     {
         IsUsingChargeShot = true;
+        PerksController.Instance.AddPerkToList(this);
     }
 
     public override void DisablePerk()

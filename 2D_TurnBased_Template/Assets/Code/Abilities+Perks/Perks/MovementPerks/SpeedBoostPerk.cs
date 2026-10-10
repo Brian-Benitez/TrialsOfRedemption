@@ -14,6 +14,7 @@ public class SpeedBoostPerk : UpgradePerk
     {
         PlayerMovementRef.FullSpeed = UpgradedMovementSpeed;
         PlayerMovementRef.PlayerSpeed = UpgradedMovementSpeed;
+        PerksController.Instance.AddPerkToList(this);
     }
 
     public override void DisablePerk()

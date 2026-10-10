@@ -21,6 +21,7 @@ public class MeleeDamageBoostPerk : UpgradePerk
 
         PlayerMeleeAttackRef.PlayerLightAttkDamg = _newDamageForNormalAttk;
         PlayerMeleeAttackRef.PlayerSpecialDamg = _newDamageForSpeicalAttk;
+        PerksController.Instance.AddPerkToList(this);
     }
 
     public override void DisablePerk()

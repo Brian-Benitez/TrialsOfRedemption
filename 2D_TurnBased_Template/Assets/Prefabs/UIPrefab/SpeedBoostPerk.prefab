@@ -281,6 +281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3721221941647051947}
+  - component: {fileID: 2147825384963041554}
   - component: {fileID: 8613054406365571306}
   m_Layer: 10
   m_Name: SpeedBoostPerk
@@ -316,6 +317,23 @@ RectTransform:
   m_AnchoredPosition: {x: -368, y: 627}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2147825384963041554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974496331080907576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa9d2e5919552d4091e888bb31b99cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPerkPicked: 0
+  IsPerkActive: 0
+  UpgradedMovementSpeed: 0
+  NormalMovementSpeed: 0
+  PlayerMovementRef: {fileID: 0}
 --- !u!114 &8613054406365571306
 MonoBehaviour:
   m_ObjectHideFlags: 0

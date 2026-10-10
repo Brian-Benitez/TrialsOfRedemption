@@ -1454,33 +1454,22 @@ RectTransform:
   m_AnchoredPosition: {x: -680, y: -252}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &104601199 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1974496331080907576, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
-  m_PrefabInstance: {fileID: 2092730858}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &104601200 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3721221941647051947, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
   m_PrefabInstance: {fileID: 2092730858}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &104601202
+--- !u!114 &104601204 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2147825384963041554, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
+  m_PrefabInstance: {fileID: 2092730858}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104601199}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7aa9d2e5919552d4091e888bb31b99cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPerkPicked: 0
-  IsPerkActive: 0
-  UpgradedMovementSpeed: 8
-  NormalMovementSpeed: 0
-  PlayerMovementRef: {fileID: 386186101}
 --- !u!1 &104934131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2636,6 +2625,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1984954335}
     m_Modifications:
+    - target: {fileID: 249387194607400706, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
+      propertyPath: AddedDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249387194607400706, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
+      propertyPath: DecreaseRangeAmount
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 249387194607400706, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
+      propertyPath: PlayerMeleeAttackRef
+      value: 
+      objectReference: {fileID: 1131129220}
     - target: {fileID: 1974496331080907576, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
       propertyPath: m_Name
       value: ExtraSpeicalDamPerkCard
@@ -2739,7 +2740,7 @@ PrefabInstance:
     - target: {fileID: 3819764912552506927, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 187421985}
+      objectReference: {fileID: 0}
     - target: {fileID: 3819764912552506927, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -2787,7 +2788,7 @@ PrefabInstance:
     - target: {fileID: 4656002613124619752, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 187421985}
+      objectReference: {fileID: 0}
     - target: {fileID: 4656002613124619752, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -2819,38 +2820,24 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1974496331080907576, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 187421985}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
 --- !u!224 &187421983 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3721221941647051947, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
   m_PrefabInstance: {fileID: 187421982}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &187421984 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1974496331080907576, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
+--- !u!114 &187421987 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 249387194607400706, guid: a2209e00624b73443a733b3a51b51c73, type: 3}
   m_PrefabInstance: {fileID: 187421982}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &187421985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187421984}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7d6f3c283b50164b9a544b61c033f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPerkPicked: 0
-  IsPerkActive: 0
-  AddedDamage: 1
-  DecreaseRangeAmount: 0.6
-  PlayerMeleeAttackRef: {fileID: 1131129220}
 --- !u!1 &187968443
 GameObject:
   m_ObjectHideFlags: 0
@@ -15430,7 +15417,7 @@ GameObject:
   - component: {fileID: 654150999}
   - component: {fileID: 654150998}
   m_Layer: 0
-  m_Name: Health
+  m_Name: XPHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18410,7 +18397,7 @@ PrefabInstance:
     - target: {fileID: 3819764912552506927, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 811501136}
+      objectReference: {fileID: 0}
     - target: {fileID: 3819764912552506927, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -18443,40 +18430,51 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisablePerk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MeleeDamageBoostPerk, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218865336232467608, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
+      propertyPath: PlayerMeleeAttackRef
+      value: 
+      objectReference: {fileID: 1131129220}
+    - target: {fileID: 6218865336232467608, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
+      propertyPath: DamageAdditionToAllMeleeAttks
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1974496331080907576, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 811501136}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
 --- !u!224 &811501134 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3721221941647051947, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
   m_PrefabInstance: {fileID: 811501133}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &811501135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1974496331080907576, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
+--- !u!114 &811501138 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6218865336232467608, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
   m_PrefabInstance: {fileID: 811501133}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &811501136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811501135}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6c345962e78bce4ea28d14d3fceb7fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPerkPicked: 0
-  IsPerkActive: 0
-  DamageAdditionToAllMeleeAttks: 0.5
-  PlayerMeleeAttackRef: {fileID: 1131129220}
 --- !u!1 &813151910
 GameObject:
   m_ObjectHideFlags: 0
@@ -18998,7 +18996,7 @@ MonoBehaviour:
   Width: 250
   Height: 25
   HealthBar: {fileID: 1732682192}
-  TheHealthBar: {fileID: 823619038}
+  TheHealthBarParentGO: {fileID: 823619038}
   DefaultPOS: {fileID: 1503986057}
   FirstUpgradePOS: {fileID: 668597665}
   SecondUpgradePOS: {fileID: 498812159}
@@ -20337,6 +20335,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 470462207}
+    - target: {fileID: 4656002613124619752, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisablePerk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PureRagePerk, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: e799edf5728e95c468db944f24063388, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21018,13 +21032,13 @@ MonoBehaviour:
   ListOfActivePerks: []
   AllPerks:
   - {fileID: 1290844452}
-  - {fileID: 811501136}
-  - {fileID: 187421985}
-  - {fileID: 1540077176}
+  - {fileID: 811501138}
+  - {fileID: 187421987}
+  - {fileID: 1540077178}
   - {fileID: 3721221941691737320}
   - {fileID: 470462207}
   - {fileID: 3721221941373602431}
-  - {fileID: 104601202}
+  - {fileID: 104601204}
   ListIndex: 0
   LevelUpUIGO: {fileID: 1636709606}
   PerkCardControllerRef: {fileID: 1982623517}
@@ -25675,6 +25689,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: a0a63401050bb6d4e8e28303febf5866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1290844452}
+    - target: {fileID: 4656002613124619752, guid: a0a63401050bb6d4e8e28303febf5866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisablePerk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: a0a63401050bb6d4e8e28303febf5866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ChargeShotPerk, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: a0a63401050bb6d4e8e28303febf5866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7655795712607807440, guid: a0a63401050bb6d4e8e28303febf5866, type: 3}
       propertyPath: RangeAttkDamRef
       value: 
@@ -28799,7 +28829,7 @@ MonoBehaviour:
   PlayerMeleeAttackRef: {fileID: 1131129220}
   PlayerInfoRef: {fileID: 386186108}
   PureRagePerkRef: {fileID: 470462207}
-  HealingRagePerkRef: {fileID: 1540077176}
+  HealingRagePerkRef: {fileID: 0}
   UltBarUIRef: {fileID: 1552305877}
 --- !u!1 &1538332499
 GameObject:
@@ -29048,7 +29078,7 @@ PrefabInstance:
     - target: {fileID: 3819764912552506927, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1540077176}
+      objectReference: {fileID: 0}
     - target: {fileID: 3819764912552506927, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -29096,7 +29126,7 @@ PrefabInstance:
     - target: {fileID: 4656002613124619752, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1540077176}
+      objectReference: {fileID: 0}
     - target: {fileID: 4656002613124619752, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -29125,40 +29155,35 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6774301815784314804, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
+      propertyPath: PlayerInfoRef
+      value: 
+      objectReference: {fileID: 386186108}
+    - target: {fileID: 6774301815784314804, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
+      propertyPath: HealthBarUIRef
+      value: 
+      objectReference: {fileID: 823619039}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1974496331080907576, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1540077176}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
 --- !u!224 &1540077174 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3721221941647051947, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
   m_PrefabInstance: {fileID: 1540077173}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1540077175 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1974496331080907576, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
+--- !u!114 &1540077178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6774301815784314804, guid: 32fdc745e2215114a9b27ca549c6eacd, type: 3}
   m_PrefabInstance: {fileID: 1540077173}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1540077176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540077175}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53b71ebdf7eda8448b6db4d31620352e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPerkPicked: 0
-  IsPerkActive: 0
-  PlayerInfoRef: {fileID: 386186108}
-  HealthBarUIRef: {fileID: 823619039}
 --- !u!1 &1547693313
 GameObject:
   m_ObjectHideFlags: 0
@@ -41862,6 +41887,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedBoostPerk
       objectReference: {fileID: 0}
+    - target: {fileID: 2147825384963041554, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
+      propertyPath: PlayerMovementRef
+      value: 
+      objectReference: {fileID: 386186101}
+    - target: {fileID: 2147825384963041554, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
+      propertyPath: UpgradedMovementSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3721221941647051947, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -41973,7 +42006,7 @@ PrefabInstance:
     - target: {fileID: 3819764912552506927, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 104601202}
+      objectReference: {fileID: 0}
     - target: {fileID: 3819764912552506927, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -42006,13 +42039,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisablePerk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SpeedBoostPerk, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656002613124619752, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1974496331080907576, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 104601202}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b4b6db430cade4582600d99be0d0e0, type: 3}
 --- !u!1 &2094827403
 GameObject:

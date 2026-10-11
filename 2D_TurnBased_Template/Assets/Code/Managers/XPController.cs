@@ -30,7 +30,7 @@ public class XPController : MonoBehaviour
 
     public void CanLevelUp()
     {
-        if(PlayerStats.XP >= LevelUpThershold)
+        if(XPBarUI.Instance.XPAmountUI >= LevelUpThershold)
         {
             Debug.Log("player can level up");
             IsUpgrading = true;
@@ -54,5 +54,6 @@ public class XPController : MonoBehaviour
     {
         LevelUpThershold = MinLevelUpThershold;
         ThersholdMultiplier = 0.5f;
+        XPBarUI.Instance.MaxXPAmountUI = LevelUpThershold;
     }
 }

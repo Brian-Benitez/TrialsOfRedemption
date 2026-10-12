@@ -10,10 +10,10 @@ public class EnemyWeaponRotation : MonoBehaviour
     {
         if (IsAttacking)
             return;
-        else
+        else if(IsAttacking == false)
         {
             //This deals with rotating weapon below
-            playerpos = PlayerController.Instance.Player.position;
+            playerpos = PlayerController.Instance.MiddleOfPlayerForAimming.position;
             Vector3 rotation = playerpos - transform.position;
             float rotz = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, rotz);

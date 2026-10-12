@@ -46,7 +46,6 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
         if(!IsCharacterDead)
         {
             PostProcessingController.Instance.PlayCorutineHitEffect();
-            CharacterHealthAmount -= damage;
             SetHealth(-damage);
             PlayerAnimationControllerRef.IsHurt();
             Debug.Log("player took: " + damage);
@@ -87,6 +86,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
 
     void PlayerIsDead()
     {
+        Debug.Log("Play dead shit");
         PlayerMovementRef.StopPlayerMovement = true;
         IsCharacterDead = true;
         NpcControllerRef.IncrementLayoutIndex();
@@ -97,7 +97,6 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
         XPController.Instance.RestartLevelUpThershold();
         XPBarUI.Instance.SetUIXP(-XPBarUI.Instance.MaxXPAmountUI);
         SecondChanceAbilityRef.IsSecondChanceUsed = false;
-        //PlayersCore.SetActive(false);
         PostProcessingController.Instance.PlayCorutineDeathTunnelVision();
         StartCoroutine(PlayingDeathScreenTransition());
     }
@@ -110,6 +109,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
         yield return new WaitForSecondsRealtime(3f);
         GameOverControllerRef.RestartGame();
         GameOverControllerRef.TurnOffDeathScreen();
+        yield return new WaitForSecondsRealtime(2f);
         PostProcessingController.Instance.StopDeathTunnelVison();
         PlayerAnimationControllerRef.IsNotDead();
         PlayerMovementRef.StopPlayerMovement = false;

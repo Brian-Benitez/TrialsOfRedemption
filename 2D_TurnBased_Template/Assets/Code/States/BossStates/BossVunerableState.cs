@@ -11,6 +11,7 @@ public class BossVunerableState : MonoBehaviour
 
     private void Update()
     {
+        /*
         if(AttackStateRef.AttackCooldownTimer > AttackStateRef.MaxTimerOfCooldown)
             _startCountdown = true;
         if(_startCountdown)
@@ -29,6 +30,6 @@ public class BossVunerableState : MonoBehaviour
                 StunStateRef.InstanteStun = true;
             }
         }
-           
+           */
     }
 }

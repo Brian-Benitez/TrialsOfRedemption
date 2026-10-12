@@ -101,10 +101,12 @@ public class AttackState : State//rename this to EnemyAttackState
         yield return new WaitForSecondsRealtime(WindUpTimeForMelee);
         Debug.Log("Winding up attack done");
         MeleeAttack();
-        _enemyWeaponRotationRef.IsAttacking = false;
         IsPlayingAttackAni = false;
-        IsWaiting = false;
         AmountOfAttacks++;
+        yield return new WaitForSecondsRealtime(0.5f);
+        IsWaiting = false;
+        _enemyWeaponRotationRef.IsAttacking = false;
+        
     }
 
     public override State RunCurrentState()
@@ -117,10 +119,11 @@ public class AttackState : State//rename this to EnemyAttackState
         if (AttackMissedPlayer == true)
         {
             RestartEnemy();
-            if (EnemySwordsmanRef.EnemyDifficulty == BaseEnemy.LevelOfEnemy.Boss)
+            
+            if (EnemySwordsmanRef.EnemyDifficulty == BaseEnemy.LevelOfEnemy.Boss)//check bool here but play delay action check in there for bool then spit out answers here
             {
                 Debug.Log("we go here");
-                return DKChaseState;
+                //return DKChaseState;
             }
 
             else
@@ -129,7 +132,10 @@ public class AttackState : State//rename this to EnemyAttackState
 
         if (IsDoneCoolingDown)
         {
-            if (!IsWaiting && WithinRange && AmountOfAttacks < MaxAmountOfAttacks && StunState.IsStunned == false)
+            if(!WithinRange)
+                return DKChaseState;
+
+            else if(!IsWaiting && WithinRange && AmountOfAttacks < MaxAmountOfAttacks && StunState.IsStunned == false)//main attack is here
             {
                 _enemyWeaponRotationRef.IsAttacking = true;
                 StartCoroutine(WindUpAttack());
@@ -176,7 +182,7 @@ public class AttackState : State//rename this to EnemyAttackState
     {
         AttackMissedPlayer = false;
         WithinRange = false;
-        _enemyWeaponRotationRef.IsAttacking = false;
+        //_enemyWeaponRotationRef.IsAttacking = false;
     }
 
     //----------------------------------------------------Debug--stuff--------------------------------------------------------------------->

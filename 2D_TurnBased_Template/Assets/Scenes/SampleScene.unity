@@ -8758,6 +8758,37 @@ MonoBehaviour:
     DissipationDistance: 100
     PropagationSpeed: 343
   DefaultVelocity: {x: 0.2, y: 0.2, z: 0}
+--- !u!1 &269519287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 269519288}
+  m_Layer: 6
+  m_Name: PlayerMiddlePointPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &269519288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269519287}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.028, y: 0.533, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 386186103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &270804872
 GameObject:
   m_ObjectHideFlags: 0
@@ -10710,6 +10741,7 @@ Transform:
   - {fileID: 1870391472}
   - {fileID: 954565360}
   - {fileID: 1669113376}
+  - {fileID: 269519288}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &386186106
@@ -18960,6 +18992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 386186103}
+  MiddleOfPlayerForAimming: {fileID: 269519288}
 --- !u!1 &823619038
 GameObject:
   m_ObjectHideFlags: 0
@@ -27175,7 +27208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ad0ad2c910e34f9e895b065f53655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesWaveCounter: 0
+  EnemiesWaveCounter: 9
   TotalAmountOfRoundsWon: 0
   MaxAmountOfRounds: 10
   RoundsText: {fileID: 1171648889}
@@ -28829,7 +28862,7 @@ MonoBehaviour:
   PlayerMeleeAttackRef: {fileID: 1131129220}
   PlayerInfoRef: {fileID: 386186108}
   PureRagePerkRef: {fileID: 470462207}
-  HealingRagePerkRef: {fileID: 0}
+  HealingRagePerkRef: {fileID: 1540077178}
   UltBarUIRef: {fileID: 1552305877}
 --- !u!1 &1538332499
 GameObject:
@@ -33260,9 +33293,9 @@ RectTransform:
   - {fileID: 660815229}
   m_Father: {fileID: 1199874464}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 689.7177, y: -716.27295}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 22, y: 84}
   m_SizeDelta: {x: 1850, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1874898322

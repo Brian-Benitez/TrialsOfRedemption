@@ -410,6 +410,7 @@ MonoBehaviour:
   AttackMissedPlayer: 0
   StunState: {fileID: 2419263769339304645}
   DKChaseState: {fileID: 6919487459235251188}
+  DKRangeAttackRef: {fileID: 4342819746663072318}
   BossVunerableStateRef: {fileID: 6024488812762598492}
 --- !u!1 &4770267563914590280
 GameObject:
@@ -703,10 +704,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RangeAttackPos: {fileID: 6265430025622044778}
-  Player: {fileID: 0}
   DKRangeDamage: 2
-  RangeAttackRange: 1.41
-  TimeBtwAttack: 10
+  RangeAttackRange: 3.5
+  TimeBtwAttack: 5
   WindUpTimeForRange: 1.5
   MaxAttackCount: 3
   CanRangeAttack: 0
@@ -965,6 +965,7 @@ GameObject:
   - component: {fileID: 81118670975159395}
   - component: {fileID: 6100834392217748935}
   - component: {fileID: 304159464258173305}
+  - component: {fileID: 2238814278456378691}
   m_Layer: 0
   m_Name: VisualDKRangeAttack
   m_TagString: Untagged
@@ -981,7 +982,7 @@ Transform:
   m_GameObject: {fileID: 6265430025622044778}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.03, y: 2.78349, z: 0}
+  m_LocalPosition: {x: 22.86, y: 2.78349, z: 0}
   m_LocalScale: {x: 2.8599226, y: 3.0082848, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1064,6 +1065,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2238814278456378691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265430025622044778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906217dc45709e74da885b365ecea652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6898675534388969963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,12 +1153,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a93dd8c5db448444806c88c17677e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 100
+  EnemyHealth: 50
   MaxEnemyHealth: 100
   EnemySpeed: 3
   EnemyDamage: 5
   BossSoulsObj: {fileID: 126269282101802777, guid: f54c8a0bec1e1634b84e73ba3016080c, type: 3}
-  EnemySoulsValue: 1000
+  EnemySoulsValue: 5000
   IsHit: 0
   IsDead: 0
   StunStateRef: {fileID: 2419263769339304645}

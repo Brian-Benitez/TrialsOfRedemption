@@ -73,7 +73,8 @@ public class PlayerMeleeAttack : MonoBehaviour
     private void Update()
     {
         DirectionalLooks.transform.position = AttackPos.position;//idk why this gets paused when i stop moving player
-        if(AmountOfAttacks >= 1 && CanMeleeAttackAgain)
+
+        if(AmountOfAttacks >= 1 && CanMeleeAttackAgain)//this is for player amount of attacks restarting after not hitting again
         {
             if (_timeSinceLastAttk >= _maxWaitTimeToRestartAmountOfAttks)
             {

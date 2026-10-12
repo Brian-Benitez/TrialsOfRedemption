@@ -503,6 +503,7 @@ MonoBehaviour:
   AttackMissedPlayer: 0
   StunState: {fileID: 4524825804764612815}
   DKChaseState: {fileID: 0}
+  DKRangeAttackRef: {fileID: 0}
   BossVunerableStateRef: {fileID: 0}
 --- !u!1 &5298813134310635769
 GameObject:

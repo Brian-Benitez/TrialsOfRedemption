@@ -5,8 +5,6 @@ public class DKRangeAttack : State
 {
     [SerializeField]
     public GameObject RangeAttackPos;
-    [SerializeField]
-    public GameObject Player;
     public int DKRangeDamage;
 
     [Header("Enemys attack range and T.T.A")]
@@ -21,6 +19,7 @@ public class DKRangeAttack : State
     public bool CanRangeAttack = false;
     public bool IsAttackingNow = false;
     public bool IsDoneFullAttack = true;
+    public bool IsRestartingRangeAnim = false;
 
     [Header("Layermasks for what can be hit")]
     public LayerMask WhatisHittable;
@@ -79,12 +78,16 @@ public class DKRangeAttack : State
     {
         RangeAttackPos.transform.position = PlayerController.Instance.Player.position;
         IsAttackingNow = true;
+        IsRestartingRangeAnim = false;
         Debug.Log("Winding up attack " + WindUpTimeForRange + " Seconds");
         yield return new WaitForSeconds(WindUpTimeForRange);
         RangeAttack();
         RestartTimerForRangeAttacks();
-        IsAttackingNow = false;
         AttackCount++;
+        IsRestartingRangeAnim = true;
+        yield return new WaitForSecondsRealtime(2f);
+        IsAttackingNow = false;
+        
     }
     public void RestartTimerForRangeAttacks() => TimeBtwAttack = _maxTimeBtwAttacks;
 
@@ -99,5 +102,6 @@ public class DKRangeAttack : State
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(RangeAttackPos.transform.position, RangeAttackRange);
     }
 }

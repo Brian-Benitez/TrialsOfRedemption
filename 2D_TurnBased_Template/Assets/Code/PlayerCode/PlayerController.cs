@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Transform Player;
     public Transform MiddleOfPlayerForAimming;
 
+
     private void Awake()
     {
         if (Instance == null)

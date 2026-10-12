@@ -35,7 +35,9 @@ public class AttackState : State//rename this to EnemyAttackState
     //States ref here
     MovementState ChaseState;
     public StunState StunState;
+    [Header("Boss Scripts only")]
     public DKChaseState DKChaseState;
+    public DKRangeAttack DKRangeAttackRef;
     public BossVunerableState BossVunerableStateRef;
     BlockAndMoveState BlockAndMoveState;
     EnemyWeaponRotation _enemyWeaponRotationRef;
@@ -103,7 +105,13 @@ public class AttackState : State//rename this to EnemyAttackState
         MeleeAttack();
         IsPlayingAttackAni = false;
         AmountOfAttacks++;
-        yield return new WaitForSecondsRealtime(0.5f);
+
+        if (EnemySwordsmanRef.EnemyDifficulty == BaseEnemy.LevelOfEnemy.Boss)
+        {
+            yield return new WaitForSecondsRealtime(1f);
+        }
+        else
+            yield return new WaitForSecondsRealtime(0.5f);
         IsWaiting = false;
         _enemyWeaponRotationRef.IsAttacking = false;
         
@@ -114,6 +122,11 @@ public class AttackState : State//rename this to EnemyAttackState
         if(StunState.IsStunned)
         {
             StopCoroutine(_windupCoroutine);
+        }
+        if (EnemySwordsmanRef.EnemyType == BaseEnemy.TypeOfEnemy.Boss)
+        {
+            if (DKRangeAttackRef.IsAttackingNow)
+                return DKRangeAttackRef;
         }
 
         if (AttackMissedPlayer == true)

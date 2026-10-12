@@ -25,7 +25,7 @@ public class GulitEffectsAnimatorController : MonoBehaviour
 
         if (DKRangeAttackRef.IsAttackingNow)//range attack animations
             PlayRangeAttackAnimation();
-        else
+        if(DKRangeAttackRef.IsRestartingRangeAnim)
             StopPlayingRangeAttackAnimation();
     }
 

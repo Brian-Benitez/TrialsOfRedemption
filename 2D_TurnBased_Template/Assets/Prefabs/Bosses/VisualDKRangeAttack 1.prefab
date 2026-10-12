@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7100550465944656083}
   - component: {fileID: 3963322194101916023}
-  - component: {fileID: 7463202822978514377}
+  - component: {fileID: 2568817760455029930}
   m_Layer: 0
-  m_Name: VisualDKRangeAttack
+  m_Name: VisualDKRangeAttack 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7463202822978514377
+--- !u!95 &2568817760455029930
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 3844191093121422554}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 21655876aef1c2f47a1284ab5ff4e161, type: 2}
+  m_Controller: {fileID: 9100000, guid: 16ffc5b2e00930b4aaded13d863b2232, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

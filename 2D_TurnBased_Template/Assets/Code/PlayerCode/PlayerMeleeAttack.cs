@@ -60,7 +60,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     private float _specialCooldown = 0f;
 
     private float _maxWaitTimeToRestartAmountOfAttks = 2f;
-    public float _timeSinceLastAttk = 0f;
+    private float _timeSinceLastAttk = 0f;
 
     private void Start()
     {

@@ -59,6 +59,9 @@ public class PlayerMeleeAttack : MonoBehaviour
     private float _maxTimeBtwAttacks;
     private float _specialCooldown = 0f;
 
+    private float _maxWaitTimeToRestartAmountOfAttks = 2f;
+    public float _timeSinceLastAttk = 0f;
+
     private void Start()
     {
         _playerMovement = GetComponentInParent<PlayerMovement>();
@@ -70,7 +73,25 @@ public class PlayerMeleeAttack : MonoBehaviour
     private void Update()
     {
         DirectionalLooks.transform.position = AttackPos.position;//idk why this gets paused when i stop moving player
-
+        if(AmountOfAttacks >= 1 && CanMeleeAttackAgain)
+        {
+            if (_timeSinceLastAttk >= _maxWaitTimeToRestartAmountOfAttks)
+            {
+                //restart amount of attacks
+                AmountOfAttacks = 0;
+                _timeSinceLastAttk = 0;
+                Debug.Log("restart amount of attacks");
+            }
+            else
+            {
+                if (_timeSinceLastAttk >= _maxWaitTimeToRestartAmountOfAttks)
+                    _timeSinceLastAttk = _maxWaitTimeToRestartAmountOfAttks;
+                else
+                    _timeSinceLastAttk += Time.deltaTime;
+            }
+                
+        }
+        
         if(AmountOfAttacks >= MaxAmountOfAttacks)
         {
             if(TimerToRestartAttacks >= MaxTimerToRestartAttack)

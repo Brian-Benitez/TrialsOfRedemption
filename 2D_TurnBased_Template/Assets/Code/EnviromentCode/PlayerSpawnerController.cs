@@ -36,7 +36,7 @@ public class PlayerSpawnerController : MonoBehaviour
         if (Input.GetKeyDown(InteractKeyCode) && CanInteract)
         {
             SpawnPlayerInArena();
-            AudioController.Instance.StartCorutineFadeCurrentSong();
+            AudioController.Instance.StopPlayCampfireMusic();
             StartingGameControllerRef.StartNewRound();
         }
             
@@ -62,6 +62,11 @@ public class PlayerSpawnerController : MonoBehaviour
     public void SpawnPlayerInArena()
     {
         PlayerController.Instance.Player.position = StartSpawner.transform.position;
+
+        if (AudioController.Instance.IsPlayBattleMusic)
+            AudioController.Instance.RaiseBattleMusicVolume();
+        else
+            AudioController.Instance.PlayBattleMusic();
     }
 
     public void SpawnPlayerInBossRoom() => PlayerController.Instance.Player.position = BossRoomSpawner.transform.position;

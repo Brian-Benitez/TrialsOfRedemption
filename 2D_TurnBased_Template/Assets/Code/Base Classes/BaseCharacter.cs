@@ -87,6 +87,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
     void PlayerIsDead()
     {
         Debug.Log("Play dead shit");
+        AudioController.Instance.PlayDeathSound();
         PlayerMovementRef.StopPlayerMovement = true;
         IsCharacterDead = true;
         NpcControllerRef.IncrementLayoutIndex();
@@ -113,6 +114,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
         PostProcessingController.Instance.StopDeathTunnelVison();
         PlayerAnimationControllerRef.IsNotDead();
         PlayerMovementRef.StopPlayerMovement = false;
+        AudioController.Instance.PlayCampfireMusic();
     }
 
     public void UpdatePlayersStats()

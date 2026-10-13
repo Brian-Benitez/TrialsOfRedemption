@@ -42,6 +42,8 @@ public class RoundController : MonoBehaviour
         { 
             if(!IsRoundEnd)
             {
+                if (AudioController.Instance.CanPlayWinningMusic)
+                    AudioController.Instance.PlayWinningRoundSong();
                 IsRoundStarted = false;
                 UpgradePrefab.SetActive(true);
                 StartButtonPrefab.SetActive(true);

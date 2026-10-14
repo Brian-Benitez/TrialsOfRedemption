@@ -86,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(DashInputKey) && CanDash && !IsDashPaused)
         {
+            AudioController.Instance.PlayDashSFX();
             StartCoroutine(Dash());
             UsedDashes++;//note:this makes it so if player dashes once it will still be there until 3 dashes.
         }

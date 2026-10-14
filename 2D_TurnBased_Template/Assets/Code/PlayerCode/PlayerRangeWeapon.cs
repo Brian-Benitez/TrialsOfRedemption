@@ -48,6 +48,7 @@ public class PlayerRangeWeapon : MonoBehaviour
             else
                 CameraShakeManager.Instance.ShakeCamera(rangeImpulseSource);
 
+            AudioController.Instance.PlayArrowAttackSoundEffect();
             PlayerShootsArrowAction();
             PlayerAmmoController.Instance.RemoveAmmo();
             RestartTimerForRangeAttacks();

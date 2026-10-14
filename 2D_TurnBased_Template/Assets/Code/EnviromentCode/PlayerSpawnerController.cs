@@ -35,6 +35,7 @@ public class PlayerSpawnerController : MonoBehaviour
     {
         if (Input.GetKeyDown(InteractKeyCode) && CanInteract)
         {
+            AudioController.Instance.PlayEnterRoomSFX();
             SpawnPlayerInArena();
             AudioController.Instance.StopPlayCampfireMusic();
             StartingGameControllerRef.StartNewRound();

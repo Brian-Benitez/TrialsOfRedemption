@@ -16,6 +16,7 @@ public class StartingGameController : MonoBehaviour
     {
         if (Input.GetKeyDown(StartRoundKey) && !RoundControllerRef.IsRoundStarted && XPController.Instance.IsUpgrading == false && CanInteract)
         {
+            AudioController.Instance.PlayEnterRoomSFX();
             StartNewRound();
         }
     }

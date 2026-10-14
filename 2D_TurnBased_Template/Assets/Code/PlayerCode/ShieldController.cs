@@ -101,7 +101,7 @@ public class ShieldController : MonoBehaviour
     public void StartCorutineActivateParry() => StartCoroutine(ActivateParry());
     IEnumerator ActivateParry()
     {
-       
+        AudioController.Instance.PlayParrySFX();
         PlayerAnimationControllerRef.IsParrying();
         yield return new WaitForSecondsRealtime(0.08f);
         IsParrying = true;

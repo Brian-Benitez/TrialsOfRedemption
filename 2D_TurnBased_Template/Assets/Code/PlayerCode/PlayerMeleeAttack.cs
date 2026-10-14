@@ -112,6 +112,7 @@ public class PlayerMeleeAttack : MonoBehaviour
             ActivateSlashRef.ActivateSlashingArt();
             _playerMovement.UnSlowPlayer();
             AmountOfAttacks++;
+            AudioController.Instance.PlayMeleeSoundEffect();
         }
 
         _specialCooldown += Time.deltaTime;

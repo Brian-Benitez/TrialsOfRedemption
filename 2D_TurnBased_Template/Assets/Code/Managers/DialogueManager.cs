@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     public bool IsThereMoreDialogue = false;
 
     public float TypingSpeed;
+    float amountOfLetters;
 
     public int SentencesCount = 0;
 
@@ -26,10 +27,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        AudioController.Instance.PlayTextSFX();
         isDialogueActive = true;
         TurnOnDialogueUI();
         lines.Clear();
-
         foreach (DialogueLine dialogueLine in dialogue.DialogueLines)
         {
             lines.Enqueue(dialogueLine);
@@ -50,6 +51,7 @@ public class DialogueManager : MonoBehaviour
         IsThereMoreDialogue = true;
         DialogueLine currentLine = lines.Dequeue();
         StopAllCoroutines();
+        AudioController.Instance.PlayTextSFX();
         StartCoroutine(TypeSentence(currentLine));
     }
 
@@ -57,13 +59,19 @@ public class DialogueManager : MonoBehaviour
     {
         SentencesCount++;
         dialogueArea.text = "";
+
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
+            amountOfLetters++;
             IsDialogueInProgress = true;
             dialogueArea.text += letter;
             yield return new WaitForSeconds(TypingSpeed);
         }
 
+        yield return new WaitForSecondsRealtime(amountOfLetters * 0.05f - 4f);
+        Debug.Log("how long are we waitin " + amountOfLetters * 0.05f);
+        AudioController.Instance.StopTextSFX();
+        amountOfLetters = 0;
         IsDialogueInProgress = false;
     }
 
@@ -75,6 +83,7 @@ public class DialogueManager : MonoBehaviour
     public void TurnOffDialogueUI()
     {
         UIDialogueCanvas.SetActive(false);
+        AudioController.Instance.StopTextSFX();
     }
     void EndDialogue()
     {

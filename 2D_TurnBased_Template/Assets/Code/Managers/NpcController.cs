@@ -21,8 +21,9 @@ public class NpcController : MonoBehaviour
     {
         if(LayoutIndex < MaxLayoutIndex)
         {
-            ChangeLayout();
             LayoutIndex++;
+            ChangeLayout();
+
         }      
     }
     void ChangeLayout()
@@ -40,8 +41,8 @@ public class NpcController : MonoBehaviour
     void SetNPCsOnMap()
     {
         RestartAllLayouts();
-        if (CurrentNpcLayout != NpcLayout.StarterNpcLayout)
-            NPCLayouts[0].gameObject.SetActive(false);
+        //if (CurrentNpcLayout != NpcLayout.StarterNpcLayout)
+            //N//PCLayouts[0].gameObject.SetActive(false);
 
         if(LayoutIndex == 1)
             NPCLayouts[LayoutIndex].gameObject.SetActive(true);

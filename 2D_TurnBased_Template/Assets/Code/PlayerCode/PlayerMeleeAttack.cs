@@ -127,6 +127,7 @@ public class PlayerMeleeAttack : MonoBehaviour
             FlipSpriteRef.PlayerLookAtMouse();
             PlayerAnimationControllerRef.IsSpeicalAttacking();
             StartCoroutine(WindUpAttack(PlayerSpecialDamg, SpeicalAttackSpeed, SpeicalPos, SpeicalRange, WhatIsEnemies));
+            AudioController.Instance.PlayGroundSlamEffect();
             _specialCooldown = 0;
             IsSpecialAttack = false;
         }

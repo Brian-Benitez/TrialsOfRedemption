@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2138442008741591365}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.059999943, y: -0.8, z: 0}
+  m_LocalPosition: {x: -0.01, y: 0.084, z: 0}
   m_LocalScale: {x: 1, y: 0.33333334, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 658134802084701672, guid: b67db68df4c951a478c0f03b5a8ed563, type: 3}
+  m_Sprite: {fileID: 6410004841064962321, guid: 1047b809924ace54aba84ad9e320ff83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -202,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 7048637344285348142}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 195.8, y: -17.4, z: 0}
+  m_LocalPosition: {x: 195.71, y: -17.4, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -299,7 +299,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.16668224, y: 0.05051273}
+  m_Offset: {x: -0.08872628, y: 0.03870088}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -309,7 +309,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.678649, y: 2.4086456}
+  m_Size: {x: 5.2831416, y: 1.5156466}
   m_EdgeRadius: 0
 --- !u!114 &3532521536587481660
 MonoBehaviour:
@@ -324,7 +324,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeUIGameObject: {fileID: 0}
-  PerksUIGameObject: {fileID: 0}
+  SoulsUI: {fileID: 0}
+  BossSoulsUI: {fileID: 0}
   EKeyPNG: {fileID: 5074259301956922309}
   InteracteWithUpgradeKey: 101
   DismissUIKey: 27

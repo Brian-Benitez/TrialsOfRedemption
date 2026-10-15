@@ -82,7 +82,9 @@ public class DialogueManager : MonoBehaviour
     }
     public void TurnOffDialogueUI()
     {
-        UIDialogueCanvas.SetActive(false);
+        if( UIDialogueCanvas != null )
+            UIDialogueCanvas.SetActive(false);
+
         AudioController.Instance.StopTextSFX();
     }
     void EndDialogue()

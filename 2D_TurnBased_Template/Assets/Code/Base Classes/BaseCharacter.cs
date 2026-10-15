@@ -45,6 +45,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
     {
         if(!IsCharacterDead)
         {
+            AudioController.Instance.PlayPlayerTookDamage();
             PostProcessingController.Instance.PlayCorutineHitEffect();
             SetHealth(-damage);
             PlayerAnimationControllerRef.IsHurt();

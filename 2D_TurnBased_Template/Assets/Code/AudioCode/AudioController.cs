@@ -7,6 +7,7 @@ public class AudioController : MonoBehaviour
     public static AudioController Instance;
 
     public List<AudioSource> AllAudioSources;
+    public AudioSource TitleThemeSong;
     public AudioSource CampfireMusic;
     public bool IsPlayBattleMusic = false;
     public AudioSource BattleMusic;
@@ -17,6 +18,7 @@ public class AudioController : MonoBehaviour
     [Header("SFX")]
     [Header("Attacking SFX")]
     public AudioSource MeleeSlashSound;
+    public AudioSource GroundSlamSound;
     public AudioSource ArrowAttackSound;
     [Header("Movement SFX")]
     public AudioSource DashSfx;
@@ -27,6 +29,7 @@ public class AudioController : MonoBehaviour
     public AudioSource TextSFX;
     [Header("death sound")]
     public AudioSource DeathSound;
+    public AudioSource PlayerTakesDamageSound;
     [Header("Script Refs")]
     public PlayerMeleeAttack PlayerMeleeAttackRef;
 
@@ -40,8 +43,25 @@ public class AudioController : MonoBehaviour
     {
         AdjustVolume(0.3f);
         WinningRoundMusic.Stop();
+        PlayMainThemeMusic();
     }
+    ///TITLE SONG STUFF
+    void PlayMainThemeMusic() => TitleThemeSong.Play();
+    public void StartCourtineFadeOutOfTitleThemeSong() => StartCoroutine(FadeOutOfTitleThemeSong());
 
+    IEnumerator FadeOutOfTitleThemeSong()
+    {
+        yield return new WaitForSecondsRealtime(0.10f);
+        TitleThemeSong.volume = 0.3f;//whatever this max is
+        yield return new WaitForSecondsRealtime(0.10f);
+        TitleThemeSong.volume = 0.20f;
+        yield return new WaitForSecondsRealtime(0.10f);
+        TitleThemeSong.volume = 0.15f;
+        yield return new WaitForSecondsRealtime(0.10f);
+        TitleThemeSong.volume = 0f;
+        TitleThemeSong.Stop();
+        PlayCampfireMusic();
+    }
     //campfire stuff
     public void PlayCampfireMusic()
     {
@@ -104,6 +124,7 @@ public class AudioController : MonoBehaviour
     }
 
     //SFX---------------------------
+    //Player SFX--------------------
 
     public void PlayMeleeSoundEffect()
     {
@@ -116,6 +137,8 @@ public class AudioController : MonoBehaviour
 
         MeleeSlashSound.Play();
     }
+
+    public void PlayGroundSlamEffect() => GroundSlamSound.Play();
     public void PlayArrowAttackSoundEffect()
     {
         int index = Random.Range(0, 2);
@@ -144,6 +167,7 @@ public class AudioController : MonoBehaviour
             TextSFX.Play();
         }       
     }
+    public void PlayPlayerTookDamage() => PlayerTakesDamageSound.Play();
     public void PlayDeathSound()
     {
         BattleMusic.Stop();

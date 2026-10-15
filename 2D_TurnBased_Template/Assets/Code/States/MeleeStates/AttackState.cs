@@ -103,6 +103,11 @@ public class AttackState : State//rename this to EnemyAttackState
         yield return new WaitForSecondsRealtime(WindUpTimeForMelee);
         Debug.Log("Winding up attack done");
         MeleeAttack();
+        if (EnemySwordsmanRef.EnemyType == BaseEnemy.TypeOfEnemy.Blob)
+            AudioController.Instance.PlayEnemyBlobSlashSound();
+        else
+            AudioController.Instance.PlayEnemySlashSound();
+
         IsPlayingAttackAni = false;
         AmountOfAttacks++;
 

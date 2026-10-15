@@ -30,6 +30,14 @@ public class AudioController : MonoBehaviour
     [Header("death sound")]
     public AudioSource DeathSound;
     public AudioSource PlayerTakesDamageSound;
+    [Header("Enemies Audio")]
+    public AudioSource EnemySlashSFX;
+    public AudioSource BlobAttackSFX;
+    public AudioSource EnemyArrowShotSFX;
+    [Header("Mis")]
+    public AudioSource AbilityPopUpSFX;
+    public AudioSource PickAbilitySFX;
+    public AudioSource ItemPickUpSFX;
     [Header("Script Refs")]
     public PlayerMeleeAttack PlayerMeleeAttackRef;
 
@@ -125,7 +133,6 @@ public class AudioController : MonoBehaviour
 
     //SFX---------------------------
     //Player SFX--------------------
-
     public void PlayMeleeSoundEffect()
     {
         if (PlayerMeleeAttackRef.AmountOfAttacks == 1)
@@ -141,14 +148,7 @@ public class AudioController : MonoBehaviour
     public void PlayGroundSlamEffect() => GroundSlamSound.Play();
     public void PlayArrowAttackSoundEffect()
     {
-        int index = Random.Range(0, 2);
-        if (index == 0)
-            ArrowAttackSound.pitch = 0.9f;
-        if (index == 1)
-            ArrowAttackSound.pitch = 1f;
-        if (index == 2)
-            ArrowAttackSound.pitch = 1.1f;
-
+        ChangeAudioPitch(ArrowAttackSound);
         ArrowAttackSound.Play();
     }
 
@@ -178,6 +178,35 @@ public class AudioController : MonoBehaviour
         DeathSound.Play();
     }
 
+
+    //SFX Enemies---------------------------------------------------------------------SFX Enemies
+    public void PlayEnemySlashSound()
+    {
+        ChangeAudioPitch(EnemySlashSFX);
+        EnemySlashSFX.Play();
+    }
+
+    public void PlayEnemyBlobSlashSound()
+    {
+        ChangeAudioPitch(BlobAttackSFX);
+        BlobAttackSFX.Play();
+    }
+    public void PlayEnemyArrowAttack()
+    {
+        ChangeAudioPitch(EnemyArrowShotSFX);
+        EnemyArrowShotSFX.Play();
+    }
+
+    void ChangeAudioPitch(AudioSource sound)
+    {
+        int index = Random.Range(0, 2);
+        if (index == 0)
+            sound.pitch = 0.9f;
+        if (index == 1)
+            sound.pitch = 1f;
+        if (index == 2)
+            sound.pitch = 1.1f;
+    }
     /// <summary>
     /// Changes all audio volume.
     /// </summary>

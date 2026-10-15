@@ -89,6 +89,7 @@ public class RangeAttackLogicState : State
     {
         if(_enemyArcherRef.EnemyType == BaseEnemy.TypeOfEnemy.Archer)
         {
+            AudioController.Instance.PlayEnemyArrowAttack();
             if (_enemyArcherRef.EnemyDifficulty == BaseEnemy.LevelOfEnemy.LevelOne)
             {
                 _bulletRB = Instantiate(BulletPrefab, ShotPoint.position, transform.rotation);

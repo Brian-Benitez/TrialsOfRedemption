@@ -30,7 +30,8 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField]
     public enum TypeOfEnemy
     {
-        Swordsman, 
+        Swordsman,
+        Blob,
         Archer,
         Wizard,
         Boss,

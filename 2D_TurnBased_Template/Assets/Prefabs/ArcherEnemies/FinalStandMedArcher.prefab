@@ -765,7 +765,7 @@ MonoBehaviour:
   IsHit: 0
   IsDead: 0
   StunStateRef: {fileID: 5503685659640680627}
-  EnemyType: 1
+  EnemyType: 2
   EnemyDifficulty: 1
   EnemiesArrowRB: {fileID: 1475249149884113262, guid: 104d95bdc178d7d47810f0d7c6790d50, type: 3}
 --- !u!114 &6627246155356475132

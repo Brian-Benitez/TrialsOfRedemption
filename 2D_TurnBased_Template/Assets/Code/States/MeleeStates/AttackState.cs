@@ -86,6 +86,7 @@ public class AttackState : State//rename this to EnemyAttackState
             {
                 Debug.Log("Hit shield!");
                 ShieldController.Instance.ShieldHealth -= EnemySwordsmanRef.EnemyDamage;
+                AudioController.Instance.PlayBlockSound();
             }
 
             if (enemiesToDamges[i].CompareTag("Player"))

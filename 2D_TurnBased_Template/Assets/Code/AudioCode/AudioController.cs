@@ -20,6 +20,7 @@ public class AudioController : MonoBehaviour
     [Header("SFX")]
     [Header("Attacking SFX")]
     public AudioSource MeleeSlashSound;
+    public AudioSource BlockSound;
     public AudioSource GroundSlamSound;
     public AudioSource ArrowAttackSound;
     [Header("Movement SFX")]
@@ -114,11 +115,9 @@ public class AudioController : MonoBehaviour
         BattleMusic.volume = 0.20f;
         yield return new WaitForSecondsRealtime(0.05f);
         BattleMusic.volume = 0.30f;//low volume for not in fight yet
-        Debug.Log("do i play>?");
     }
     IEnumerator FadeOutOfBattleSong(AudioSource battleSong, AudioSource winningRoundSong, float lenghtofWinningSong)
     {
-        Debug.Log("fuck u bitch");
         yield return new WaitForSecondsRealtime(0.10f);
         battleSong.volume = 0.3f;//whatever this max is
         yield return new WaitForSecondsRealtime(0.10f);
@@ -158,6 +157,8 @@ public class AudioController : MonoBehaviour
 
     //SFX---------------------------
     //Player SFX--------------------
+
+    public void PlayBlockSound() => BlockSound.Play();
     public void PlayMeleeSoundEffect()
     {
         if (PlayerMeleeAttackRef.AmountOfAttacks == 1)

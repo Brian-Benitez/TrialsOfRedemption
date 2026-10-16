@@ -14,6 +14,8 @@ public class AudioController : MonoBehaviour
     public bool IsPlayingIldeMusic = false;
     public AudioSource IdleBattleMusic;
     public bool CanPlayWinningMusic = false;
+    public bool IsPlayingWinningMusic = false;
+    public bool DidSkip = false;
     public AudioSource WinningRoundMusic;
     [Header("SFX")]
     [Header("Attacking SFX")]
@@ -40,6 +42,7 @@ public class AudioController : MonoBehaviour
     public AudioSource ItemPickUpSFX;
     [Header("Script Refs")]
     public PlayerMeleeAttack PlayerMeleeAttackRef;
+    IEnumerator _fadeOutBattleMusic;
 
     private void Awake()
     {
@@ -52,6 +55,7 @@ public class AudioController : MonoBehaviour
         AdjustVolume(0.3f);
         WinningRoundMusic.Stop();
         PlayMainThemeMusic();
+        _fadeOutBattleMusic = FadeOutOfBattleSong(BattleMusic, WinningRoundMusic, 6f);
     }
     ///TITLE SONG STUFF
     void PlayMainThemeMusic() => TitleThemeSong.Play();
@@ -87,13 +91,19 @@ public class AudioController : MonoBehaviour
     {
         StartCorutineFadeOutBattleMusic();
     }
+    public void StopPlayingWinningRoundSong()
+    {
+        StartCoroutine(SkipWinningMusic());
+    }
 
 
     //Battle music stuff
     public void PlayBattleMusic()
     {
+        IsPlayingIldeMusic = false;
         IsPlayBattleMusic = true;
         CanPlayWinningMusic = true;
+        BattleMusic.volume = 0.3f;
         BattleMusic.Play();
     }
     public void RaiseBattleMusicVolume() => StartCoroutine(RaiseBattleMusic());
@@ -104,9 +114,11 @@ public class AudioController : MonoBehaviour
         BattleMusic.volume = 0.20f;
         yield return new WaitForSecondsRealtime(0.05f);
         BattleMusic.volume = 0.30f;//low volume for not in fight yet
+        Debug.Log("do i play>?");
     }
     IEnumerator FadeOutOfBattleSong(AudioSource battleSong, AudioSource winningRoundSong, float lenghtofWinningSong)
     {
+        Debug.Log("fuck u bitch");
         yield return new WaitForSecondsRealtime(0.10f);
         battleSong.volume = 0.3f;//whatever this max is
         yield return new WaitForSecondsRealtime(0.10f);
@@ -116,19 +128,32 @@ public class AudioController : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.10f);
         battleSong.volume = 0f;
         winningRoundSong.Play();
+        IsPlayingWinningMusic = true;
         yield return new WaitForSecondsRealtime(lenghtofWinningSong);
-
-        if (!IsPlayingIldeMusic)
+        IsPlayingWinningMusic = false;
+        if (!IsPlayingIldeMusic && !DidSkip)
         {
+            Debug.Log("do i plauy");
             IdleBattleMusic.Play();
             IdleBattleMusic.volume = 0.10f;
             IsPlayingIldeMusic = true;
         }
-        else
+        else if(IsPlayingIldeMusic && !DidSkip)
+        {
             IdleBattleMusic.volume = 0.10f;
-
-
-        battleSong.volume = 0f;
+        }
+        else if (DidSkip)
+        {
+            Debug.Log("do iiiii play");
+            DidSkip = false;
+        }
+    }
+    IEnumerator SkipWinningMusic()
+    {
+        DidSkip = true;
+        WinningRoundMusic.Stop();
+        yield return new WaitForSecondsRealtime(0.05f);
+        BattleMusic.volume = 0.3f;
     }
 
     //SFX---------------------------
@@ -160,7 +185,6 @@ public class AudioController : MonoBehaviour
     public void StopTextSFX() => IsPlayingTextSFX = false;
     public IEnumerator CorutineTextSFX()
     {
-        IsPlayingTextSFX = true;
         while(IsPlayingTextSFX)
         {
             yield return new WaitForSecondsRealtime(0.08F);
@@ -207,6 +231,14 @@ public class AudioController : MonoBehaviour
         if (index == 2)
             sound.pitch = 1.1f;
     }
+
+
+    ///MIS
+   
+    public void PlayAbiliyPopUpSound() => AbilityPopUpSFX.Play();
+    public void PlayAbilityPickedSound() => PickAbilitySFX.Play();
+    public void PlayItemPickUpSound() => ItemPickUpSFX.Play();  
+
     /// <summary>
     /// Changes all audio volume.
     /// </summary>

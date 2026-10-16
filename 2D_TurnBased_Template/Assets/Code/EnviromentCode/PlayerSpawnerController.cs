@@ -64,6 +64,9 @@ public class PlayerSpawnerController : MonoBehaviour
     {
         PlayerController.Instance.Player.position = StartSpawner.transform.position;
 
+        if (AudioController.Instance.IsPlayingWinningMusic)
+            AudioController.Instance.StopPlayingWinningRoundSong();
+
         if (AudioController.Instance.IsPlayBattleMusic)
             AudioController.Instance.RaiseBattleMusicVolume();
         else

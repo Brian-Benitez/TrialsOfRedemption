@@ -40,7 +40,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void Update()
     {
-        if(!RestartDialouge && Input.GetKeyUp(InteractKeyCode))
+        if(!RestartDialouge && Input.GetKeyUp(InteractKeyCode) || _dialogueManagerRef.IsDialogueInProgress)
             return;
         if(_dialogueManagerRef.isDialogueActive && Input.GetKeyUp(InteractKeyCode))
         {
@@ -78,6 +78,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            AudioController.Instance.IsPlayingTextSFX = false;
             RestartDialouge = true;
             EKeyGameObject.SetActive(false);
             _dialogueManagerRef.isDialogueActive = false;

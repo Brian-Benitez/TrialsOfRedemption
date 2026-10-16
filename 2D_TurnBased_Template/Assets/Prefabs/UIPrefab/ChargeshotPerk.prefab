@@ -823,7 +823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Holding right click for 3 seconds deals 2x damage to enemies.
+  m_text: Holding right click for 2 seconds deals 2x damage to enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}
   m_sharedMaterial: {fileID: 223548740990782276, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}

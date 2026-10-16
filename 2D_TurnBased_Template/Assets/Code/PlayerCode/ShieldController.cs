@@ -75,6 +75,7 @@ public class ShieldController : MonoBehaviour
             _playerMovement.UnSlowPlayer();
             ShieldObject.SetActive(false);
             TurnOffIsShieldActive();
+            ChangeBackPlayerLayerName();
         }
 
         if(ShieldHealth <= 0)

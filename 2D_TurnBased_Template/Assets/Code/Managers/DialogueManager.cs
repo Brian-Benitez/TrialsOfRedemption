@@ -27,6 +27,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        AudioController.Instance.IsPlayingTextSFX = true;
         AudioController.Instance.PlayTextSFX();
         isDialogueActive = true;
         TurnOnDialogueUI();
@@ -68,7 +69,7 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(TypingSpeed);
         }
 
-        yield return new WaitForSecondsRealtime(amountOfLetters * 0.05f - 4f);
+        yield return new WaitForSecondsRealtime(amountOfLetters * 0.05f - 5f);
         Debug.Log("how long are we waitin " + amountOfLetters * 0.05f);
         AudioController.Instance.StopTextSFX();
         amountOfLetters = 0;

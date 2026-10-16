@@ -127,7 +127,6 @@ public class PlayerMeleeAttack : MonoBehaviour
             FlipSpriteRef.PlayerLookAtMouse();
             PlayerAnimationControllerRef.IsSpeicalAttacking();
             StartCoroutine(WindUpAttack(PlayerSpecialDamg, SpeicalAttackSpeed, SpeicalPos, SpeicalRange, WhatIsEnemies));
-            AudioController.Instance.PlayGroundSlamEffect();
             _specialCooldown = 0;
             IsSpecialAttack = false;
         }
@@ -149,10 +148,15 @@ public class PlayerMeleeAttack : MonoBehaviour
     public IEnumerator WindUpAttack(float dam, float attackspeed,Transform pos, float range, LayerMask enemy)
     {
         yield return new WaitForSecondsRealtime(attackspeed);
-        if(!IsSpecialAttack)
-            CameraShakeManager.Instance.ShakeCamera(impulseSource);
-
         Hit(dam, pos, range, enemy);
+        yield return new WaitForSecondsRealtime(0.1f);
+        if (!IsSpecialAttack)
+        {
+            CameraShakeManager.Instance.ShakeCamera(impulseSource);
+            AudioController.Instance.PlayGroundSlamEffect();
+        }
+            
+
         PlayerAnimationControllerRef.IsNotAttacking();
     }
     void Hit(float dam, Transform pos, float range, LayerMask enemy)

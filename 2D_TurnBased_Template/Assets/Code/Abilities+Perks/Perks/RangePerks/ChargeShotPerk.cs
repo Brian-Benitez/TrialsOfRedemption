@@ -9,7 +9,7 @@ public class ChargeShotPerk : UpgradePerk
     float _normalDamg;
     float newRangeDamg;
     public float CurrentHoldTimer = 0f;
-    float _maxHoldTimer = 3f;
+    float _maxHoldTimer = 2f;
     public BaseCharacter RangeAttkDamRef;
 
     private void Start()

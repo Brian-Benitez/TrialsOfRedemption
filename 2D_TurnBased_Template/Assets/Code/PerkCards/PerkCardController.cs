@@ -49,6 +49,7 @@ public class PerkCardController : MonoBehaviour
     public void StartPlaceCardsOnScreenCoroutine() => StartCoroutine(PlaceCardsOnScreen());
     private IEnumerator PlaceCardsOnScreen()
     {
+        AudioController.Instance.PlayAbiliyPopUpSound();
         TurnOffButtons(PerkCardsChoices);
         yield return new WaitForSecondsRealtime(1f);
         PerkCardsChoices[0].DOAnchorPos(AnchorsForCards[0], .5f);
@@ -63,6 +64,7 @@ public class PerkCardController : MonoBehaviour
     public void StartPickedACardCoroutine() => StartCoroutine(PickedACard());
     private IEnumerator PickedACard()
     {
+        AudioController.Instance.PlayAbilityPickedSound();
         TurnOffButtons(PerkCardsChoices);
         for (int i = 0; i < PerkCardsChoices.Count; i++)
         {

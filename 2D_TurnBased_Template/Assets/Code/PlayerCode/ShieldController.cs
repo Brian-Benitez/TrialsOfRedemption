@@ -70,8 +70,9 @@ public class ShieldController : MonoBehaviour
             TurnOnShieldObject();
             ChangePlayerLayerName();
         }
-        else
+        if(Input.GetKeyUp(ShieldKey) && !IsShieldBroken && !IsParrying || Input.GetKeyUp(ShieldKey) && IsShieldBroken && !IsParrying)
         {
+            ChangeBackPlayerLayerName();
             _playerMovement.UnSlowPlayer();
             ShieldObject.SetActive(false);
             TurnOffIsShieldActive();
@@ -83,6 +84,7 @@ public class ShieldController : MonoBehaviour
         if(IsShieldBroken && !IsParrying)
         {
             ChangeBackPlayerLayerName();
+            ShieldObject.SetActive(false);
             ShieldCoolDownTimer += Time.deltaTime;
 
             if(ShieldCoolDownTimer >= ShieldBreakDuration)

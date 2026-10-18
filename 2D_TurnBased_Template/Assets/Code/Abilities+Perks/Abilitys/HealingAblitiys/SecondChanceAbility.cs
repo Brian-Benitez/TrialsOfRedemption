@@ -10,9 +10,9 @@ public class SecondChanceAbility : LevelUpStat
     public TextMeshProUGUI CurrentAmount;
     public GameObject UpgradeButton;
     public GameObject MaxButton;
-    private const float firstReviveHealthAmount = 5f;
-    private const float secondReviveHealthAmount = 10f;
-    private const float lastReviveHealthAmount = 15f;
+    private const float firstReviveHealthAmount = 50f;
+    private const float secondReviveHealthAmount = 100f;
+    private const float lastReviveHealthAmount = 150f;
 
     public enum UpgradeTiers
     {

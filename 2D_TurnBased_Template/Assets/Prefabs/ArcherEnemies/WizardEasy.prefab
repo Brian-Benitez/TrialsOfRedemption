@@ -336,6 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 7285332750646591564}
   BaseEnemy: {fileID: 4039939391909849326}
+  MovementStateRef: {fileID: 0}
   AttackStateRef: {fileID: 0}
   GetWithinRangeAttackStateRef: {fileID: 54742961677973419}
   AttackState: {fileID: 1229841222759704543}

@@ -4,6 +4,7 @@ public class EnemyAnimator : MonoBehaviour
 {
     public Animator Animator;
     public BaseEnemy BaseEnemy;
+    public MovementState MovementStateRef;
     public AttackState AttackStateRef;
     [Header("Archers Settings")]
     public GetWithinRangeAttackState GetWithinRangeAttackStateRef;
@@ -23,8 +24,13 @@ public class EnemyAnimator : MonoBehaviour
             else
                 IsNotAttacking();
         }
-        if(BaseEnemy.EnemyType == BaseEnemy.TypeOfEnemy.Swordsman)
+        if(BaseEnemy.EnemyType == BaseEnemy.TypeOfEnemy.Swordsman || BaseEnemy.EnemyType == BaseEnemy.TypeOfEnemy.Blob)
         {
+            if (MovementStateRef.IsMoving == true)
+                IsWalking();
+            else
+                IsNotWalking();
+
             if (AttackStateRef.IsPlayingAttackAni)
                 IsAttacking();
             else

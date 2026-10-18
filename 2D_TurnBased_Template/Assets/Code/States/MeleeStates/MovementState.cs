@@ -4,6 +4,7 @@ public class MovementState : State
 {
     [Header("States")]
     AttackState AttackState;
+    public bool IsMoving = false;
 
     [Header("Floats")]
     public float AttackRange;
@@ -47,6 +48,7 @@ public class MovementState : State
             if (Vector2.Distance(transform.position, PlayerController.Instance.Player.position) > AggroRange)
             {
                 AttackState.WithinRange = false;
+                IsMoving = true;
                 transform.position = Vector2.MoveTowards(transform.position, PlayerController.Instance.Player.position, EnemySwordsmanRef.EnemySpeed * Time.deltaTime);
             }
             if (Vector2.Distance(transform.position, PlayerController.Instance.Player.position) <= AggroRange)
@@ -78,7 +80,11 @@ public class MovementState : State
     public override State RunCurrentState()
     {
         if (AttackState.WithinRange)
+        {
+            IsMoving = false;
             return AttackState;
+        }
+            
 
         return this;
     }

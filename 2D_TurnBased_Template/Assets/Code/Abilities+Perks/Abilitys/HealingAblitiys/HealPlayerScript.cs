@@ -8,9 +8,9 @@ public class HealPlayerScript : LevelUpStat
     public GameObject UpgradeButton;
     public GameObject MaxButton;
     private float upgradeHealthAmount;
-    private const float firstLevelHealthUpgrade = 5f;
-    private const float secondLevelHealthUpgrade = 10f;
-    private const float lastLevelHealthUpgrade = 15f;
+    private const float firstLevelHealthUpgrade = 50f;
+    private const float secondLevelHealthUpgrade = 100f;
+    private const float lastLevelHealthUpgrade = 150f;
     public enum UpgradeTiers
     {
         None,

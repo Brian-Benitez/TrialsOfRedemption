@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 6246656192346290789}
   BaseEnemy: {fileID: 9113469955481799094}
+  MovementStateRef: {fileID: 2766800968437526379}
   AttackStateRef: {fileID: 4232709564529391995}
   GetWithinRangeAttackStateRef: {fileID: 0}
   AttackState: {fileID: 0}
@@ -641,6 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b73f734f239ce4c9fb99bdc27d37fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMoving: 0
   AttackRange: 2.9
   AggroRange: 5
   StandByRange: 10

@@ -12,9 +12,9 @@ public class LingeringHealthAbility : LevelUpStat
     public TextMeshProUGUI CurrentHealsAmountText;
     public TextMeshProUGUI DescriptionHealAmountText;
     private float healthUpgradeAmount;
-    private const float firstUpgradeAmount = 3f;
-    private const float secondUpgradeAmount = 5f;
-    private const float finalUpgradeAmount = 7f;
+    private const float firstUpgradeAmount = 30f;
+    private const float secondUpgradeAmount = 50f;
+    private const float finalUpgradeAmount = 70f;
     public enum AbilityTiers
     {
         None,

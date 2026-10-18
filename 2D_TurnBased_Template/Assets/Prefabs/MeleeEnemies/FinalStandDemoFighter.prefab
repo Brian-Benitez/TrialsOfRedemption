@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 8199693743930919038}
   - component: {fileID: 6334252506456177160}
   m_Layer: 0
-  m_Name: TempSwordsman
+  m_Name: Art+Animatior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 7754686623634691582}
   BaseEnemy: {fileID: 763097274553505534}
+  MovementStateRef: {fileID: 3771332004520370198}
   AttackStateRef: {fileID: 3481125080086476875}
   GetWithinRangeAttackStateRef: {fileID: 0}
   AttackState: {fileID: 0}
@@ -890,6 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b73f734f239ce4c9fb99bdc27d37fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMoving: 0
   AttackRange: 2.5
   AggroRange: 5
   StandByRange: 10

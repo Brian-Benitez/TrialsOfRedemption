@@ -80,8 +80,9 @@ public class ShieldController : MonoBehaviour
         if(ShieldHealth <= 0)
             IsShieldBroken = true;
 
-        if(IsShieldBroken)
+        if(IsShieldBroken && !IsParrying)
         {
+            ChangeBackPlayerLayerName();
             ShieldCoolDownTimer += Time.deltaTime;
 
             if(ShieldCoolDownTimer >= ShieldBreakDuration)

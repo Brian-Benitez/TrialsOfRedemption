@@ -86,6 +86,7 @@ public class Projectile : MonoBehaviour
             {
                 Debug.Log("hit enemy");
                 other.gameObject.GetComponent<BaseEnemy>().TakeDamage(PlayerController.Instance.Player.gameObject.GetComponent<PlayerInfo>().RangeDamg);
+                DamagePopUp.Create(other.gameObject.transform.position, PlayerController.Instance.Player.gameObject.GetComponent<PlayerInfo>().RangeDamg);
                 IgnoreOrEnableEnemiesTag(3, 12, true);//ignore enmey projkectile to enemy projectile
                 DestroyProjectile();
             }

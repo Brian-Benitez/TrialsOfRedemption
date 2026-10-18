@@ -603,10 +603,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a93dd8c5db448444806c88c17677e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 10
-  MaxEnemyHealth: 10
+  EnemyHealth: 100
+  MaxEnemyHealth: 100
   EnemySpeed: 3.5
-  EnemyDamage: 3
+  EnemyDamage: 30
   BossSoulsObj: {fileID: 0}
   EnemySoulsValue: 10
   IsHit: 0

@@ -12137,10 +12137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd47b04eb2120d4db60a92812896876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterHealthAmount: 15
-  CharacterMaxHealth: 15
-  BaseLineHealth: 15
-  RangeDamg: 1
+  CharacterHealthAmount: 150
+  CharacterMaxHealth: 150
+  BaseLineHealth: 150
+  RangeDamg: 10
   Souls: 90000
   BossSouls: 0
   XP: 0
@@ -24721,10 +24721,10 @@ MonoBehaviour:
   NormalAttackSpeed: 0.1
   SpeicalAttackSpeed: 0.5
   WindUpDuration: 0.23
-  PlayerLightAttkDamg: 1
-  PlayerSpecialDamg: 2
-  DefaultLightAttkDamg: 1
-  DefaultSpeicalDamg: 2
+  PlayerLightAttkDamg: 10
+  PlayerSpecialDamg: 20
+  DefaultLightAttkDamg: 10
+  DefaultSpeicalDamg: 20
   WhatIsEnemies:
     serializedVersion: 2
     m_Bits: 520
@@ -38215,63 +38215,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1964086500
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8739158315629441044, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -292.40628
-      objectReference: {fileID: 0}
-    - target: {fileID: 8739158315629441044, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -191.35889
-      objectReference: {fileID: 0}
-    - target: {fileID: 8739158315629441044, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8739158315629441044, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8739158315629441044, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8739158315629441044, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8739158315629441044, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8739158315629441044, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8739158315629441044, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8739158315629441044, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818265710935858715, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
-      propertyPath: m_Name
-      value: FinalStandEasyArcher
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2f0fa27f4742b3d40b712e4529c4450b, type: 3}
 --- !u!1 &1970472805
 GameObject:
   m_ObjectHideFlags: 0
@@ -48284,4 +48227,3 @@ SceneRoots:
   - {fileID: 1811571936}
   - {fileID: 154343318}
   - {fileID: 1745218942}
-  - {fileID: 1964086500}

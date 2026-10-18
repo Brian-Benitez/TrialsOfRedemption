@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RangeAttackPos: {fileID: 6265430025622044778}
-  DKRangeDamage: 2
+  DKRangeDamage: 20
   RangeAttackRange: 3.5
   TimeBtwAttack: 5
   WindUpTimeForRange: 1.5
@@ -712,6 +712,7 @@ MonoBehaviour:
   CanRangeAttack: 0
   IsAttackingNow: 0
   IsDoneFullAttack: 1
+  IsRestartingRangeAnim: 0
   WhatisHittable:
     serializedVersion: 2
     m_Bits: 64
@@ -1153,10 +1154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a93dd8c5db448444806c88c17677e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 50
-  MaxEnemyHealth: 100
+  EnemyHealth: 1000
+  MaxEnemyHealth: 1000
   EnemySpeed: 3
-  EnemyDamage: 5
+  EnemyDamage: 50
   BossSoulsObj: {fileID: 126269282101802777, guid: f54c8a0bec1e1634b84e73ba3016080c, type: 3}
   EnemySoulsValue: 5000
   IsHit: 0

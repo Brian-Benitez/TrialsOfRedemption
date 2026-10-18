@@ -262,7 +262,7 @@ MonoBehaviour:
   LockedOnPlayer: 0
   IsPlayingAnimation: 0
   WizardBullet: {fileID: 0}
-  ArrowSpeed: 7
+  ArrowSpeed: 8
   EnemyCoreGO: {fileID: 8818265710935858715}
   ShotPointTwo: {fileID: 4263232305946379098}
   ShotPointThree: {fileID: 8824331901901780249}

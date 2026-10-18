@@ -75,7 +75,6 @@ public class ShieldController : MonoBehaviour
             _playerMovement.UnSlowPlayer();
             ShieldObject.SetActive(false);
             TurnOffIsShieldActive();
-            ChangeBackPlayerLayerName();
         }
 
         if(ShieldHealth <= 0)
@@ -108,10 +107,10 @@ public class ShieldController : MonoBehaviour
         IsParrying = true;
         ChangePlayerLayerToParry();
         yield return new WaitForSecondsRealtime(ParryDuration);
-        ChangeBackPlayerLayerName();
+        Debug.Log("not parrying");
         PlayerAnimationControllerRef.IsNotParrying();
         IsParrying = false;
-       
+        ChangeBackPlayerLayerName();
     }
     void ChangePlayerLayerToParry() => PlayerController.Instance.Player.gameObject.tag = "Parry";
     void ChangePlayerLayerName() => PlayerController.Instance.Player.gameObject.tag = "Shield";

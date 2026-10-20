@@ -17,6 +17,8 @@ public class RoundController : MonoBehaviour
     public GameObject UpgradePrefab;
     [Header("StartButton GameObject")]
     public GameObject StartButtonPrefab;
+    public GameObject TeleportToCampfirePrefab;
+    public bool IsBossDefeated = false;
 
     [Header("Round Start Events")]//put all this in separate class..
     public bool IsStartedEvent = false;
@@ -60,11 +62,15 @@ public class RoundController : MonoBehaviour
     {
         if (EnemiesWaveCounter == MaxAmountOfRounds)
         {
+            TeleportToCampfirePrefab.SetActive(true);
+            IsBossDefeated = true;
             RestartRoundCounter();
             EnemiesWaveCounter += Mathf.Clamp(1, 0, MaxAmountOfRounds);
         }
         else
+        {
             EnemiesWaveCounter += Mathf.Clamp(1, 0, MaxAmountOfRounds);
+        }
         TotalAmountOfRoundsWon++;
         RoundsText.text = "" + TotalAmountOfRoundsWon;
         Debug.Log("what round are we on " + EnemiesWaveCounter);

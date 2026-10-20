@@ -27,6 +27,7 @@ public class InteractingWithUpgradeSystem : MonoBehaviour
             if (Input.GetKeyDown(InteracteWithUpgradeKey))
             {
                 UpgradeUIGameObject.SetActive(true);
+                SoulsUI.SetActive(true);
                 XPController.Instance.IsUpgrading = true;
                 IsInteracting = true;
                 CheckpointReached = true;
@@ -34,6 +35,7 @@ public class InteractingWithUpgradeSystem : MonoBehaviour
             if (Input.GetKeyUp(DismissUIKey))
             {
                 UpgradeUIGameObject.SetActive(false);
+                SoulsUI.SetActive(true);
                 BossSoulsUI.SetActive(false);
                 IsInteracting = false;
                 PlayerMovementRef.TurnOffStopPlayerMovement();

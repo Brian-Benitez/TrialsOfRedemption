@@ -22,7 +22,7 @@ public class ShieldController : MonoBehaviour
 
     [Header("Cooldown")]
     public bool IsShieldBroken = false;
-    private float ShieldCoolDownTimer = 0;
+    public float ShieldCoolDownTimer = 0f;
     public float ShieldBreakDuration;
 
     [Header("Shield key")]
@@ -48,6 +48,27 @@ public class ShieldController : MonoBehaviour
         if(_playerMovement.IsDashing)
             return;
 
+
+        if (ShieldHealth <= 0)
+        {
+            IsShieldBroken = true;
+            ShieldCoolDownTimer += Time.deltaTime;
+        }
+            
+
+        if (IsShieldBroken && !IsParrying)
+        {
+            ChangeBackPlayerLayerName();
+            ShieldObject.SetActive(false);
+
+            if (ShieldCoolDownTimer >= ShieldBreakDuration)
+            {
+                IsShieldBroken = false;
+                ShieldHealth = MaxShieldHealth;
+                ShieldCoolDownTimer = 0f;
+            }
+        }
+
         if (!CanParry && ParryCooldown > 0)
             ParryCooldown -= Time.deltaTime;
         else
@@ -70,35 +91,13 @@ public class ShieldController : MonoBehaviour
             TurnOnShieldObject();
             ChangePlayerLayerName();
         }
-        if(Input.GetKeyUp(ShieldKey) && !IsShieldBroken && !IsParrying || Input.GetKeyUp(ShieldKey) && IsShieldBroken && !IsParrying)
+        if(Input.GetKeyUp(ShieldKey) && !IsShieldBroken && !IsParrying || Input.GetKey(ShieldKey) && IsShieldBroken && !IsParrying)
         {
             ChangeBackPlayerLayerName();
             _playerMovement.UnSlowPlayer();
             ShieldObject.SetActive(false);
             TurnOffIsShieldActive();
-        }
-
-        if(ShieldHealth <= 0)
-            IsShieldBroken = true;
-
-        if(IsShieldBroken && !IsParrying)
-        {
-            ChangeBackPlayerLayerName();
-            ShieldObject.SetActive(false);
-            ShieldCoolDownTimer += Time.deltaTime;
-
-            if(ShieldCoolDownTimer >= ShieldBreakDuration)
-            {
-                IsShieldBroken = false;
-                ShieldHealth = MaxShieldHealth;
-            }
-        }
-            
-    }
-    public void UpgradeShield(float increment)
-    {
-        MaxShieldHealth += increment;
-        ShieldHealth = MaxShieldHealth;
+        }        
     }
 
     public void StartCorutineActivateParry() => StartCoroutine(ActivateParry());

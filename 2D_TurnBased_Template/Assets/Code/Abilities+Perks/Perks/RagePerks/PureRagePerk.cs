@@ -50,7 +50,7 @@ public class PureRagePerk : UpgradePerk
         PlayerMeleeAttackRef.PlayerLightAttkDamg = PlayerMeleeAttackRef.DefaultLightAttkDamg;
 
         //Range upgrade
-        PlayerInfoRef.RangeDamg = 1f;
+        PlayerInfoRef.RangeDamg = 10f;
         Debug.Log("restart pure rage perk");
     }
 

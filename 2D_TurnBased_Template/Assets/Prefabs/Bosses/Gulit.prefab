@@ -116,7 +116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6074239206484288611
 Transform:
   m_ObjectHideFlags: 0
@@ -799,9 +799,9 @@ RectTransform:
   - {fileID: 3209421576622030787}
   m_Father: {fileID: 2131219388703686877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 689.7177, y: -716.27295}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 39, y: 81}
   m_SizeDelta: {x: 1850, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &283256754811643131
@@ -858,7 +858,7 @@ MonoBehaviour:
   BossDisplayNameText: {fileID: 2293992083446347835}
   BossSettings: {fileID: 3849610635453228326}
   Health: 0
-  MaxHealth: 80
+  MaxHealth: 3000
   Width: 1850
   Height: 35
   HealthBar: {fileID: 2171505502836707036}
@@ -1154,8 +1154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a93dd8c5db448444806c88c17677e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 1000
-  MaxEnemyHealth: 1000
+  EnemyHealth: 3000
+  MaxEnemyHealth: 3000
   EnemySpeed: 3
   EnemyDamage: 50
   BossSoulsObj: {fileID: 126269282101802777, guid: f54c8a0bec1e1634b84e73ba3016080c, type: 3}
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   IsHit: 0
   IsDead: 0
   StunStateRef: {fileID: 2419263769339304645}
-  EnemyType: 3
+  EnemyType: 4
   EnemyDifficulty: 3
 --- !u!50 &5096189896417039861
 Rigidbody2D:

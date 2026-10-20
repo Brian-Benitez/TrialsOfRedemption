@@ -14,6 +14,15 @@ public class PlayerAnimationController : MonoBehaviour
             IsDashing();
         else
             IsNotDashing();
+
+        if(Input.GetMouseButton(1))
+        {
+            PlayerAnimator.SetBool("IsAttacking", false);
+            PlayerAnimator.SetBool("IsAttackingTwo", false);
+            PlayerAnimator.SetBool("IsAttackingThree", false);
+            IsNotMoving();
+        }
+            
     }
 
     //Walking animations bools

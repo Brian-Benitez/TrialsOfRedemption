@@ -23,20 +23,23 @@ public class UltBarUI : MonoBehaviour
 
     public void SetUIUltBar(float amount)
     {
-        UltAmountUI += amount;
-        if (UltAmountUI > MaxUltAmountUI)
+        if(PlayersUltController.Instance.HasAUltPerk)
         {
-            UltAmountUI = MaxUltAmountUI;
-            UltUIGameObject.SetActive(true);    
-        }
-        if (UltAmountUI < 0)
-        {
-            UltUIGameObject.SetActive(false);
-            UltAmountUI = 0;
-        }
+            UltAmountUI += amount;
+            if (UltAmountUI > MaxUltAmountUI)
+            {
+                UltAmountUI = MaxUltAmountUI;
+                UltUIGameObject.SetActive(true);
+            }
+            if (UltAmountUI < 0)
+            {
+                UltUIGameObject.SetActive(false);
+                UltAmountUI = 0;
+            }
 
-        float newWidth = (UltAmountUI / MaxUltAmountUI) * Width;
-        UltBar.sizeDelta = new Vector2(newWidth, Height);
+            float newWidth = (UltAmountUI / MaxUltAmountUI) * Width;
+            UltBar.sizeDelta = new Vector2(newWidth, Height);
+        }
     }
 
     public void StartDrianUltUICorutine() => StartCoroutine(DrainUltUI());

@@ -17,7 +17,6 @@ public class TypesOfEnemiesPerRoundController : MonoBehaviour
     public List<GameObject> ArchersGameObjects;
     public List<GameObject> Wizards;
     public List<GameObject> Bosses;
-    public TextMeshProUGUI BossNameString;
 
     public RoundController RoundControllerRef;
     public EnemiesSpawner EnemiesSpawnerRef;

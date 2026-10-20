@@ -1,3 +1,4 @@
+using System.Data.Common;
 using TMPro;
 using UnityEngine;
 
@@ -25,8 +26,9 @@ public class BossHealthUI : MonoBehaviour
 
     public void SetUIHealth(float health)
     {
+        Debug.Log("Hit boss for - " +  health);
         Health -= health;
-
+        Debug.Log("whats the boss health " + Health);
         if (Health > MaxHealth)
             Health = MaxHealth;
         if (Health < 0)

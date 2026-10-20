@@ -8,8 +8,7 @@ public class StartingGameController : MonoBehaviour
     [Header("UI Start GameObject")]
     public GameObject EKeyGameObject;
     public GameObject UIStartGameObject;
-    [Header("Boss Settings")]
-    public GameObject BossHealth;
+
     [Header("Scripts")]
     public RoundController RoundControllerRef;
     void Update()
@@ -20,6 +19,9 @@ public class StartingGameController : MonoBehaviour
             StartNewRound();
         }
     }
+    /// <summary>
+    /// Starts a new round and dictate where the player spawns as well.
+    /// </summary>
     public void StartNewRound()
     {
         Debug.Log("start new round");
@@ -28,16 +30,9 @@ public class StartingGameController : MonoBehaviour
         UIStartGameObject.SetActive(false);
         RoundControllerRef.IsStartedEvent = false;
         EnemiesSpawner.Instance.IsAllEnemiesDead = false;
-        if(RoundControllerRef.EnemiesWaveCounter == 10)
-        {
-            PlayerSpawnerController.Instance.SpawnPlayerInBossRoom();
-            BossHealth.SetActive(true);
-            //spawn to boss room
-        }
-        else
-        {
-            PlayerSpawnerController.Instance.SpawnPlayerInArena();
-        }   
+
+        //put spawn player here
+        PlayerSpawnerController.Instance.PlacePlayerInCorrectRoom();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

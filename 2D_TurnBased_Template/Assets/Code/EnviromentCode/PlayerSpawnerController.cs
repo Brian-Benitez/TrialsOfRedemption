@@ -13,6 +13,7 @@ public class PlayerSpawnerController : MonoBehaviour
     public GameObject BossRoomSpawner;
     [Header("Scripts")]
     public StartingGameController StartingGameControllerRef;
+    public RoundController RoundControllerRef;
     private void Awake()
     {
         if (Instance == null)
@@ -36,7 +37,7 @@ public class PlayerSpawnerController : MonoBehaviour
         if (Input.GetKeyDown(InteractKeyCode) && CanInteract)
         {
             AudioController.Instance.PlayEnterRoomSFX();
-            SpawnPlayerInArena();
+            PlacePlayerInCorrectRoom();
             AudioController.Instance.StopPlayCampfireMusic();
             StartingGameControllerRef.StartNewRound();
         }
@@ -59,6 +60,26 @@ public class PlayerSpawnerController : MonoBehaviour
             CanInteract = false;
         }
        
+    }
+
+    public void PlacePlayerInCorrectRoom()
+    {
+        if (RoundControllerRef.EnemiesWaveCounter == 10)
+        {
+            Debug.Log("spawn in boss here");
+            SpawnPlayerInBossRoom();
+        }
+        else if (RoundControllerRef.IsBossDefeated && RoundControllerRef.EnemiesWaveCounter == 1)
+        {
+            RoundControllerRef.IsBossDefeated = false;
+            Debug.Log("spawn in campfire");
+            SpawnPlayerInCampfire();
+        }
+        else
+        {
+            Debug.Log("spawn in fighting room");
+            SpawnPlayerInArena();
+        }
     }
     public void SpawnPlayerInArena()
     {

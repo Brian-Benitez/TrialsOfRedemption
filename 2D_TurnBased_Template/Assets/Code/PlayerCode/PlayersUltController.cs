@@ -10,6 +10,8 @@ public class PlayersUltController : MonoBehaviour
 
     [Header("Ult Settings")]
     public bool IsUlted;
+    public bool HasAUltPerk = false;
+    public GameObject UltUIGO;
     public bool IsUpgradeOn;
     public float UltPoints;
     public float MaxUltPoints;
@@ -41,7 +43,7 @@ public class PlayersUltController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(UltActivationKey))
+        if(Input.GetKeyDown(UltActivationKey) && HasAUltPerk)
         {
             if(!IsUlted && UltPoints >= MaxUltPoints) //|| !IsUlted && UltPoints == MaxUltPoints / 2)
             {
@@ -63,7 +65,7 @@ public class PlayersUltController : MonoBehaviour
             UltDuration += MaxUltDuration;
         }
 
-        if(IsUlted && !IsUpgradeOn)
+        if(IsUlted && !IsUpgradeOn && HasAUltPerk)
         {
             IsUpgradeOn = true;
             Debug.Log("Start ult");
@@ -99,6 +101,12 @@ public class PlayersUltController : MonoBehaviour
         PlayerInfoRef.UpdatePlayersStats();
         UltBarUIRef.SetUIUltBar(amount / 4f);
     }
-
+    /// <summary>
+    /// Turns on UI when perk is a ult.
+    /// </summary>
+    public void TurnOnUltUI()
+    {
+        UltUIGO.SetActive(true);
+    }
     public void RemoveAllUltPoints() => UltPoints = 0;
 }

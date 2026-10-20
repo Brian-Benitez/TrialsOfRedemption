@@ -34,6 +34,7 @@ public class HealPlayerScript : LevelUpStat
             PlayerInfoRef.SetHealth(PlayerInfoRef.CharacterMaxHealth);
             PlayerInfoRef.Souls -= (int)CostAmount;
             PlayerInfoRef.UpdatePlayersStats();
+            AudioController.Instance.PlayClickedOnButtonSFX();
         }
         else
         {

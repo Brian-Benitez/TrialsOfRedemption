@@ -38,6 +38,7 @@ public class PlayersUltController : MonoBehaviour
     private void Start()
     {
         UltBarUIRef.SetUIMaxUlt(MaxUltPoints);
+        TurnOffUltUI();
     }
 
 
@@ -93,20 +94,32 @@ public class PlayersUltController : MonoBehaviour
 
     public void AddUltPoint(float amount)
     {
-        if(UltPoints >= MaxUltPoints)
-            UltPoints = MaxUltPoints;
-        else
-            UltPoints += amount / 4f;
+        if(HasAUltPerk)
+        {
+            if (UltPoints >= MaxUltPoints)
+                UltPoints = MaxUltPoints;
+            else
+                UltPoints += amount / 4f;
 
-        PlayerInfoRef.UpdatePlayersStats();
-        UltBarUIRef.SetUIUltBar(amount / 4f);
+            PlayerInfoRef.UpdatePlayersStats();
+            UltBarUIRef.SetUIUltBar(amount / 4f);
+        }
     }
     /// <summary>
-    /// Turns on UI when perk is a ult.
+    /// Turns on the UI of the ult and enables player to gain ult points.
     /// </summary>
     public void TurnOnUltUI()
     {
+        HasAUltPerk = true;
         UltUIGO.SetActive(true);
+    }
+    /// <summary>
+    /// Turns Off ult UI and disables player to gain ult points
+    /// </summary>
+    public void TurnOffUltUI()
+    {
+        HasAUltPerk = false;
+        UltUIGO.SetActive(false);
     }
     public void RemoveAllUltPoints() => UltPoints = 0;
 }

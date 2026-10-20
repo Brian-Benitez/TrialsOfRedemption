@@ -95,6 +95,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
         PlayersUltController.Instance.UltPoints = 0f;
         UltBarUI.Instance.UltAmountUI = 0;
         UltBarUI.Instance.SetUIUltBar(-UltBarUI.Instance.MaxUltAmountUI);
+        PlayersUltController.Instance.TurnOffUltUI();
         XP = 0;
         XPController.Instance.RestartLevelUpThershold();
         XPBarUI.Instance.SetUIXP(-XPBarUI.Instance.MaxXPAmountUI);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMeleeAttack : MonoBehaviour
 {
     [Header("Booleans")]
+    public bool IsAttackingPaused = false;
     public bool IsAttacking = false;
     public bool CanMeleeAttackAgain = false;
     public bool CanSpeicalAgain = false;
@@ -68,12 +69,14 @@ public class PlayerMeleeAttack : MonoBehaviour
         
         _maxTimeBtwAttacks = WindUpDuration;
         RestartTimerForAttacks();
+        StopMeleeAttacks();
     }
 
     private void Update()
     {
         DirectionalLooks.transform.position = AttackPos.position;//idk why this gets paused when i stop moving player
-
+        if (IsAttackingPaused)
+            return;
         if(AmountOfAttacks >= 1 && CanMeleeAttackAgain)//this is for player amount of attacks restarting after not hitting again
         {
             if (_timeSinceLastAttk >= _maxWaitTimeToRestartAmountOfAttks)
@@ -105,7 +108,7 @@ public class PlayerMeleeAttack : MonoBehaviour
             CanMeleeAttackAgain = false;
         }
 
-        if (Input.GetMouseButtonDown(0) && CanMeleeAttackAgain && !BaseCharacterRef.IsCharacterDead)
+        if (Input.GetMouseButtonDown(0) && CanMeleeAttackAgain && !BaseCharacterRef.IsCharacterDead && !IsAttackingPaused)
         {
             PlayerAnimationControllerRef.IsAttacking();
             StartCoroutine(WindUpAttack(PlayerLightAttkDamg, NormalAttackSpeed,AttackPos, AttackRange, WhatIsEnemies));
@@ -122,7 +125,7 @@ public class PlayerMeleeAttack : MonoBehaviour
             IsSpecialAttack = true;
         }
 
-        if(Input.GetKeyDown(SpecialKey) && IsSpecialAttack && !BaseCharacterRef.IsCharacterDead)
+        if(Input.GetKeyDown(SpecialKey) && IsSpecialAttack && !BaseCharacterRef.IsCharacterDead && !IsAttackingPaused)
         {
             FlipSpriteRef.PlayerLookAtMouse();
             PlayerAnimationControllerRef.IsSpeicalAttacking();
@@ -188,7 +191,14 @@ public class PlayerMeleeAttack : MonoBehaviour
         IsLightAttack = false;
         ChangedValues = false;
     }
-
+    /// <summary>
+    /// stops player from meleeing whenver i want.
+    /// </summary>
+    public void StopMeleeAttacks() => IsAttackingPaused = true;
+    /// <summary>
+    /// player can melee attack again.
+    /// </summary>
+    public void EnableMeleeAttacks() => IsAttackingPaused = false;
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

@@ -26,6 +26,7 @@ public class ExtraDashAbility : LevelUpStat
             UpgradeDashAmount();
             TurnOnMaxButton();
             CostAmountText.gameObject.SetActive(false);
+            AudioController.Instance.PlayClickedOnButtonSFX();
         }
         else
         {

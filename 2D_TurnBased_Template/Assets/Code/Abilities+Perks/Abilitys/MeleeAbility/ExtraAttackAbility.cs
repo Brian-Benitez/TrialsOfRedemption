@@ -25,6 +25,7 @@ public class ExtraAttackAbility : LevelUpStat
             AddExtraAttackToPlayer();
             TurnOnMaxButton();
             CostAmountText.gameObject.SetActive(false);
+            AudioController.Instance.PlayClickedOnButtonSFX();
         }
         else
         {

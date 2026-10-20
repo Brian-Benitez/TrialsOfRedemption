@@ -14,6 +14,7 @@ public class InteractingWithUpgradeSystem : MonoBehaviour
     public bool IsInteracting = false;
     public bool CheckpointReached = false;
     public PlayerMovement PlayerMovementRef;
+    public PlayerMeleeAttack PlayerMeleeAttackRef;
 
     private void Start()
     {
@@ -39,12 +40,17 @@ public class InteractingWithUpgradeSystem : MonoBehaviour
                 BossSoulsUI.SetActive(false);
                 IsInteracting = false;
                 PlayerMovementRef.TurnOffStopPlayerMovement();
+                PlayerMeleeAttackRef.IsAttackingPaused = false;
                 XPController.Instance.IsUpgrading = false;
             }
         }
         //makes player not move when in menu
         if(IsInteracting)
+        {
             PlayerMovementRef.TurnOnStopPlayerMovement();
+            PlayerMeleeAttackRef.IsAttackingPaused = true;
+        }
+            
     }
 
     public void TurnOnBossSoulsUI()

@@ -35,6 +35,7 @@ public class HellsRetriverAbility : LevelUpStat
             PlayerInfoRef.UpdatePlayersStats();
             UpdateStatsUI();
             SetCurrentUpgradeTier();
+            AudioController.Instance.PlayClickedOnButtonSFX();
         }
         else
         {

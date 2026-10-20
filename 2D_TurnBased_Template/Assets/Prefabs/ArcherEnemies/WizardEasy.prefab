@@ -955,7 +955,7 @@ MonoBehaviour:
   EnemyHealth: 60
   MaxEnemyHealth: 60
   EnemySpeed: 1.5
-  EnemyDamage: 10
+  EnemyDamage: 15
   BossSoulsObj: {fileID: 0}
   EnemySoulsValue: 10
   IsHit: 0

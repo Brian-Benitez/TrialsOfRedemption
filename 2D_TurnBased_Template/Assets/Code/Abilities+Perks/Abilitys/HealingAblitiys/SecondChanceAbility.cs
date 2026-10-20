@@ -34,6 +34,7 @@ public class SecondChanceAbility : LevelUpStat
             UpdateStatsUI();
             DetermineCurrentTier();
             ChangeAllText();
+            AudioController.Instance.PlayClickedOnButtonSFX();
         }
         else
         {

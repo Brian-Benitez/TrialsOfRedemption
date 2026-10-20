@@ -41,6 +41,7 @@ public class LingeringHealthAbility : LevelUpStat
             SetHealthIncrementAmount();
             CurrentHealsAmountText.text = healthUpgradeAmount.ToString();
             ChangeDescriptonHealUpgrade();
+            AudioController.Instance.PlayClickedOnButtonSFX();
         }
         else
         {

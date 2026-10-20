@@ -339,7 +339,8 @@ MonoBehaviour:
   InteractKeyCode: 101
   Dialogue:
     DialogueLines:
-    - line: I miss my family..Why couldn't I be the only one who died. Why...
+    - line: 'Searching for morality in war is like trying to find a needle in a haystack. '
+    - line: Even if you find it, you're going to make a great mess in the process.
 --- !u!114 &5571615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1674,7 +1675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press ESC to Exit
+  m_text: Press Q to Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}
   m_sharedMaterial: {fileID: 223548740990782276, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}
@@ -2275,8 +2276,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f8d3493ce8bcb8f428be4575448a8a21, type: 3}
-  m_Resource: {fileID: 8300000, guid: f8d3493ce8bcb8f428be4575448a8a21, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 36751061f310863479ae46a93d980297, type: 3}
+  m_Resource: {fileID: 8300000, guid: 36751061f310863479ae46a93d980297, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3450,7 +3451,8 @@ MonoBehaviour:
   InteractKeyCode: 101
   Dialogue:
     DialogueLines:
-    - line: I miss my family..Why couldn't I be the only one who died. Why...
+    - line: 'Remember, vengeance and redemption are not one in the same. '
+    - line: As frustrated as you might get, do not lose sight of why you fight.
 --- !u!114 &153974679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11671,6 +11673,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332126862}
   m_CullTransparentMesh: 1
+--- !u!1 &335000400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335000401}
+  - component: {fileID: 335000402}
+  m_Layer: 0
+  m_Name: ClickOnButtonSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &335000401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335000400}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -284.3, y: -115.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1265436985}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &335000402
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335000400}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5dbd8378c30b3ab409ea6207d84c2728, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5dbd8378c30b3ab409ea6207d84c2728, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &337438045
 GameObject:
   m_ObjectHideFlags: 0
@@ -17027,6 +17158,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMenuPrefab: {fileID: 1182902469}
   OptionsMenuPrefab: {fileID: 0}
+  IsInMenuScreen: 0
+  PlayerMovementRef: {fileID: 386186101}
+  PlayerMeleeAttackRef: {fileID: 1131129220}
 --- !u!1 &579285954
 GameObject:
   m_ObjectHideFlags: 0
@@ -17458,6 +17592,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596720467}
   m_CullTransparentMesh: 1
+--- !u!1 &603655859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603655860}
+  - component: {fileID: 603655861}
+  m_Layer: 0
+  m_Name: SwordSlashSFX2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &603655860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603655859}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -284.3, y: -115.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1258439354}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &603655861
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603655859}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c0b11c51e3698494786ffb9127f6a65d, type: 3}
+  m_Resource: {fileID: 8300000, guid: c0b11c51e3698494786ffb9127f6a65d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &606552482
 GameObject:
   m_ObjectHideFlags: 0
@@ -18088,6 +18351,7 @@ RectTransform:
   m_Children:
   - {fileID: 1403292104}
   - {fileID: 1171648888}
+  - {fileID: 1409828280}
   - {fileID: 823619040}
   - {fileID: 1552305876}
   - {fileID: 2109047574}
@@ -19197,15 +19461,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -19266,8 +19530,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -842.6, y: -109}
-  m_SizeDelta: {x: 159.26, y: 28.899994}
+  m_AnchoredPosition: {x: -838.5, y: -105.5}
+  m_SizeDelta: {x: 159.26, y: 35.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &741471221
 GameObject:
@@ -21375,7 +21639,7 @@ PrefabInstance:
       objectReference: {fileID: 1131129220}
     - target: {fileID: 6218865336232467608, guid: 2fd5cd12c702c4a4d863766903c43765, type: 3}
       propertyPath: DamageAdditionToAllMeleeAttks
-      value: 25
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23204,7 +23468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.722992, y: -17.7872}
+  m_AnchoredPosition: {x: -3.7230225, y: -17.787231}
   m_SizeDelta: {x: -258.9497, y: -114.9968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927801899
@@ -24319,7 +24583,7 @@ GameObject:
   - component: {fileID: 980662602}
   - component: {fileID: 980662601}
   m_Layer: 5
-  m_Name: PickACardText
+  m_Name: CurrentPerkText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24393,10 +24657,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.3
-  m_fontSizeBase: 36
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -24507,9 +24771,9 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.6698113, g: 0.38229796, b: 0.39091998, a: 0.38431373}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -25594,6 +25858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22db64af34b10ec4492524f6125ff783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsAttackingPaused: 0
   IsAttacking: 0
   CanMeleeAttackAgain: 0
   CanSpeicalAgain: 0
@@ -28897,6 +29162,7 @@ Transform:
   - {fileID: 2069438788}
   - {fileID: 1265436985}
   - {fileID: 1214135741}
+  - {fileID: 603655860}
   - {fileID: 1505081253}
   - {fileID: 1823183380}
   - {fileID: 153064780}
@@ -29076,6 +29342,7 @@ Transform:
   - {fileID: 1878103182}
   - {fileID: 118557926}
   - {fileID: 45893254}
+  - {fileID: 335000401}
   m_Father: {fileID: 1258439354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1268800727
@@ -31256,6 +31523,145 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 58}
   m_SizeDelta: {x: 1333.22, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1409828279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1409828280}
+  - component: {fileID: 1409828282}
+  - component: {fileID: 1409828281}
+  m_Layer: 0
+  m_Name: PerkTabText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1409828280
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409828279}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1722319168}
+  m_Father: {fileID: 655354074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -876, y: 133}
+  m_SizeDelta: {x: 158.83, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1409828281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409828279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Perks
+
+    [Tab]'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}
+  m_sharedMaterial: {fileID: 223548740990782276, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 3388997631
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.7882353}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 45
+  m_fontSizeBase: 45
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1409828282
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409828279}
+  m_CullTransparentMesh: 1
 --- !u!1 &1413297726
 GameObject:
   m_ObjectHideFlags: 0
@@ -32308,8 +32714,7 @@ MonoBehaviour:
   InteractKeyCode: 101
   Dialogue:
     DialogueLines:
-    - line: Where's my husband? Where am I?
-    - line: You seem familiar somehow...
+    - line: Hahaha! That last attempt was a joke, right? Good one!
 --- !u!114 &1486471650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33958,7 +34363,7 @@ MonoBehaviour:
   IsUsingHealingRagePerk: 0
   IsUlted: 0
   HasAUltPerk: 0
-  UltUIGO: {fileID: 0}
+  UltUIGO: {fileID: 1552305875}
   IsUpgradeOn: 0
   UltPoints: 0
   MaxUltPoints: 250
@@ -34819,6 +35224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046836f4bdf154f4d80522c8f2e39940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MasterVolume: 0.3
   AllAudioSources:
   - {fileID: 980478157}
   - {fileID: 289143946}
@@ -34840,6 +35246,8 @@ MonoBehaviour:
   - {fileID: 45893255}
   - {fileID: 569256065}
   - {fileID: 327922539}
+  - {fileID: 335000402}
+  - {fileID: 603655861}
   TitleThemeSong: {fileID: 569256065}
   CampfireMusic: {fileID: 980478157}
   IsPlayBattleMusic: 0
@@ -34851,6 +35259,7 @@ MonoBehaviour:
   DidSkip: 0
   WinningRoundMusic: {fileID: 181741152}
   MeleeSlashSound: {fileID: 1214135742}
+  OtherIterationMeleeSlashSound: {fileID: 603655861}
   BlockSound: {fileID: 327922539}
   GroundSlamSound: {fileID: 807949889}
   ArrowAttackSound: {fileID: 1505081254}
@@ -34867,6 +35276,7 @@ MonoBehaviour:
   AbilityPopUpSFX: {fileID: 1878103183}
   PickAbilitySFX: {fileID: 118557927}
   ItemPickUpSFX: {fileID: 45893255}
+  ClickOnButtonSFX: {fileID: 335000402}
   PlayerMeleeAttackRef: {fileID: 1131129220}
 --- !u!1 &1556314981
 GameObject:
@@ -36734,6 +37144,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706144769}
   m_CullTransparentMesh: 1
+--- !u!1 &1722319167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1722319168}
+  - component: {fileID: 1722319170}
+  - component: {fileID: 1722319169}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1722319168
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722319167}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1409828280}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -32, y: -19}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1722319169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722319167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.19215687}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1722319170
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722319167}
+  m_CullTransparentMesh: 1
 --- !u!1 &1724830767
 GameObject:
   m_ObjectHideFlags: 0
@@ -37116,8 +37601,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -1.0263, y: 48.4205}
-  m_SizeDelta: {x: 1356.4525, y: 67.159}
+  m_AnchoredPosition: {x: -1.0263, y: 56.771}
+  m_SizeDelta: {x: 1356.4525, y: 83.859}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737977884
 MonoBehaviour:
@@ -37760,9 +38245,9 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.6698113, g: 0.38229796, b: 0.39091998, a: 0.3882353}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -38018,7 +38503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.46226418, g: 0.0021804967, b: 0.0021804967, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -38068,16 +38553,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803095362}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 741257066}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92.6, y: 0}
+  m_AnchoredPosition: {x: -96.3999, y: -3.2001953}
   m_SizeDelta: {x: 30, y: 22.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1803095364
@@ -40818,8 +41303,11 @@ MonoBehaviour:
   InteractKeyCode: 101
   Dialogue:
     DialogueLines:
-    - line: Where's my husband? Where am I?
-    - line: You seem familiar somehow...
+    - line: Why did the chicken cross the road? Because the farmer's house burned
+        down!
+    - line: 'Get it? All his chickens got loose. '
+    - line: "Ha\u2026 hm. That\u2019s a true story, actually."
+    - line: "Not so funny, now that I think about it.\"\r"
 --- !u!114 &1952189972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46779,8 +47267,9 @@ MonoBehaviour:
   InteractKeyCode: 101
   Dialogue:
     DialogueLines:
-    - line: Where's my husband? Where am I?
-    - line: You seem familiar somehow...
+    - line: 'Back again, huh? '
+    - line: Instead of using that big sword of yours, have you tried making your
+        enemy laugh? They might not expect that!
 --- !u!114 &2020670487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49083,6 +49572,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 919973084}
     - target: {fileID: 3532521536587481660, guid: a9f1126c4878c0343a308d747ef10531, type: 3}
+      propertyPath: DismissUIKey
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532521536587481660, guid: a9f1126c4878c0343a308d747ef10531, type: 3}
       propertyPath: PerksUIGameObject
       value: 
       objectReference: {fileID: 919973084}
@@ -49094,6 +49587,10 @@ PrefabInstance:
       propertyPath: UpgradeUIGameObject
       value: 
       objectReference: {fileID: 1636709606}
+    - target: {fileID: 3532521536587481660, guid: a9f1126c4878c0343a308d747ef10531, type: 3}
+      propertyPath: PlayerMeleeAttackRef
+      value: 
+      objectReference: {fileID: 1131129220}
     - target: {fileID: 7048637344285348142, guid: a9f1126c4878c0343a308d747ef10531, type: 3}
       propertyPath: m_Name
       value: UpgradeCenter
@@ -49627,7 +50124,55 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1554595550}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlayClickedOnButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1554595550}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: StartCourtineFadeOutOfTitleThemeSong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 386186101}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: TurnOffStopPlayerMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1131129220}
+        m_TargetAssemblyTypeName: PlayerMeleeAttack, Assembly-CSharp
+        m_MethodName: EnableMeleeAttacks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 574168715}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: IsNotInMenuScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49747,19 +50292,25 @@ MonoBehaviour:
   InteractKeyCode: 101
   Dialogue:
     DialogueLines:
-    - line: Hello angry soul. You seem lost. You seem... broken.
+    - line: Hello hollow one. You seem lost.
     - line: I am the Godess of Purgatory. I help lost souls like yourself find where
         they need to go to in the afterlife.
-    - line: But for you, you're...different.
-    - line: 'What I know of you is your a killer. '
-    - line: Fought in the name of the kingdom... Kings right hand man. Conquered
-        many lands.
-    - line: You have a high kill count. Usually the Gods would send you to hell.
-        But they sent you here.
-    - line: We still don't know your true self. I will test you.
-    - line: If you pass, this will prove you can change and can be revived to go
-        back to your kingdom.
-    - line: If not, you will get sent to hell and pay for your crimes.
+    - line: You have died. Say's here from battle.
+    - line: You were the Kings executioner,  you also served his Kingdom for years.
+    - line: You lead the Agraya Kingdom Massarce... killing...
+    - line: ...By the nine hells...
+    - line: You were sent here because neither Heaven nor Hell wanted to deal with
+        you.
+    - line: So that leads you here with me.
+    - line: I believe people can change. Even you. But you must prove yourself that
+        you can.
+    - line: I have the power you bring you back to life. Under one condition.
+    - line: You must pass my trial. If you show that you are willing to change. Ill
+        bring you back to life.
+    - line: You will be stuck here until you pass my test. If not, you will be stuck
+        here forever.
+    - line: You will not escape by death. Every hit you take is real and dying will
+        feel worse.
 --- !u!1 &361067956321021548
 GameObject:
   m_ObjectHideFlags: 0
@@ -50094,7 +50645,8 @@ MonoBehaviour:
   InteractKeyCode: 101
   Dialogue:
     DialogueLines:
-    - line: I miss my family..Why couldn't I be the only one who died. Why...
+    - line: 'It can be difficult to look within and face our demons. '
+    - line: But it is an essential part of making amends for our sins.
 --- !u!4 &2239985396947637724
 Transform:
   m_ObjectHideFlags: 0

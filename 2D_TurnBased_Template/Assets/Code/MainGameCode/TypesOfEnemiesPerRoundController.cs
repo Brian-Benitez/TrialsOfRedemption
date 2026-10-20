@@ -101,7 +101,7 @@ public class TypesOfEnemiesPerRoundController : MonoBehaviour
     void FourthWaveEnemies()
     {
         TypesOfInGameEnemies.Add(SwordsmanGameObjects[0]);
-        TypesOfInGameEnemies.Add(ArchersGameObjects[0]);
+        TypesOfInGameEnemies.Add(AOEEnemies[0]);
         Debug.Log("added both archers and swordsman as enemies");
     }
 
@@ -114,7 +114,7 @@ public class TypesOfEnemiesPerRoundController : MonoBehaviour
 
     void SixthWaveEnemies()
     {
-        TypesOfInGameEnemies.Add(SwordsmanGameObjects[0]);
+        TypesOfInGameEnemies.Add(ArchersGameObjects[1]);
         TypesOfInGameEnemies.Add(Wizards[0]);
     }
 
@@ -123,7 +123,7 @@ public class TypesOfEnemiesPerRoundController : MonoBehaviour
         bool isAllArchers = false;
         bool isAllSwordsman = false;//can add more later and more unique
 
-        int results = Random.Range(0, 1);
+        int results = Random.Range(0, 2);
         if (results == 0)
         {
             isAllArchers = true;
@@ -148,7 +148,7 @@ public class TypesOfEnemiesPerRoundController : MonoBehaviour
     void EighthWaveEnemies()
     {
         TypesOfInGameEnemies.Add(AOEEnemies[0]);
-        TypesOfInGameEnemies.Add(SwordsmanGameObjects[1]);
+        TypesOfInGameEnemies.Add(Wizards[0]);
     }
 
     void NintheWaveEnemies()

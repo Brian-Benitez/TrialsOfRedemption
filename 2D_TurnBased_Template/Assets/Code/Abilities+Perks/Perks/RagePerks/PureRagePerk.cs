@@ -25,6 +25,9 @@ public class PureRagePerk : UpgradePerk
     {
         PlayersUltController.Instance.IsUsingPureRagePerk = true;
         PerksController.Instance.AddPerkToList(this);
+
+        if(PlayersUltController.Instance.HasAUltPerk == false)
+            PlayersUltController.Instance.TurnOnUltUI();
     }
 
     public void ActivatePureRagePerk()

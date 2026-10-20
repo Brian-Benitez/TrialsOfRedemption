@@ -80,6 +80,7 @@ public class Projectile : MonoBehaviour
                 IgnoreOrEnableEnemiesTag(3, 12, false);//do not ignore enmey projkectile to enemy projectile
                 Debug.Log("parry");
                 Deflect(transform.up);
+                AudioController.Instance.PlayParrySFX();
             }
 
             if (other.gameObject.layer == 3)//enemy layer

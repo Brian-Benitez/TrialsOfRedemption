@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioController : MonoBehaviour
 {
     public static AudioController Instance;
-
+    [Range(0f, 1f)]
+    public float MasterVolume;
     public List<AudioSource> AllAudioSources;
     public AudioSource TitleThemeSong;
     public AudioSource CampfireMusic;
@@ -20,6 +22,7 @@ public class AudioController : MonoBehaviour
     [Header("SFX")]
     [Header("Attacking SFX")]
     public AudioSource MeleeSlashSound;
+    public AudioSource OtherIterationMeleeSlashSound;
     public AudioSource BlockSound;
     public AudioSource GroundSlamSound;
     public AudioSource ArrowAttackSound;
@@ -41,6 +44,7 @@ public class AudioController : MonoBehaviour
     public AudioSource AbilityPopUpSFX;
     public AudioSource PickAbilitySFX;
     public AudioSource ItemPickUpSFX;
+    public AudioSource ClickOnButtonSFX;
     [Header("Script Refs")]
     public PlayerMeleeAttack PlayerMeleeAttackRef;
     IEnumerator _fadeOutBattleMusic;
@@ -53,10 +57,14 @@ public class AudioController : MonoBehaviour
 
     private void Start()
     {
-        AdjustVolume(0.3f);
         WinningRoundMusic.Stop();
         PlayMainThemeMusic();
         _fadeOutBattleMusic = FadeOutOfBattleSong(BattleMusic, WinningRoundMusic, 6f);
+    }
+
+    private void Update()
+    {
+        AdjustVolume(MasterVolume);
     }
     ///TITLE SONG STUFF
     void PlayMainThemeMusic() => TitleThemeSong.Play();
@@ -65,7 +73,7 @@ public class AudioController : MonoBehaviour
     IEnumerator FadeOutOfTitleThemeSong()
     {
         yield return new WaitForSecondsRealtime(0.10f);
-        TitleThemeSong.volume = 0.3f;//whatever this max is
+        TitleThemeSong.volume = MasterVolume;//whatever this max is
         yield return new WaitForSecondsRealtime(0.10f);
         TitleThemeSong.volume = 0.20f;
         yield return new WaitForSecondsRealtime(0.10f);
@@ -104,7 +112,7 @@ public class AudioController : MonoBehaviour
         IsPlayingIldeMusic = false;
         IsPlayBattleMusic = true;
         CanPlayWinningMusic = true;
-        BattleMusic.volume = 0.3f;
+        BattleMusic.volume = MasterVolume;
         BattleMusic.Play();
     }
     public void RaiseBattleMusicVolume() => StartCoroutine(RaiseBattleMusic());
@@ -114,12 +122,12 @@ public class AudioController : MonoBehaviour
         IdleBattleMusic.volume = 0f;
         BattleMusic.volume = 0.20f;
         yield return new WaitForSecondsRealtime(0.05f);
-        BattleMusic.volume = 0.30f;//low volume for not in fight yet
+        BattleMusic.volume = MasterVolume;
     }
     IEnumerator FadeOutOfBattleSong(AudioSource battleSong, AudioSource winningRoundSong, float lenghtofWinningSong)
     {
         yield return new WaitForSecondsRealtime(0.10f);
-        battleSong.volume = 0.3f;//whatever this max is
+        battleSong.volume = MasterVolume;//whatever this max is
         yield return new WaitForSecondsRealtime(0.10f);
         battleSong.volume = 0.20f;
         yield return new WaitForSecondsRealtime(0.10f);
@@ -152,7 +160,7 @@ public class AudioController : MonoBehaviour
         DidSkip = true;
         WinningRoundMusic.Stop();
         yield return new WaitForSecondsRealtime(0.05f);
-        BattleMusic.volume = 0.3f;
+        BattleMusic.volume = MasterVolume;
     }
 
     //SFX---------------------------
@@ -162,13 +170,29 @@ public class AudioController : MonoBehaviour
     public void PlayMeleeSoundEffect()
     {
         if (PlayerMeleeAttackRef.AmountOfAttacks == 1)
-            MeleeSlashSound.pitch = 0.9f;
+        {
+            int index = Random.Range(0, 2);
+            if(index == 0)
+            {
+                MeleeSlashSound.pitch = 0.9f;
+                MeleeSlashSound.Play();
+            }
+            if(index >= 1)
+                OtherIterationMeleeSlashSound.Play();
+        }
         if (PlayerMeleeAttackRef.AmountOfAttacks == 2)
+        {
             MeleeSlashSound.pitch = 1f;
+            MeleeSlashSound.Play();
+        }
         if (PlayerMeleeAttackRef.AmountOfAttacks >= 3)
+        {
             MeleeSlashSound.pitch = 1.1f;
+            MeleeSlashSound.Play();
+        }
+            
 
-        MeleeSlashSound.Play();
+        
     }
 
     public void PlayGroundSlamEffect() => GroundSlamSound.Play();
@@ -236,10 +260,20 @@ public class AudioController : MonoBehaviour
 
     ///MIS
    
-    public void PlayAbiliyPopUpSound() => AbilityPopUpSFX.Play();
+    public IEnumerator PlayAbiliyPopUpSound()
+    {
+        WinningRoundMusic.volume = 0.10f;
+        IdleBattleMusic.volume = 0f;
+        BattleMusic.volume = 0f;
+        AbilityPopUpSFX.Play();
+        yield return new WaitForSecondsRealtime(2.5f);
+        WinningRoundMusic.volume = MasterVolume;
+        IdleBattleMusic.volume = 0.10f;
+    }
     public void PlayAbilityPickedSound() => PickAbilitySFX.Play();
-    public void PlayItemPickUpSound() => ItemPickUpSFX.Play();  
+    public void PlayItemPickUpSound() => ItemPickUpSFX.Play();
 
+    public void PlayClickedOnButtonSFX() => ClickOnButtonSFX.Play();
     /// <summary>
     /// Changes all audio volume.
     /// </summary>

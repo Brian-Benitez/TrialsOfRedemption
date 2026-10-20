@@ -606,7 +606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealth: 100
   MaxEnemyHealth: 100
-  EnemySpeed: 3.5
+  EnemySpeed: 3
   EnemyDamage: 30
   BossSoulsObj: {fileID: 0}
   EnemySoulsValue: 10
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsMoving: 0
-  AttackRange: 2.9
+  AttackRange: 2
   AggroRange: 5
   StandByRange: 10
   DistanceFromPlayer: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanBlock: 0
   DieRollResult: 0
-  PercentageToBlock: 50
+  PercentageToBlock: 25
   DurationOfBlock: 2
 --- !u!1 &6243354425971591692
 GameObject:

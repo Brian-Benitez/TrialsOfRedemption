@@ -19,7 +19,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     public int AmountOfAttacks;
     public int MaxAmountOfAttacks;
     private float TimerToRestartAttacks;
-    public float MaxTimerToRestartAttack;
+    public float MaxTimerToRestartAttack = 1f;
 
 
     [Header("Spiecal stats")]
@@ -60,7 +60,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     private float _maxTimeBtwAttacks;
     private float _specialCooldown = 0f;
 
-    private float _maxWaitTimeToRestartAmountOfAttks = 2f;
+    private float _maxWaitTimeToRestartAmountOfAttks = 1.5f;
     private float _timeSinceLastAttk = 0f;
 
     private void Start()

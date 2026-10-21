@@ -5,7 +5,7 @@ public class ChargeShotPerk : UpgradePerk
 {
     public bool IsUsingChargeShot = false;
     bool IsUpdatedDamgAmount = false;
-    float _damageMultipler = 20f;
+    float _damageMultipler = 2f;
     float _normalDamg;
     float newRangeDamg;
     public float CurrentHoldTimer = 0f;

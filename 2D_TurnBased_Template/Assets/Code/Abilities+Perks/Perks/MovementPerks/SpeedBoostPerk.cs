@@ -8,16 +8,16 @@ public class SpeedBoostPerk : UpgradePerk
 
     private void Start()
     {
-        NormalMovementSpeed = PlayerMovementRef.FullSpeed;
+        NormalMovementSpeed = PlayerMovementRef.DefaultSpeed;
     }
     public override void EnablePerk()
     {
-        PlayerMovementRef.FullSpeed = UpgradedMovementSpeed;
+        PlayerMovementRef.DefaultSpeed = UpgradedMovementSpeed;
         PerksController.Instance.AddPerkToList(this);
     }
 
     public override void DisablePerk()
     {
-        PlayerMovementRef.FullSpeed = NormalMovementSpeed;
+        PlayerMovementRef.DefaultSpeed = NormalMovementSpeed;
     }
 }

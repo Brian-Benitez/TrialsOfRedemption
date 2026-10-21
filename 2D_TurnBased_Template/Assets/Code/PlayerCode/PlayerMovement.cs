@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float PlayerSpeed;
-    public float FullSpeed;
+    public float DefaultSpeed;
     public float HalfSpeed;
     public GameObject PlayerObject;
     public Rigidbody2D Rb;
@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Animator info")]
     public FlipSprite FlipSpriteRef;
     public PlayerAnimationController PlayerAnimationControllerRef;
+    public PureRagePerk PureRagePerkRef;
     //public PlayerStunnedState PlayerStunnedStateRef;
 
     private void Update()
@@ -123,7 +124,17 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     public void UnSlowPlayer()
     {
-        PlayerSpeed = FullSpeed;
+        if(PureRagePerkRef.PureRagePerkIsActive)
+        {
+            PlayerSpeed = PureRagePerkRef.BoostedMovementSpeed;
+            //add perk buff here
+        }
+        else
+        {
+            PlayerSpeed = DefaultSpeed; 
+            //normal behavior here.
+        }
+        PlayerSpeed = DefaultSpeed;
         IsDashPaused = false;
     }
 

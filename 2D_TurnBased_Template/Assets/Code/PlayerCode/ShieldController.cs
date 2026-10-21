@@ -89,6 +89,7 @@ public class ShieldController : MonoBehaviour
             _playerMovement.SlowPlayer();
             ShieldObject.SetActive(true);
             TurnOnShieldObject();
+            AudioController.Instance.PlayBlockSound();
             ChangePlayerLayerName();
         }
         if(Input.GetKeyUp(ShieldKey) && !IsShieldBroken && !IsParrying || Input.GetKey(ShieldKey) && IsShieldBroken && !IsParrying)
@@ -97,6 +98,7 @@ public class ShieldController : MonoBehaviour
             _playerMovement.UnSlowPlayer();
             ShieldObject.SetActive(false);
             TurnOffIsShieldActive();
+            AudioController.Instance.RestartBlockSound();
         }        
     }
 

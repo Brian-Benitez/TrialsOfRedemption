@@ -35,6 +35,7 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
     public NpcController NpcControllerRef;
     public PlayerAnimationController PlayerAnimationControllerRef;
     public PlayerMovement PlayerMovementRef;
+    public PureRagePerk PureRagePerkRef;
 
     private void Update()
     {
@@ -88,6 +89,9 @@ public class BaseCharacter : MonoBehaviour// need to move melee and rage values 
     void PlayerIsDead()
     {
         Debug.Log("Play dead shit");
+        if(PureRagePerkRef.PureRagePerkIsActive)
+            PureRagePerkRef.PlayTurnOffRageFilter();
+
         AudioController.Instance.PlayDeathSound();
         PlayerMovementRef.StopPlayerMovement = true;
         IsCharacterDead = true;

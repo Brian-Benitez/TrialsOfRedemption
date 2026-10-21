@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PureRagePerk : UpgradePerk
 {
+    public bool PureRagePerkIsActive = false;
     [Header("Stats Info")]
     [Header("Movement")]
     public float BoostedMovementSpeed = 11f;
@@ -32,10 +33,10 @@ public class PureRagePerk : UpgradePerk
 
     public void ActivatePureRagePerk()
     {
+        PureRagePerkIsActive = true;
         Debug.Log("how many times");
         CameraShakeManager.Instance.ShakeCamera(PureRageCinemachine);
         PlayRageFilter();
-        PlayerMovementRef.FullSpeed = BoostedMovementSpeed;
 
         //Melee upgrade
         PlayerMeleeAttackRef.PlayerLightAttkDamg = MeleeUpgradeDam;
@@ -45,15 +46,13 @@ public class PureRagePerk : UpgradePerk
     }
     public void SetPlayerToNormalStats()
     {
+        PureRagePerkIsActive = false;
         PlayTurnOffRageFilter();
-        //Movement upgrade
-        PlayerMovementRef.FullSpeed = 8f;
-
         //Melee upgrade
         PlayerMeleeAttackRef.PlayerLightAttkDamg = PlayerMeleeAttackRef.DefaultLightAttkDamg;
 
         //Range upgrade
-        PlayerInfoRef.RangeDamg = 10f;
+        PlayerInfoRef.RangeDamg = 5f;
         Debug.Log("restart pure rage perk");
     }
 

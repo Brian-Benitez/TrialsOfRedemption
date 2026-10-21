@@ -42,11 +42,13 @@ public class InteractingWithUpgradeSystem : MonoBehaviour
                 PlayerMovementRef.TurnOffStopPlayerMovement();
                 PlayerMeleeAttackRef.IsAttackingPaused = false;
                 XPController.Instance.IsUpgrading = false;
+                AudioController.Instance.EnableAllAudioSFX();
             }
         }
         //makes player not move when in menu
         if(IsInteracting)
         {
+            AudioController.Instance.StopAllAudioSFX = true;
             PlayerMovementRef.TurnOnStopPlayerMovement();
             PlayerMeleeAttackRef.IsAttackingPaused = true;
         }

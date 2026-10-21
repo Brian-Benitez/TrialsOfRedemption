@@ -14,6 +14,11 @@ public class SecondChanceAbility : LevelUpStat
     private const float secondReviveHealthAmount = 100f;
     private const float lastReviveHealthAmount = 150f;
 
+    private void Start()
+    {
+        CostAmountText.text = " " + CostAmount;
+    }
+
     public enum UpgradeTiers
     {
         None,
@@ -39,6 +44,7 @@ public class SecondChanceAbility : LevelUpStat
         else
         {
             Debug.Log("player does not have enough souls.");
+            AudioController.Instance.PlayUILockedSFX();
         }
     }
 

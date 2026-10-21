@@ -705,8 +705,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RangeAttackPos: {fileID: 6265430025622044778}
   DKRangeDamage: 20
-  RangeAttackRange: 3.5
-  TimeBtwAttack: 5
+  RangeAttackRange: 5
+  TimeBtwAttack: 2.5
   WindUpTimeForRange: 1.5
   MaxAttackCount: 3
   CanRangeAttack: 0
@@ -984,7 +984,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 22.86, y: 2.78349, z: 0}
-  m_LocalScale: {x: 2.8599226, y: 3.0082848, z: 1}
+  m_LocalScale: {x: 4.1, y: 4.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 887253511516265353}

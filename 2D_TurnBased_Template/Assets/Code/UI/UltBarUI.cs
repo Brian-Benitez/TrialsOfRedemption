@@ -50,8 +50,8 @@ public class UltBarUI : MonoBehaviour
         {
             PlayersUltController.Instance.UltPoints--;
             yield return new WaitForSecondsRealtime(0.35f);
-            SetUIUltBar(-.75f);
-            UltAmountUI -= .75f;
+            SetUIUltBar(-26.25f);
+            UltAmountUI -= 26.25f;
         }
         if (UltAmountUI < 0)
             UltAmountUI = 0;

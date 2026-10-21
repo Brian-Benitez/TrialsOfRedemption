@@ -8,6 +8,7 @@ public class AudioController : MonoBehaviour
     public static AudioController Instance;
     [Range(0f, 1f)]
     public float MasterVolume;
+    public bool StopAllAudioSFX = false;
     public List<AudioSource> AllAudioSources;
     public AudioSource TitleThemeSong;
     public AudioSource CampfireMusic;
@@ -24,6 +25,7 @@ public class AudioController : MonoBehaviour
     public AudioSource MeleeSlashSound;
     public AudioSource OtherIterationMeleeSlashSound;
     public AudioSource BlockSound;
+    public bool PlayedBlockSound = false;
     public AudioSource GroundSlamSound;
     public AudioSource ArrowAttackSound;
     [Header("Movement SFX")]
@@ -40,11 +42,13 @@ public class AudioController : MonoBehaviour
     public AudioSource EnemySlashSFX;
     public AudioSource BlobAttackSFX;
     public AudioSource EnemyArrowShotSFX;
+    public AudioSource EnemyHitByArrowSFX;
     [Header("Mis")]
     public AudioSource AbilityPopUpSFX;
     public AudioSource PickAbilitySFX;
     public AudioSource ItemPickUpSFX;
     public AudioSource ClickOnButtonSFX;
+    public AudioSource UILockedSfx;
     [Header("Script Refs")]
     public PlayerMeleeAttack PlayerMeleeAttackRef;
     IEnumerator _fadeOutBattleMusic;
@@ -57,15 +61,13 @@ public class AudioController : MonoBehaviour
 
     private void Start()
     {
+        StopAllAudioSFX = true;
         WinningRoundMusic.Stop();
         PlayMainThemeMusic();
         _fadeOutBattleMusic = FadeOutOfBattleSong(BattleMusic, WinningRoundMusic, 6f);
-    }
-
-    private void Update()
-    {
         AdjustVolume(MasterVolume);
     }
+
     ///TITLE SONG STUFF
     void PlayMainThemeMusic() => TitleThemeSong.Play();
     public void StartCourtineFadeOutOfTitleThemeSong() => StartCoroutine(FadeOutOfTitleThemeSong());
@@ -166,7 +168,16 @@ public class AudioController : MonoBehaviour
     //SFX---------------------------
     //Player SFX--------------------
 
-    public void PlayBlockSound() => BlockSound.Play();
+    public void PlayBlockSound()
+    {
+        if(!PlayedBlockSound && !StopAllAudioSFX)
+        {
+            BlockSound.Play();
+            PlayedBlockSound = true;
+        }
+            
+    }
+    public void RestartBlockSound() => PlayedBlockSound = false;
     public void PlayMeleeSoundEffect()
     {
         if (PlayerMeleeAttackRef.AmountOfAttacks == 1)
@@ -189,10 +200,7 @@ public class AudioController : MonoBehaviour
         {
             MeleeSlashSound.pitch = 1.1f;
             MeleeSlashSound.Play();
-        }
-            
-
-        
+        }  
     }
 
     public void PlayGroundSlamEffect() => GroundSlamSound.Play();
@@ -235,6 +243,7 @@ public class AudioController : MonoBehaviour
         EnemySlashSFX.Play();
     }
 
+    public void PlayEnemyHitByArrowSFX() => EnemyHitByArrowSFX.Play();
     public void PlayEnemyBlobSlashSound()
     {
         ChangeAudioPitch(BlobAttackSFX);
@@ -259,21 +268,25 @@ public class AudioController : MonoBehaviour
 
 
     ///MIS
-   
-    public IEnumerator PlayAbiliyPopUpSound()
+   public void StartPlayingAbiliyPopUpSound() => StartCoroutine(PlayAbiliyPopUpSound());
+    IEnumerator PlayAbiliyPopUpSound()
     {
-        WinningRoundMusic.volume = 0.10f;
+        WinningRoundMusic.volume = 0.05f;
         IdleBattleMusic.volume = 0f;
         BattleMusic.volume = 0f;
+        AbilityPopUpSFX.volume = 1f;
         AbilityPopUpSFX.Play();
         yield return new WaitForSecondsRealtime(2.5f);
-        WinningRoundMusic.volume = MasterVolume;
+        //WinningRoundMusic.volume = MasterVolume;
         IdleBattleMusic.volume = 0.10f;
     }
     public void PlayAbilityPickedSound() => PickAbilitySFX.Play();
     public void PlayItemPickUpSound() => ItemPickUpSFX.Play();
 
     public void PlayClickedOnButtonSFX() => ClickOnButtonSFX.Play();
+    public void PlayUILockedSFX() => UILockedSfx.Play();
+
+    public void EnableAllAudioSFX() => StopAllAudioSFX = false;
     /// <summary>
     /// Changes all audio volume.
     /// </summary>

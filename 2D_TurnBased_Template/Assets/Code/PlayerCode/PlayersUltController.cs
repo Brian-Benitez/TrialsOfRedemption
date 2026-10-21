@@ -49,7 +49,6 @@ public class PlayersUltController : MonoBehaviour
             if(!IsUlted && UltPoints >= MaxUltPoints) //|| !IsUlted && UltPoints == MaxUltPoints / 2)
             {
                 IsUlted = true;
-                UltBarUI.Instance.StartDrianUltUICorutine();
             }
         }
 
@@ -77,9 +76,15 @@ public class PlayersUltController : MonoBehaviour
     public void ActivateRagePerk()
     {
         if (IsUsingPureRagePerk)
+        {
             PureRagePerkRef.ActivatePureRagePerk();
+        }
         if (IsUsingHealingRagePerk)
+        {
             HealingRagePerkRef.ActivateHealPerk();
+        }
+
+        UltBarUI.Instance.StartDrianUltUICorutine();
     }
 
     public void ResettingPlayerFromPerk()

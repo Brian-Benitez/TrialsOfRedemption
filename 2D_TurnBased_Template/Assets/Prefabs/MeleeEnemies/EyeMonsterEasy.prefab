@@ -890,11 +890,11 @@ MonoBehaviour:
   IsPlayingAttackAni: 0
   MeleePos: {fileID: 9136692640756715487}
   AttackRange: 0.65
-  WindUpTimeForMelee: 1.5
+  WindUpTimeForMelee: 1
   AmountOfAttacks: 0
   MaxAmountOfAttacks: 1
   AttackCooldownTimer: 0
-  MaxTimerOfCooldown: 3
+  MaxTimerOfCooldown: 2
   IsWaiting: 0
   WithinRange: 0
   IsDoneCoolingDown: 1

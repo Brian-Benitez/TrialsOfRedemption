@@ -28,6 +28,7 @@ public class LingeringHealthAbility : LevelUpStat
     private void Start()
     {
         TurnOnUpgradeButton();
+        CostAmountText.text = " " + CostAmount;
     }
 
     public override void UpgradeStat()
@@ -46,6 +47,7 @@ public class LingeringHealthAbility : LevelUpStat
         else
         {
             Debug.Log("player does not have enough souls.");
+            AudioController.Instance.PlayUILockedSFX();
         }
     }
     private void SetHealthIncrementAmount()

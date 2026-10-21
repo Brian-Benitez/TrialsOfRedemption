@@ -1032,7 +1032,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlesh all the rage inside of you, Double dam and speed for 8 sec.
+  m_text: Press X when Ult Bar is full to unlesh all the rage inside of you, Double
+    dam and speed for 8 sec.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}
   m_sharedMaterial: {fileID: 223548740990782276, guid: 77e4747177b0dbf438662cac117ffd22, type: 2}
@@ -1059,8 +1060,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

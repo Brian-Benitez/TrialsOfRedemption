@@ -4533,8 +4533,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10348,8 +10348,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12304,8 +12304,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278774030
-  m_fontColor: {r: 0.055549707, g: 0.9150943, b: 0.030215396, a: 1}
+    rgba: 4279284485
+  m_fontColor: {r: 0.019607844, g: 0.7019608, b: 0.0627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -12936,7 +12936,7 @@ MonoBehaviour:
   CharacterHealthAmount: 150
   CharacterMaxHealth: 150
   BaseLineHealth: 150
-  RangeDamg: 10
+  RangeDamg: 5
   Souls: 0
   BossSouls: 0
   XP: 0
@@ -13825,8 +13825,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279369472
-  m_fontColor: {r: 0, g: 1, b: 0.06795335, a: 1}
+    rgba: 4279284228
+  m_fontColor: {r: 0.016464932, g: 0.6981132, b: 0.061908107, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14884,6 +14884,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472729983}
   m_CullTransparentMesh: 1
+--- !u!1 &476720370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476720371}
+  - component: {fileID: 476720372}
+  m_Layer: 0
+  m_Name: EnemyHitByArrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &476720371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476720370}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -284.3, y: -115.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2069438788}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &476720372
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476720370}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f8b556d0dbb2bdf45aaa7fb0867bc4ff, type: 3}
+  m_Resource: {fileID: 8300000, guid: f8b556d0dbb2bdf45aaa7fb0867bc4ff, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &477313015
 GameObject:
   m_ObjectHideFlags: 0
@@ -25413,6 +25542,135 @@ MonoBehaviour:
   - {fileID: 858790824}
   - {fileID: 1100578559}
   CurrentNpcLayout: 0
+--- !u!1 &1097692246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097692247}
+  - component: {fileID: 1097692248}
+  m_Layer: 0
+  m_Name: LockedUISFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1097692247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097692246}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -284.3, y: -115.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1265436985}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1097692248
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097692246}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8ef6f9c8c32f9854b8c5cb304ec9558e, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8ef6f9c8c32f9854b8c5cb304ec9558e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1100578559
 GameObject:
   m_ObjectHideFlags: 0
@@ -25533,8 +25791,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25879,9 +26137,9 @@ MonoBehaviour:
   SpeicalAttackSpeed: 0.5
   WindUpDuration: 0.23
   PlayerLightAttkDamg: 10
-  PlayerSpecialDamg: 20
+  PlayerSpecialDamg: 15
   DefaultLightAttkDamg: 10
-  DefaultSpeicalDamg: 20
+  DefaultSpeicalDamg: 15
   WhatIsEnemies:
     serializedVersion: 2
     m_Bits: 520
@@ -29343,6 +29601,7 @@ Transform:
   - {fileID: 118557926}
   - {fileID: 45893254}
   - {fileID: 335000401}
+  - {fileID: 1097692247}
   m_Father: {fileID: 1258439354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1268800727
@@ -35104,8 +35363,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255434
-  m_fontColor: {r: 0.29170775, g: 1, b: 0, a: 1}
+    rgba: 4279284485
+  m_fontColor: {r: 0.019607844, g: 0.7019608, b: 0.0627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -35225,6 +35484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MasterVolume: 0.3
+  StopAllAudioSFX: 0
   AllAudioSources:
   - {fileID: 980478157}
   - {fileID: 289143946}
@@ -35248,6 +35508,8 @@ MonoBehaviour:
   - {fileID: 327922539}
   - {fileID: 335000402}
   - {fileID: 603655861}
+  - {fileID: 1097692248}
+  - {fileID: 476720372}
   TitleThemeSong: {fileID: 569256065}
   CampfireMusic: {fileID: 980478157}
   IsPlayBattleMusic: 0
@@ -35261,6 +35523,7 @@ MonoBehaviour:
   MeleeSlashSound: {fileID: 1214135742}
   OtherIterationMeleeSlashSound: {fileID: 603655861}
   BlockSound: {fileID: 327922539}
+  PlayedBlockSound: 0
   GroundSlamSound: {fileID: 807949889}
   ArrowAttackSound: {fileID: 1505081254}
   DashSfx: {fileID: 1823183381}
@@ -35273,10 +35536,12 @@ MonoBehaviour:
   EnemySlashSFX: {fileID: 150104479}
   BlobAttackSFX: {fileID: 1403679467}
   EnemyArrowShotSFX: {fileID: 1255461778}
+  EnemyHitByArrowSFX: {fileID: 476720372}
   AbilityPopUpSFX: {fileID: 1878103183}
   PickAbilitySFX: {fileID: 118557927}
   ItemPickUpSFX: {fileID: 45893255}
   ClickOnButtonSFX: {fileID: 335000402}
+  UILockedSfx: {fileID: 1097692248}
   PlayerMeleeAttackRef: {fileID: 1131129220}
 --- !u!1 &1556314981
 GameObject:
@@ -37727,8 +37992,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -37930,8 +38195,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255375
-  m_fontColor: {r: 0.05724919, g: 1, b: 0, a: 1}
+    rgba: 4279284485
+  m_fontColor: {r: 0.019607844, g: 0.7019608, b: 0.0627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -38016,8 +38281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 423.99997, y: -42.000084}
-  m_SizeDelta: {x: 22.3, y: 30.2}
+  m_AnchoredPosition: {x: 437, y: -42.000084}
+  m_SizeDelta: {x: 50.02, y: 30.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1768691464
 GameObject:
@@ -39592,8 +39857,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8639c5a5e35e28142af7e33eecfaeb06, type: 3}
-  m_Resource: {fileID: 8300000, guid: 8639c5a5e35e28142af7e33eecfaeb06, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 76b887b9a90aeab40b39c30d85f377c8, type: 3}
+  m_Resource: {fileID: 8300000, guid: 76b887b9a90aeab40b39c30d85f377c8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -40108,8 +40373,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279284485
+  m_fontColor: {r: 0.019607844, g: 0.7019608, b: 0.0627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -40910,8 +41175,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279284485
+  m_fontColor: {r: 0.019607844, g: 0.7019608, b: 0.0627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -41027,8 +41292,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255403
-  m_fontColor: {r: 0.17054713, g: 1, b: 0, a: 1}
+    rgba: 4279284485
+  m_fontColor: {r: 0.019607844, g: 0.7019608, b: 0.0627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -47902,6 +48167,7 @@ Transform:
   - {fileID: 150104478}
   - {fileID: 1403679466}
   - {fileID: 1255461777}
+  - {fileID: 476720371}
   m_Father: {fileID: 1258439354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2069572074
@@ -50173,6 +50439,18 @@ MonoBehaviour:
       - m_Target: {fileID: 574168715}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
         m_MethodName: IsNotInMenuScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1554595550}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: EnableAllAudioSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

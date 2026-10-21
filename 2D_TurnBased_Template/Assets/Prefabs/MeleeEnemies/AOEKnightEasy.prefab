@@ -1124,7 +1124,7 @@ MonoBehaviour:
   AmountOfAttacks: 0
   MaxAmountOfAttacks: 1
   AttackCooldownTimer: 0
-  MaxTimerOfCooldown: 3
+  MaxTimerOfCooldown: 2
   IsWaiting: 0
   WithinRange: 0
   IsDoneCoolingDown: 1

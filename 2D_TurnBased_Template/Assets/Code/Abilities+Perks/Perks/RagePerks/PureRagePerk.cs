@@ -9,7 +9,12 @@ public class PureRagePerk : UpgradePerk
     public float BoostedMovementSpeed = 11f;
     [Header("Damages")]
     public float MeleeUpgradeDam = 4f;
+    public float SpeicalUpgradeDam;
     public float RangeUpgradeDam = 2.5f;
+    [Header("var holders for maybe upgraded damgs")]
+    public float CurrentLightDam;
+    public float CurrentSpeicalDam;
+    public float CurrentRangeDam;
     [Header("Rage Filter")]
     public Animator RageAnimator;
     [Header("Shaking camera")]
@@ -37,10 +42,13 @@ public class PureRagePerk : UpgradePerk
         Debug.Log("how many times");
         CameraShakeManager.Instance.ShakeCamera(PureRageCinemachine);
         PlayRageFilter();
-
+        //checks if player has  dam boost taht after ult is done, they keep that boost
+        CurrentLightDam = PlayerMeleeAttackRef.CurrentPlayerLightAttkDamg;
+        CurrentSpeicalDam = PlayerMeleeAttackRef.CurrentPlayerSpecialDamg;
+        CurrentRangeDam = PlayerInfoRef.RangeDamg;
         //Melee upgrade
-        PlayerMeleeAttackRef.PlayerLightAttkDamg = MeleeUpgradeDam;
-
+        PlayerMeleeAttackRef.CurrentPlayerLightAttkDamg = MeleeUpgradeDam;
+        PlayerMeleeAttackRef.CurrentPlayerSpecialDamg = SpeicalUpgradeDam;
         //Range upgrade
         PlayerInfoRef.RangeDamg = RangeUpgradeDam;
     }
@@ -49,16 +57,17 @@ public class PureRagePerk : UpgradePerk
         PureRagePerkIsActive = false;
         PlayTurnOffRageFilter();
         //Melee upgrade
-        PlayerMeleeAttackRef.PlayerLightAttkDamg = PlayerMeleeAttackRef.DefaultLightAttkDamg;
-
+        PlayerMeleeAttackRef.CurrentPlayerLightAttkDamg = CurrentLightDam;
+        PlayerMeleeAttackRef.CurrentPlayerSpecialDamg = CurrentSpeicalDam;
         //Range upgrade
-        PlayerInfoRef.RangeDamg = 5f;
+        PlayerInfoRef.RangeDamg = CurrentRangeDam;
         Debug.Log("restart pure rage perk");
     }
 
     public override void DisablePerk()
     {
         PlayersUltController.Instance.IsUsingPureRagePerk = false;
+        PureRagePerkIsActive = false;
     }
 
     void PlayRageFilter() => RageAnimator.SetBool("IsRaging", true);

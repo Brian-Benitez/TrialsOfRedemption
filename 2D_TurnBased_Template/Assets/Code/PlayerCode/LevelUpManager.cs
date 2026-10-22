@@ -122,7 +122,7 @@ public class LevelUpManager : MonoBehaviour
             {
                 Debug.Log("upgraded melee");
                // PlayerMeleeAttackRef.PlayerLightAttkDamg += MeleeUpgradeIncrement;
-                PlayerMeleeAttackRef.PlayerSpecialDamg += MeleeUpgradeIncrement;
+                PlayerMeleeAttackRef.CurrentPlayerSpecialDamg += MeleeUpgradeIncrement;
                 _meleeUpgradePercent += MeleeUpgradeIncrement;
                 _meleeUpgradeLevel += 1;
                 _playerInfo.Souls -= CostyForMeleeUpgrade;

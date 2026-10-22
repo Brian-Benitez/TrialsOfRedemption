@@ -51,21 +51,18 @@ public class PerksController : MonoBehaviour
     {
         if (ListOfActivePerks.Count > 0)
         {
+            Debug.Log("hjow many perks do we have " +  ListOfActivePerks.Count);    
             PerkCardControllerRef.RemoveAllVisualPerkCardsFromList();//Removes all UI versions of the perks
             for (int i = 0; i < AllPerks.Count; i++)//disables all perks
             {
                 Debug.Log("turn off " + AllPerks[i].gameObject.name);
+                AllPerks[i].IsPerkActive = false;
+                AllPerks[i].IsPerkPicked = false;
+                AllPerks[i].GetComponent<PerkCardBehaviour>().IsPickedOnChoice = false;
                 AllPerks[i].DisablePerk();
-            }
-            
-            for (int j = 0; j < ListOfActivePerks.Count; j++)
-            {
-                ListOfActivePerks.Remove(ListOfActivePerks[j]);
-
-            }
-            
+            } 
         }
-
+        ListOfActivePerks.Clear();
     }
     public void EnablePerksUI()
     {

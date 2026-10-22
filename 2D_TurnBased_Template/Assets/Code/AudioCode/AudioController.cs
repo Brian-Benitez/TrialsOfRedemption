@@ -279,6 +279,7 @@ public class AudioController : MonoBehaviour
         yield return new WaitForSecondsRealtime(2.5f);
         //WinningRoundMusic.volume = MasterVolume;
         IdleBattleMusic.volume = 0.10f;
+        WinningRoundMusic.volume = MasterVolume;
     }
     public void PlayAbilityPickedSound() => PickAbilitySFX.Play();
     public void PlayItemPickUpSound() => ItemPickUpSFX.Play();

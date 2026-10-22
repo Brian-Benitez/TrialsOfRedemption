@@ -49,8 +49,15 @@ public class EnemyTurnController : MonoBehaviour
     public void CheckOnAmountOfEnemyThreats()
     {
         if (EnemiesFightingPlayer.Count == MaxAmountOfDirectEnemyThreat)
+        {
             IsThereAnOpenSlot = false;
+            Debug.Log("no more room");
+        }
         else
+        {
+            Debug.Log("there room");
             IsThereAnOpenSlot = true;
+        }
+            
     }
 }

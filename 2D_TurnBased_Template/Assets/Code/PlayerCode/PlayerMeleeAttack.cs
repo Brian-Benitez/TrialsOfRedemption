@@ -42,8 +42,8 @@ public class PlayerMeleeAttack : MonoBehaviour
     public float WindUpDuration = 0.3f;
 
     [Header("Player attk damg")]
-    public float PlayerLightAttkDamg;
-    public float PlayerSpecialDamg;
+    public float CurrentPlayerLightAttkDamg;
+    public float CurrentPlayerSpecialDamg;
     public float DefaultLightAttkDamg;
     public float DefaultSpeicalDamg;
 
@@ -111,7 +111,7 @@ public class PlayerMeleeAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && CanMeleeAttackAgain && !BaseCharacterRef.IsCharacterDead && !IsAttackingPaused)
         {
             PlayerAnimationControllerRef.IsAttacking();
-            StartCoroutine(WindUpAttack(PlayerLightAttkDamg, NormalAttackSpeed,AttackPos, AttackRange, WhatIsEnemies));
+            StartCoroutine(WindUpAttack(CurrentPlayerLightAttkDamg, NormalAttackSpeed,AttackPos, AttackRange, WhatIsEnemies));
             ActivateSlashRef.ActivateSlashingArt();
             _playerMovement.UnSlowPlayer();
             AmountOfAttacks++;
@@ -129,7 +129,7 @@ public class PlayerMeleeAttack : MonoBehaviour
         {
             FlipSpriteRef.PlayerLookAtMouse();
             PlayerAnimationControllerRef.IsSpeicalAttacking();
-            StartCoroutine(WindUpAttack(PlayerSpecialDamg, SpeicalAttackSpeed, SpeicalPos, SpeicalRange, WhatIsEnemies));
+            StartCoroutine(WindUpAttack(CurrentPlayerSpecialDamg, SpeicalAttackSpeed, SpeicalPos, SpeicalRange, WhatIsEnemies));
             _specialCooldown = 0;
             IsSpecialAttack = false;
         }

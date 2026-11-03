@@ -74,6 +74,7 @@ public class PlayerSpawnerController : MonoBehaviour
             RoundControllerRef.IsBossDefeated = false;
             Debug.Log("spawn in campfire");
             SpawnPlayerInCampfire();
+            AudioController.Instance.PlayCampfireMusic();
         }
         else
         {
@@ -94,6 +95,18 @@ public class PlayerSpawnerController : MonoBehaviour
             AudioController.Instance.PlayBattleMusic();
     }
 
-    public void SpawnPlayerInBossRoom() => PlayerController.Instance.Player.position = BossRoomSpawner.transform.position;
+    public void SpawnPlayerInBossRoom()
+    {
+        PlayerController.Instance.Player.position = BossRoomSpawner.transform.position;
+         
+        if (AudioController.Instance.IsPlayingWinningMusic)
+            AudioController.Instance.StopPlayingWinningRoundSong();
+
+        if (AudioController.Instance.IsPlayBattleMusic)
+            AudioController.Instance.RaiseBattleMusicVolume();
+        else
+            AudioController.Instance.PlayBattleMusic();
+    }
+
     public void SpawnPlayerInCampfire() => PlayerController.Instance.Player.position = CampfireSpawner.transform.position;
 }

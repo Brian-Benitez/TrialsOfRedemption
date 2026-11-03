@@ -89,6 +89,7 @@ public class AudioController : MonoBehaviour
     public void PlayCampfireMusic()
     {
         Debug.Log("play campfires sonng");
+        IdleBattleMusic.Stop();
         CampfireMusic.Play();
     }
     public void StopPlayCampfireMusic()

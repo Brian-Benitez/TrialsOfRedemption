@@ -55,7 +55,6 @@ public class EnemyTurnController : MonoBehaviour
         }
         else
         {
-            Debug.Log("there room");
             IsThereAnOpenSlot = true;
         }
             

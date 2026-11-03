@@ -221,8 +221,6 @@ MonoBehaviour:
   IsStunned: 0
   InstanteStun: 1
   StunDuration: 5
-  BaseEnemyRef: {fileID: 763097274553505534}
-  MovementStateRef: {fileID: 3771332004520370198}
   KnockBackFeedBackRef: {fileID: 8478864681154725586}
 --- !u!1 &2535473672352954059
 GameObject:
@@ -395,8 +393,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 7754686623634691582}
   BaseEnemy: {fileID: 763097274553505534}
+  MovementStateRef: {fileID: 0}
   AttackStateRef: {fileID: 3481125080086476875}
-  RangeAttackState: {fileID: 0}
+  GetWithinRangeAttackStateRef: {fileID: 0}
+  AttackState: {fileID: 0}
 --- !u!1 &2962749354059967010
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,51 +591,8 @@ MonoBehaviour:
   AttackMissedPlayer: 0
   StunState: {fileID: 4524825804764612815}
   DKChaseState: {fileID: 0}
---- !u!1 &6229005726687233467
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9168880141029374524}
-  - component: {fileID: 6523174012736294526}
-  m_Layer: 3
-  m_Name: HitPauseController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9168880141029374524
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6229005726687233467}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 420412308278162264}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6523174012736294526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6229005726687233467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5bdaa1481b54ab4c9124dc6ac842d01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitPauseWaitTime: 0.1
+  DKRangeAttackRef: {fileID: 0}
+  BossVunerableStateRef: {fileID: 0}
 --- !u!1 &7258568105007961688
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAggro: 0
+  IsFightingPlayer: 0
   AggroDistance: 10
 --- !u!58 &7784250481907273731
 CircleCollider2D:
@@ -761,7 +719,6 @@ Transform:
   - {fileID: 5680161182226638595}
   - {fileID: 3288533199338745091}
   - {fileID: 6821506381673166192}
-  - {fileID: 9168880141029374524}
   - {fileID: 3546789916428154126}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -908,16 +865,13 @@ MonoBehaviour:
   EnemyHealth: 4
   MaxEnemyHealth: 4
   EnemySpeed: 2
-  PatrolSpeed: 1
   EnemyDamage: 0.5
-  HealthPotion: {fileID: 8241212872979105498, guid: 71ffacc5d176d324eac596cf228156cd, type: 3}
-  RagePotion: {fileID: 600810356273653899, guid: ab5027affe3cbc84b97865519c0f8019, type: 3}
-  ChanceToDropItem: 25
+  BossSoulsObj: {fileID: 0}
   EnemySoulsValue: 25
   IsHit: 0
   IsDead: 0
-  HitPauseControllerRef: {fileID: 6523174012736294526}
   StunStateRef: {fileID: 4524825804764612815}
+  HitPauseControllerRef: {fileID: 0}
   EnemyType: 0
   EnemyDifficulty: 0
 --- !u!114 &3771332004520370198
@@ -932,11 +886,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b73f734f239ce4c9fb99bdc27d37fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FightingRange: 3.2
+  IsMoving: 0
+  AttackRange: 0
+  AggroRange: 0
   StandByRange: 5
-  StoppingDistance: 2
   DistanceFromPlayer: 0
-  IsAThreat: 0
   EnemySwordsmanRef: {fileID: 763097274553505534}
   EnemyAggroDistanceRef: {fileID: 3828468443647139524}
   StunStateRef: {fileID: 4524825804764612815}

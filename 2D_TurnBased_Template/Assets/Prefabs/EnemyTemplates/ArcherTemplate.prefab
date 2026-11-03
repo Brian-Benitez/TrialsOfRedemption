@@ -407,6 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 2606571140067528217}
   BaseEnemy: {fileID: 3818436561324985095}
+  MovementStateRef: {fileID: 0}
   AttackStateRef: {fileID: 0}
   GetWithinRangeAttackStateRef: {fileID: 0}
   AttackState: {fileID: 0}
@@ -723,7 +724,6 @@ Transform:
   - {fileID: 8329797765379305929}
   - {fileID: 7767789757035812841}
   - {fileID: 3841734301679198151}
-  - {fileID: 3016192093805343814}
   - {fileID: 341891987604854847}
   - {fileID: 1858467422721983606}
   m_Father: {fileID: 0}
@@ -866,6 +866,7 @@ MonoBehaviour:
   IsHit: 0
   IsDead: 0
   StunStateRef: {fileID: 6606801238363406728}
+  HitPauseControllerRef: {fileID: 0}
   EnemyType: 1
   EnemyDifficulty: 0
   EnemiesArrowRB: {fileID: 0}
@@ -921,48 +922,3 @@ MonoBehaviour:
   Rb2d: {fileID: 4694136040254918480}
   Strength: 5010
   delay: 0.15
---- !u!1 &8994200281661801719
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3016192093805343814}
-  - component: {fileID: 9184289616862122558}
-  m_Layer: 0
-  m_Name: HitController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3016192093805343814
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8994200281661801719}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03930998, y: 0.9050901, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8739158315629441044}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9184289616862122558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8994200281661801719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5bdaa1481b54ab4c9124dc6ac842d01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitPauseWaitTime: 0.1

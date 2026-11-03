@@ -53,7 +53,8 @@ public class BaseEnemy : MonoBehaviour
     {
         PlayersUltController.Instance.AddUltPoint(damage);
         EnemyHealth -= damage;
-        IsHit = true;   
+        IsHit = true;
+        HitPauseController.Instance.TriggerFreezeTime();
         Debug.Log("enemy took: " + damage);
         if(EnemyType == TypeOfEnemy.Boss)
         {

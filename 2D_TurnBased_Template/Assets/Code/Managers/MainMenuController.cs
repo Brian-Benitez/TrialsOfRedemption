@@ -5,8 +5,9 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     public GameObject StartMenuPrefab;
-    public GameObject OptionsMenuPrefab;
+    public GameObject CreditsMenuPrefab;
     public bool IsInMenuScreen = false;
+    public bool IsInCreditsMenu = false;
     public PlayerMovement PlayerMovementRef;
     public PlayerMeleeAttack PlayerMeleeAttackRef;
 
@@ -22,6 +23,8 @@ public class MainMenuController : MonoBehaviour
         {
             PlayerMeleeAttackRef.IsAttackingPaused = true;
             PlayerMovementRef.TurnOnStopPlayerMovement();
+            if(IsInCreditsMenu && Input.GetKeyDown(KeyCode.Q))
+                CreditsMenuPrefab.SetActive(false);
         }
 
     }
@@ -35,13 +38,15 @@ public class MainMenuController : MonoBehaviour
     {
         //add fade to black...
         StartMenuPrefab.SetActive(false);
+        CreditsMenuPrefab.SetActive(false);
         //place player in tutorial area...
     }
 
     public void OptionMenuOpen()
     {
+        IsInCreditsMenu = true;
         //add small pop up on menu...
-        Debug.Log("does not have menu made yet...");
+        CreditsMenuPrefab.SetActive(true);
         //OptionsMenuPrefab.SetActive(true);
     }
     public void QuitGame() => Application.Quit();

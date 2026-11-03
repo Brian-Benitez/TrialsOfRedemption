@@ -623,7 +623,6 @@ Transform:
   - {fileID: 7199791132900255307}
   - {fileID: 7320332759763666008}
   - {fileID: 6783123508345464235}
-  - {fileID: 564412670899018400}
   - {fileID: 9089115209004234252}
   - {fileID: 8252927944634645974}
   m_Father: {fileID: 0}
@@ -971,48 +970,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7792463973501070681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8614275513046711676
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 564412670899018400}
-  - component: {fileID: 1728808975762281706}
-  m_Layer: 0
-  m_Name: HitController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &564412670899018400
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8614275513046711676}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.80003357, y: 0.588892, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7792463973501070681}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1728808975762281706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8614275513046711676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5bdaa1481b54ab4c9124dc6ac842d01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitPauseWaitTime: 0.1

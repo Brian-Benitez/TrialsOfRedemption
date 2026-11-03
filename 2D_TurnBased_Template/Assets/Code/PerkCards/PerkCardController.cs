@@ -81,7 +81,7 @@ public class PerkCardController : MonoBehaviour
             }
         }
 
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(.5f);
 
         for (int i = 0; i < PerkCardsChoices.Count; i++)
         {

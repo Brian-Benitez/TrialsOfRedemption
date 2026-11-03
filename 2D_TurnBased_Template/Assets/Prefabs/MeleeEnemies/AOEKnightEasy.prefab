@@ -453,7 +453,6 @@ Transform:
   - {fileID: 6471721072823238306}
   - {fileID: 2252279605204564249}
   - {fileID: 8731315596009294009}
-  - {fileID: 4592103176159268014}
   - {fileID: 2576229292573470078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -599,10 +598,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealth: 100
   MaxEnemyHealth: 100
-  EnemySpeed: 2.5
-  EnemyDamage: 20.5
+  EnemySpeed: 2
+  EnemyDamage: 15.5
   BossSoulsObj: {fileID: 0}
-  EnemySoulsValue: 10
+  EnemySoulsValue: 15
   IsHit: 0
   IsDead: 0
   StunStateRef: {fileID: 7356329978495689720}
@@ -621,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsMoving: 0
-  AttackRange: 3
+  AttackRange: 2
   AggroRange: 5
   StandByRange: 10
   DistanceFromPlayer: 0
@@ -980,51 +979,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &8479386441359878278
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4592103176159268014}
-  - component: {fileID: 3025586056129156893}
-  m_Layer: 3
-  m_Name: HitPauseController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4592103176159268014
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8479386441359878278}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4973531865409396807}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3025586056129156893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8479386441359878278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5bdaa1481b54ab4c9124dc6ac842d01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitPauseWaitTime: 0.1
 --- !u!1 &8720874509599502561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1074,7 @@ MonoBehaviour:
   IsPlayingAttackAni: 0
   MeleePos: {fileID: 7344149554982938583}
   AttackRange: 3
-  WindUpTimeForMelee: 1
+  WindUpTimeForMelee: 0.8
   AmountOfAttacks: 0
   MaxAmountOfAttacks: 1
   AttackCooldownTimer: 0

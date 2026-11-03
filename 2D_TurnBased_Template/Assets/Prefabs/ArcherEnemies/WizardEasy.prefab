@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeBtwAttack: 4.5
-  WindUpTime: 0.5
+  WindUpTime: 1.3
   ShotPoint: {fileID: 760799864920403555}
   RangeDistance: 10
   CanRangeAttackAgain: 0
@@ -729,51 +729,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7509707606843565576}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20}
---- !u!1 &8136183332565636343
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8368135875678512978}
-  - component: {fileID: 2516781734486487009}
-  m_Layer: 0
-  m_Name: HitController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8368135875678512978
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8136183332565636343}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03930998, y: 0.9050901, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1671222008362878180}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2516781734486487009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8136183332565636343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5bdaa1481b54ab4c9124dc6ac842d01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitPauseWaitTime: 0.1
 --- !u!1 &8824564027631054714
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +773,6 @@ Transform:
   - {fileID: 9052657054035642011}
   - {fileID: 157611138832957896}
   - {fileID: 5234021543404738940}
-  - {fileID: 8368135875678512978}
   - {fileID: 3113065877909719884}
   - {fileID: 6401601296954947121}
   m_Father: {fileID: 0}

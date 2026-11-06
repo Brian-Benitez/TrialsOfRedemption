@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 916154730}
   InteractKeyCode: 101
   Dialogue:
@@ -3855,6 +3856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 1495437151}
   InteractKeyCode: 101
   Dialogue:
@@ -14841,6 +14843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 1256266892}
   InteractKeyCode: 101
   Dialogue:
@@ -15595,7 +15598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 620.1, y: 124.929016}
+  m_AnchoredPosition: {x: -643, y: 203}
   m_SizeDelta: {x: 110.56, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477313017
@@ -15618,7 +15621,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[SPACE] ->
+  m_text: '[E] ->
 
 '
   m_isRightToLeft: 0
@@ -15647,8 +15650,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -16142,6 +16145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 163647356}
   InteractKeyCode: 101
   Dialogue:
@@ -17198,6 +17202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 591376588}
   InteractKeyCode: 101
   Dialogue:
@@ -28166,6 +28171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 1332286232}
   InteractKeyCode: 101
   Dialogue:
@@ -29394,6 +29400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 850717421}
   InteractKeyCode: 101
   Dialogue:
@@ -34357,6 +34364,7 @@ MonoBehaviour:
   ChargeShotImpulseSource: {fileID: 843245814}
   ChargeShotPerkRef: {fileID: 1290844452}
   BaseCharacterRef: {fileID: 386186108}
+  ActivateSlashRef: {fileID: 495055288}
 --- !u!1 &1460985452
 GameObject:
   m_ObjectHideFlags: 0
@@ -34764,6 +34772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 1891913279}
   InteractKeyCode: 101
   Dialogue:
@@ -36168,6 +36177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 143907511}
   InteractKeyCode: 101
   Dialogue:
@@ -39771,8 +39781,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -1.0263, y: 113}
-  m_SizeDelta: {x: 1356.4525, y: 83.859}
+  m_AnchoredPosition: {x: 0.2042, y: 125.9199}
+  m_SizeDelta: {x: 1353.9916, y: 109.6988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737977884
 MonoBehaviour:
@@ -43739,6 +43749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 2049861228}
   InteractKeyCode: 101
   Dialogue:
@@ -49839,6 +49850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 1401975979}
   InteractKeyCode: 101
   Dialogue:
@@ -53107,6 +53119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 2059708034219641267}
   InteractKeyCode: 101
   Dialogue:
@@ -53456,6 +53469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDialouge: 1
+  FinishedFirstDialouge: 0
   EKeyGameObject: {fileID: 361067956321021548}
   InteractKeyCode: 101
   Dialogue:

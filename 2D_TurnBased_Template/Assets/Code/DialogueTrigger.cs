@@ -19,6 +19,7 @@ public class DialogueTrigger : MonoBehaviour
     [Header("NOTE: Make sure you add the Dialouge Manager to this object!")]
     [Header("Booleans")]
     public bool RestartDialouge = true;
+    public bool FinishedFirstDialouge = false;
     public GameObject EKeyGameObject;
 
     [Header("Buttons")]
@@ -42,14 +43,22 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(!RestartDialouge && Input.GetKeyUp(InteractKeyCode) || _dialogueManagerRef.IsDialogueInProgress)
             return;
-        if(_dialogueManagerRef.isDialogueActive && Input.GetKeyUp(InteractKeyCode))
+        
+        if(Input.GetKeyDown(InteractKeyCode))
         {
-            RestartDialouge = false;
-            TriggerDialogue();
-        }
-        if(_dialogueManagerRef.IsThereMoreDialogue && Input.GetKeyUp(KeyCode.Space))
-        {
-            _dialogueManagerRef.DisplayNextDialogueLine();
+            if (FinishedFirstDialouge && _dialogueManagerRef.IsThereMoreDialogue)
+            {
+                Debug.Log("look hoe");
+                _dialogueManagerRef.DisplayNextDialogueLine();
+            }
+            else if (_dialogueManagerRef.isDialogueActive)
+            {
+                TriggerDialogue();
+                RestartDialouge = false;
+                FinishedFirstDialouge = true;
+                Debug.Log("cuck2");
+            }
+            Debug.Log("cuck");
         }
     }
 
